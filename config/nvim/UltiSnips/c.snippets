@@ -1,0 +1,42 @@
+### [b] = must be the first word on line
+### [i] = expand snippet regardless of preceding characters
+
+## Main
+# main
+snippet main "standard main" [b]
+int main(int argc, char const *argv[])
+{
+  ${0}
+}
+endsnippet
+
+## Preprocessor
+# include system
+snippet inc "system include" [b]
+#include <${1}>
+endsnippet
+
+# include local
+snippet inc2 "local include" [b]
+#include "${1}"
+endsnippet
+
+## Structures
+# struct
+snippet struct "Structure definition" [b]
+struct ${1}
+{
+	${0:/* data */}
+};
+endsnippet
+
+## Guard
+# header guard
+snippet guard "Header guard" [b]
+#ifndef ${1}
+#define $1
+
+${0}
+
+#endif /* !$1 */
+endsnippet

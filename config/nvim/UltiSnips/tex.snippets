@@ -1,0 +1,20 @@
+### [b] = must be the first word on line
+### [i] = expand snippet regardless of preceding characters
+
+snippet env "LaTeX environment" [b]
+\begin{${1}}${2}
+	${0}
+\end{$1}
+endsnippet
+
+snippet v_m "membrane potential" [i]
+V\textsubscript{m}
+endsnippet
+
+snippet sup "superscript" [1]
+\textsuperscript{${1}}${0}
+endsnippet
+
+snippet sub "subscript" [1]
+\textsubscript{${1}}${0}
+endsnippet
