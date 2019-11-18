@@ -1,4 +1,7 @@
 " nvimrc
+" Author: Theo Delrieu <delrieutheo@gmail.com>
+" Source: https://github.com/delrieutheo/dotnvim/blob/master/nvimrc
+
 " Plugins ------------------------------------------------------------------ {{{
 
 filetype plugin indent on
@@ -7,10 +10,11 @@ syntax on
 call plug#begin('~/.nvim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sjl/gundo.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
-Plug 'embear/vim-localvimrc'
+Plug 'derekwyatt/vim-fswitch'
 
 " Go
 Plug 'fatih/vim-go'
@@ -23,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " vim-scripts
+" Plug 'vim-scripts/Conque-GDB'
 Plug 'vim-scripts/vim-stay'                 " Open a previously closed file where you left it
 
 " Colors
@@ -32,9 +37,10 @@ Plug 'luochen1990/rainbow'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Valloric/YouCompleteMe', {'do' : './install.py --clang-completer'}
 Plug 'Valloric/ListToggle'
 Plug 'rdnetto/YCM-Generator', {'branch' : 'stable'}
+Plug 'ervandew/supertab'
 
 " Cosmetics
 Plug 'vim-airline/vim-airline'
@@ -114,6 +120,18 @@ set expandtab               " Insert spaces instead of tabs
 
 let s:highlight_flag = 0
 
+" Toggle the 80+ columns highlight with <leader>w
+function! ToggleWidthHighlight()
+  if !s:highlight_flag
+    let &colorcolumn="80,".join(range(120,999),",") " Highlight 80th column and 120th+
+    let s:highlight_flag = 1
+  else
+    let &colorcolumn=""
+    let s:highlight_flag = 0
+  endif
+endfunction
+
+
 " Visual search. Stolen from @sjl.
 function! s:VSetSearch()
   let temp = @@
@@ -138,6 +156,9 @@ nnoremap  <leader>y  "+y
 " Buffer switching
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprevious<CR>
+
+" Calls ToggleWidthHighlight
+nnoremap <leader>w :call ToggleWidthHighlight()<CR>
 
 " Remove search highlight with //
 nnoremap <silent> // :nohlsearch<CR>
@@ -185,6 +206,26 @@ nnoremap Y ggVG"+y
 
 " Plugin configuration ----------------------------------------------------- {{{
 
+""" CamelCaseMotion -------------------------------------------------------- {{{
+
+" map <silent> w <Plug>CamelCaseMotion_w
+" map <silent> b <Plug>CamelCaseMotion_b
+" map <silent> e <Plug>CamelCaseMotion_e
+" map <silent> ge <Plug>CamelCaseMotion_ge
+" sunmap w
+" sunmap b
+" sunmap e
+" sunmap ge
+
+""" }}}
+
+""" ConqueGdb -------------------------------------------------------------- {{{
+
+" avoid conflict with mapleader
+let g:ConqueGdb_Leader = '\'
+
+""" }}}
+
 """ Ctrl-P ----------------------------------------------------------------- {{{
 
 let g:ctrlp_working_path_mode = 'ra'
@@ -200,6 +241,12 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 let g:fastfold_savehook = 0
 let g:fastfold_fold_command_suffixes = []
+
+""" }}}
+
+""" Gundo ------------------------------------------------------------------ {{{
+
+nnoremap <F5> :GundoToggle<CR>
 
 """ }}}
 
@@ -228,6 +275,16 @@ let g:rainbow_conf = {
                     \}
 
 """ }}}
+
+""" SuperTab --------------------------------------------------------------- {{{
+
+let g:SuperTabDefaultCompletionType = '<C-j>'
+let g:SuperTabMappingForward = '<C-j>'
+let g:SuperTabMappingBackward = '<C-k>'
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+""" }}}
+
 
 """ UltiSnips -------------------------------------------------------------- {{{
 
@@ -271,22 +328,38 @@ let g:go_fmt_experimental = 1
 
 """ }}}
 
-""" coc ---------------------------------------------------------------- {{{
+""" vim-fswitch --------------------------------------------- {{{
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-nnoremap <silent> <leader>t :call CocActionAsync('doHover')<CR>
-nnoremap <silent> K  :call CocAction<CR>
-nmap <silent> <leader>f <Plug>(coc-declaration)
+let g:fsnonewfiles = 1
+augroup my_fswitch_au_group
+    au!
+    au BufEnter *.h   let b:fswitchlocs = 'reg:|include/[^/]\+|src|,reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|'
+    au BufEnter *.hh  let b:fswitchlocs = 'reg:|include/[^/]\+|src|,reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|'
+    au BufEnter *.hpp let b:fswitchlocs = 'reg:|include/[^/]\+|src|,reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|'
+    au BufEnter *.hxx let b:fswitchlocs = 'reg:|include/[^/]\+|src|,reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|'
+    au BufEnter *.H   let b:fswitchlocs = 'reg:|include/[^/]\+|src|,reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|'
+augroup END
+command A FSHere 
+
+""" }}}
+
+""" YouCompleteMe ---------------------------------------------------------- {{{
+
+nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>f :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>e :YcmCompleter GoToInclude<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_always_populate_location_list = 1
+let g:ycm_extra_conf_globlist = ['~/*']
+" basic config
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 
 """ }}}
 
 let g:python3_host_prog = "/usr/bin/python3"
 let g:python_host_prog = "/usr/bin/python2"
-
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " }}}

@@ -1,0 +1,11 @@
+{
+  "languageserver":{
+    "clangd": {
+      "command": "clangd",
+      "args":["--background-index"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"]
+    }
+  },
+  "diagnostic.virtualText":true
+}
