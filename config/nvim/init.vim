@@ -12,9 +12,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
 Plug 'embear/vim-localvimrc'
 
-" Go
-Plug 'fatih/vim-go'
-
 " Snippets
 Plug 'SirVer/ultisnips'
 
@@ -160,10 +157,6 @@ nnoremap T :tabnew<cr>
 nnoremap H :tabprev<cr>
 nnoremap L :tabnext<cr>
 
-" Convenience
-command! W w
-command! Q q
-
 " Exit insert mode
 inoremap jk <ESC>
 
@@ -264,22 +257,18 @@ let g:cpp_class_scope_highlight = 1
 
 """ }}}
 
-""" vim-go --------------------------------------------- {{{
-
-let g:go_fmt_command = "goimports"
-let g:go_fmt_experimental = 1
-
-""" }}}
-
 """ coc ---------------------------------------------------------------- {{{
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : coc#refresh()
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap <silent> <leader>t :call CocActionAsync('doHover')<CR>
-nnoremap <silent> K  :call CocAction<CR>
+nnoremap <silent> K :CocAction<CR>
 nmap <silent> <leader>f <Plug>(coc-declaration)
 
 """ }}}
