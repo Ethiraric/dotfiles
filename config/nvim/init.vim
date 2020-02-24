@@ -11,6 +11,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
 Plug 'embear/vim-localvimrc'
+Plug 'rhysd/vim-clang-format'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -168,7 +169,8 @@ map <Leader>c <C-_><C-_>
 
 " Clang-format
 
-noremap <leader>x :pyf ~/.config/nvim/clang-format.py<CR>
+autocmd FileType c,cpp nnoremap <leader>x :ClangFormat<CR>
+autocmd FileType c,cpp ClangFormatAutoEnable
 
 " Misc
 nnoremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<space> :wq<ENTER>
