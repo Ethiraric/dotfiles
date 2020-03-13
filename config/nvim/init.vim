@@ -58,6 +58,7 @@ set number
 set relativenumber
 set scrolloff=999           " Keep the cursor centered
 set showbreak=↪             " Show line wrapping character
+set inccommand=split        " Interactive search and replace
 
 " set background=dark
 colorscheme jellybeans
@@ -168,9 +169,11 @@ nnoremap <Space> za
 map <Leader>c <C-_><C-_>
 
 " Clang-format
-
 autocmd FileType c,cpp nnoremap <leader>x :ClangFormat<CR>
 autocmd FileType c,cpp ClangFormatAutoEnable
+
+" C++
+autocmd FileType c,cpp nmap <leader>m bcwstd::move()<Esc>P
 
 " Misc
 nnoremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<space> :wq<ENTER>
