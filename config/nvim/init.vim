@@ -6,7 +6,6 @@ syntax on
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
@@ -32,7 +31,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Valloric/ListToggle'
-Plug 'rdnetto/YCM-Generator', {'branch' : 'stable'}
+Plug 'junegunn/fzf', { 'dir':'~/.fzf','do':'./install --all' }
+Plug 'junegunn/fzf.vim',
 
 " Cosmetics
 Plug 'vim-airline/vim-airline'
@@ -183,15 +183,11 @@ nnoremap Y ggVG"+y
 
 " Plugin configuration ----------------------------------------------------- {{{
 
-""" Ctrl-P ----------------------------------------------------------------- {{{
-
-let g:ctrlp_working_path_mode = 'ra'
-" Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_mruf_relative = 1
-let g:ctrlp_clear_cache_on_exit = 0
-
+""" FZF -------------------------------------------------------------------- {{{
+" Show FZF when pressing ctrl-p
+noremap <c-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore deps -g ""'
+nnoremap / :BLines<CR>
 """ }}}
 
 """ FastFold --------------------------------------------------------------- {{{
