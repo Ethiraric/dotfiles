@@ -1,0 +1,26 @@
+urxvt*scrollBar:        false
+URxvt.transparent:   true
+URxvt.shading:       30
+urxvt*background:       #8c8c8c
+urxvt*foreground:       #cccccc
+URxvt*termName: rxvt-unicode-256color
+URxvt*imLocale: en_GB.UTF-8
+URxvt*font: fixed
+URxvt*boldFont: fixedbold
+
+URxvt*color0:      #000000
+URxvt*color1:      #9e1828
+URxvt*color2:      #aece92
+URxvt*color3:      #968a38
+URxvt*color4:      #414171
+URxvt*color5:      #963c59
+URxvt*color6:      #418179
+URxvt*color7:      #bebebe
+URxvt*color8:      #666666
+URxvt*color9:      #cf6171
+URxvt*color10:     #c5f779
+URxvt*color11:     #fff796
+URxvt*color12:     #4186be
+URxvt*color13:     #cf9ebe
+URxvt*color14:     #71bebe
+URxvt*color15:     #ffffff
