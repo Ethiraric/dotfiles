@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -150,6 +150,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 bindsym Print exec "scrot"
+bindsym $mod+Shift+s exec "/home/ethiraric/Scripts/scrot_region"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -164,8 +165,6 @@ bindsym Control+Mod1+Left workspace prev
 bindsym $mod+t exec terminology
 bindsym $mod+Shift+Prior move workspace to output left
 bindsym $mod+Shift+Next move workspace to output right
-
-exec --no-startup-id $HOME/.fehbg
 
 mode "soundboard" {
   bindsym Shift+w exec "${HOME}/Scripts/play ${HOME}/Sounds/Spider_Solitaire_Win.mp3"
@@ -249,8 +248,8 @@ mode "sb-music" {
   bindsym t exec "${HOME}/Scripts/play ${HOME}/Sounds/music_tempsjaipas.mp3"
   bindsym s exec "${HOME}/Scripts/play ${HOME}/Sounds/music_sad-violin.mp3"
   bindsym h exec "${HOME}/Scripts/play ${HOME}/Sounds/music_haendel.mp3"
-  bindsym d exec "${HOME}/Scripts/play ${HOME}/Sounds/music_drown.mp3"
   bindsym k exec "${HOME}/Scripts/play ${HOME}/Sounds/music_kiwi.mp3"
+  bindsym d exec "${HOME}/Scripts/play ${HOME}/Sounds/music_dejavu.mp3"
   bindsym a exec "${HOME}/Scripts/play ${HOME}/Sounds/music_ayaya.mp3"
   bindsym c exec "${HOME}/Scripts/play ${HOME}/Sounds/music_casse.mp3"
   bindsym g exec "${HOME}/Scripts/play ${HOME}/Sounds/music_garou.mp3"
@@ -263,6 +262,7 @@ mode "sb-music" {
   bindsym Shift+a exec "${HOME}/Scripts/play ${HOME}/Sounds/music_ascenseur.mp3"
   bindsym Shift+s exec "${HOME}/Scripts/play ${HOME}/Sounds/music_secret-garden.mp3"
   bindsym Shift+d exec "${HOME}/Scripts/play ${HOME}/Sounds/music_dies-irae.mp3"
+  bindsym Ctrl+d exec "${HOME}/Scripts/play ${HOME}/Sounds/music_drown.mp3"
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
@@ -327,6 +327,10 @@ mode "sb-lolen" {
 
 mode "sb-dota" {
   bindsym m exec "${HOME}/Scripts/play ${HOME}/Sounds/dota_monsterkill.mp3"
+  bindsym t exec "${HOME}/Scripts/play ${HOME}/Sounds/dota_touche.mp3"
+  bindsym w exec "${HOME}/Scripts/play ${HOME}/Sounds/dota_techies_weeeee.mp3"
+  bindsym l exec "${HOME}/Scripts/play ${HOME}/Sounds/dota_lion_magic_touch.mp3"
+  bindsym p exec "${HOME}/Scripts/play ${HOME}/Sounds/dota_puck_and_you_are.mp3"
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
@@ -336,3 +340,6 @@ mode "sb-dota" {
 
 bindsym $mod+b mode "soundboard"
 bindsym $mod+Shift+b exec "urxvt -e nvim ~/.config/i3/config"
+
+exec --no-startup-id $HOME/.fehbg
+exec xset r rate 200 50
