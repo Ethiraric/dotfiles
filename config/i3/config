@@ -9,6 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec xrdb ~/.Xresources
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -28,6 +30,13 @@ font pango:monospace 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+default_border pixel
+
+for_window [class="^.*"] border pixel 0
+smart_gaps on
+gaps inner 10
+gaps outer -8
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -343,3 +352,4 @@ bindsym $mod+Shift+b exec "urxvt -e nvim ~/.config/i3/config"
 
 exec --no-startup-id $HOME/.fehbg
 exec xset r rate 200 50
+# exec --no-startup-id $HOME/.config/polybar/launch.sh

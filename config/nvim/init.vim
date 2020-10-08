@@ -11,6 +11,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
 Plug 'embear/vim-localvimrc'
 Plug 'rhysd/vim-clang-format'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Snippets
 Plug 'SirVer/ultisnips'
