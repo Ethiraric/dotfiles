@@ -32,6 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec i3
 $HOME/.fehbg &
 xset r rate 150 50
+ffplay $HOME/startup.mp3 -nodisp -autoexit > /dev/null 2>&1 < /dev/null &
+exec i3

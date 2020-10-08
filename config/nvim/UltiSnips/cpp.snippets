@@ -44,7 +44,7 @@ private:
 endsnippet
 
 # copelian class with default ctor/dtor/operator=
-snippet dclass "Copelian class default fun" [bA]
+snippet dclass "Copelian class default fun" [bAi]
 class ${1}
 {
 public:
@@ -119,10 +119,10 @@ endsnippet
 ##
 ## Input/Output
 snippet cout "standard print sequence" [i]
-std::cout << ${1} << std::endl;
+std::cout << ${1} << '\n';
 endsnippet
 snippet cerr "error print sequence" [i]
-std::cerr << ${1} << std::endl;
+std::cerr << ${1} << '\n';
 endsnippet
 snippet cin "std::cin" [i]
 std::cin >> ${1};
