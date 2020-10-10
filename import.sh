@@ -1,19 +1,34 @@
-# Recreate directories
-rm -rf config Scripts Xdefaults xinitrc Xresources
-mkdir config config/{nvim,i3} Scripts
+set -euo pipefail
 
-# Copy nvim config
-for dir in $(cd ~/.config/nvim && find . -type d | tail -n +1 | cut -c 3-); do mkdir -v config/nvim/$dir; done
-for file in $(cd ~/.config/nvim && find . -type f | tail -n +1 | cut -c 3-); do ln -v ~/.config/nvim/$file config/nvim/$file; done
+function importFile() {
+  from="$1"
+  to="$2"
 
-# Copy i3 config
-ln ${HOME}/.config/i3/config ./config/i3/config
+  if [ "$#" -ne 2 ]; then echo "Invalid use of importFile"; exit 1; fi
+  [ -f "$from" ] && rm -f "$to" && ln -v "$from" "$to" || echo "Skipping: $from"
+}
 
-# Copy Scripts
-for dir in $(cd ~/Scripts && find . -type d | tail -n +1 | cut -c 3-); do mkdir -v Scripts/$dir; done
-for file in $(cd ~/Scripts && find . -type f | tail -n +1 | cut -c 3-); do ln -v ~/Scripts/$file Scripts/$file; done
+function importDir() {
+  from="$1"
+  to="$2"
 
-# Copy random files
-ln ${HOME}/.Xdefaults Xdefaults
-ln ${HOME}/.xinitrc xinitrc
-ln ${HOME}/.Xresources Xresources
+  if [ "$#" -ne 2 ]; then echo "Invalid use of importDir"; exit 1; fi
+  if [ -d "$from" ]; then
+    rm -rf "$to"
+    mkdir "$to"
+    for dir in $(cd "$from" && find . -type d | tail -n +1 | cut -c 3-); do mkdir -v "$to/$dir"; done
+    for file in $(cd "$from" && find . -type f | tail -n +1 | cut -c 3-); do ln -v "$from/$file" "$to/$file"; done
+  else
+    echo "Skipping: $from"
+  fi
+}
+
+importDir "${HOME}/.config/nvim" "config/nvim"
+importDir "${HOME}/Scripts" "Scripts"
+
+importFile "${HOME}/.config/i3/config" "config/i3/config"
+
+importFile "${HOME}/.Xdefaults" Xdefaults
+importFile "${HOME}/.xinitrc" xinitrc
+importFile "${HOME}/.Xresources" Xresources
+importFile "${HOME}/.bashrc" bashrc
