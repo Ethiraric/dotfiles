@@ -11,7 +11,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
 Plug 'embear/vim-localvimrc'
 Plug 'rhysd/vim-clang-format'
-Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -179,10 +178,10 @@ nnoremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<space> :wq<ENTER>
 nnoremap Y ggVG"+y
 
 " Stop randomly `chdir`ing
+set noautochdir
 augroup AutoChdir
   autocmd!
 augroup END
-set noautochdir
 
 " }}}
 
@@ -191,9 +190,10 @@ set noautochdir
 """ FZF -------------------------------------------------------------------- {{{
 
 " Show FZF when pressing ctrl-p
-noremap <c-p> :FZF<CR>
+noremap <c-p> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore deps -g ""'
 nnoremap / :BLines<CR>
+nnoremap <c-j> :Ag<CR>
 
 """ }}}
 
