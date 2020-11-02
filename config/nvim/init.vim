@@ -194,6 +194,7 @@ noremap <c-p> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore deps -g ""'
 nnoremap / :BLines<CR>
 nnoremap <c-j> :Ag<CR>
+nnoremap <c-b> :Buffer<CR>
 
 """ }}}
 
