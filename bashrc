@@ -5,7 +5,6 @@ ulimit -c 0
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="${HOME}/.local/bin:${PATH}"
-export PATH="${GOPATH}/bin:${PATH}"
 export PATH=":~/Scripts:${PATH}"
 
 export LD_LIBRARY_PATH="/usr/local/mesa/lib:/usr/local/lib:${LD_LIBRARY_PATH}"
@@ -19,7 +18,6 @@ export PAGER='less'
 export PS1="(\h \#)"
 export SAVEHIST=500000
 export WATCH='all'
-
 
 # ls and friends
 alias ls='clear;lsd --color=auto'
@@ -56,6 +54,7 @@ alias bashrc='ne ~/.bashrc ; anew'
 
 # Misc
 alias mysql='mycli'
+alias explore='fzf --preview "bat --style=numbers --color=always {}" | head -500'
 
 function ytdl {
 if [ 1 -gt "$#" ]
@@ -95,4 +94,6 @@ function carre() {
     sed -e "s/9/:nine: /g"
 }
 
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
