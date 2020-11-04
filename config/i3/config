@@ -195,8 +195,9 @@ mode "soundboard" {
   bindsym k exec "pkill play"
   bindsym Escape mode "default"
   bindsym BackSpace mode "default"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-pokemon" {
@@ -206,8 +207,9 @@ mode "sb-pokemon" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-sfx" {
@@ -249,8 +251,9 @@ mode "sb-sfx" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-music" {
@@ -275,8 +278,9 @@ mode "sb-music" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-gate" {
@@ -288,8 +292,9 @@ mode "sb-gate" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-worms" {
@@ -308,8 +313,9 @@ mode "sb-worms" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-lolen" {
@@ -330,8 +336,9 @@ mode "sb-lolen" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 mode "sb-dota" {
@@ -343,8 +350,9 @@ mode "sb-dota" {
 
   bindsym Escape mode "soundboard"
   bindsym BackSpace mode "soundboard"
-  bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
-  bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+  bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%"
+  bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%"
+  bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 }
 
 bindsym $mod+b mode "soundboard"
