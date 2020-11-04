@@ -24,6 +24,7 @@ function importDir() {
 }
 
 importDir "${HOME}/.config/nvim" "config/nvim"
+importDir "${HOME}/.config/ranger" "config/ranger"
 importDir "${HOME}/Scripts" "Scripts"
 
 importFile "${HOME}/.config/i3/config" "config/i3/config"
