@@ -1,7 +1,7 @@
 ### [b] = must be the first word on line
 ### [i] = expand snippet regardless of preceding characters
 
-snippet main "standard main" [b]
+snippet main "standard main" b
 int main(int argc, char const* const* argv)
 {
   ${0}
@@ -9,25 +9,25 @@ int main(int argc, char const* const* argv)
 endsnippet
 
 ## Preprocessor
-snippet inc "system include" [bA]
+snippet inc "system include" bA
 #include <${1}>
 endsnippet
 
 ## STL
-snippet beginend "$1.begin(), $1.end() (beginend)" [i]
+snippet beginend "$1.begin(), $1.end() (beginend)" i
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
-snippet sv "std::string_view" [i]
+snippet sv "std::string_view" i
 std::string_view
 endsnippet
 
-snippet rw "std::reference_wrapper" [i]
+snippet rw "std::reference_wrapper" i
 std::reference_wrapper<${1}>
 endsnippet
 
 # copelian class
-snippet class "Copelian class" [b]
+snippet class "Copelian class" b
 class ${1}
 {
 public:
@@ -44,7 +44,7 @@ private:
 endsnippet
 
 # copelian class with default ctor/dtor/operator=
-snippet dclass "Copelian class default fun" [bAi]
+snippet dclass "Copelian class default fun" Abi
 class ${1}
 {
 public:
@@ -61,7 +61,7 @@ private:
 endsnippet
 
 # exception base class
-snippet clbexcept "Exception base class" [bA]
+snippet clbexcept "Exception base class" bA
 class ${1:Exception} : public ${2}
 {
 public:
@@ -84,7 +84,7 @@ private:
 endsnippet
 
 # exception class
-snippet clexcept "Exception class" [bA]
+snippet clexcept "Exception class" bA
 class ${1:Exception} : public ${2:Exception}
 {
 public:
@@ -95,7 +95,7 @@ public:
 endsnippet
 
 #member function implementation
-snippet mfun "member function implementation" [b]
+snippet mfun "member function implementation" b
 ${1:void} ${2:`!p snip.rv = snip.basename`}::${3:memberFunction}(${4})
 {
   ${0}
@@ -103,13 +103,13 @@ ${1:void} ${2:`!p snip.rv = snip.basename`}::${3:memberFunction}(${4})
 endsnippet
 
 # namespace
-snippet ns "namespace" [bA]
+snippet ns "namespace" bA
 namespace ${1}
 {
 ${0}
 }
 endsnippet
-snippet ans "anonymous namespace" [bA]
+snippet ans "anonymous namespace" bA
 namespace
 {
 ${1}
@@ -118,41 +118,41 @@ endsnippet
 
 ##
 ## Input/Output
-snippet cout "standard print sequence" [i]
+snippet cout "standard print sequence" i
 std::cout << ${1} << '\n';
 endsnippet
-snippet cerr "error print sequence" [i]
+snippet cerr "error print sequence" i
 std::cerr << ${1} << '\n';
 endsnippet
-snippet cin "std::cin" [i]
+snippet cin "std::cin" i
 std::cin >> ${1};
 endsnippet
 
 ## Lambdas
 # lamda (one line)
-snippet ld "lambda" [i]
+snippet ld "lambda" i
 [&](${1}){${2}}
 endsnippet
 
 ## Templates
 # template
-snippet tpl "Template" [i]
+snippet tpl "Template" i
 template <typename ${1:T}>
 endsnippet
 
 ## Asserts
 # static_assert
-snippet sta "Static Assert" [b]
+snippet sta "Static Assert" b
 static_assert(${1}, "${2}");
 endsnippet
 # static_assert std::is_same
-snippet stas "Static Assert is_same" [b]
+snippet stas "Static Assert is_same" b
 static_assert(std::is_same<${1}, ${2}>::value, "${3}");
 endsnippet
 
 ## Guard
 # header guard
-snippet guard "Header guard" [bA]
+snippet guard "Header guard" bA
 #ifndef ${1}
 #define $1
 
@@ -163,14 +163,14 @@ endsnippet
 
 ## Dump
 # hexadecimal
-snippet dumphex "Dump hexadecimal" [b]
+snippet dumphex "Dump hexadecimal" b
 static auto const* digits = "0123456789ABCDEF";
 for (auto const byte : ${1})
   std::cout << digits[byte >> 4] << digits[byte & 0xF] << ' ';
 std::cout << std::endl;
 endsnippet
 
-snippet vdmsgh "VoxDei message header" [b]
+snippet vdmsgh "VoxDei message header" b
 #ifndef NETWORK_MESSAGES_${1}_HH_
 #define NETWORK_MESSAGES_$1_HH_
 
@@ -222,7 +222,7 @@ void $2::writeTo(VDStream<T>& sock) const
 
 #endif /* !NETWORK_MESSAGES_$1_HH_ */
 endsnippet
-snippet vdmsgc "VoxDei message source" [b]
+snippet vdmsgc "VoxDei message source" b
 #include <Network/Messages/${1}.hh>
 
 #include <Client.hh>
@@ -257,7 +257,7 @@ MessagesGroupData $1::process(MessagesGroupData group, Client& cl)
 }
 endsnippet
 
-snippet dpar "Default ctor param" [i]
+snippet dpar "Default ctor param" i
 ${1}{p$1}
 endsnippet
 
