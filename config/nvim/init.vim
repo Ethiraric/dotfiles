@@ -30,7 +30,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Valloric/ListToggle'
+" Plug 'Valloric/ListToggle'
 Plug 'junegunn/fzf', { 'dir':'~/.fzf','do':'./install --all' }
 Plug 'junegunn/fzf.vim',
 
@@ -275,25 +275,29 @@ let g:cpp_class_scope_highlight = 1
 """ coc -------------------------------------------------------------------- {{{
 
 let g:coc_global_extensions = [
-    \ 'coc-snippets',
     \ 'coc-actions',
     \ 'coc-python',
-    \ 'coc-prettier',
     \ 'coc-json',
     \ 'coc-marketplace',
 \ ]
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : coc#refresh()
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap <silent> <leader>t :call CocActionAsync('doHover')<CR>
 nnoremap <silent> K :CocAction<CR>
-nmap <silent> <leader>f <Plug>(coc-declaration)
+
+" GoTo code navigation.
+nmap <silent> ,f <Plug>(coc-declaration)
+nmap <silent> ,d <Plug>(coc-definition)
+nmap <silent> ,r <Plug>(coc-references)
+nmap <silent> ,R <Plug>(coc-rename)
+nmap <silent> <expr> ,l bufexists("list:///diagnostics") == 1? ":CocListCancel<CR>" : ":CocList --normal diagnostics<CR>"
+nmap <silent> ,n <Plug>(coc-diagnostic-next)
+nmap <silent> ,p <Plug>(coc-diagnostic-prev)
+
+nmap <silent> ,y <Plug>(coc-type-definition)
+nmap <silent> ,i <Plug>(coc-implementation)
+
 
 """ }}}
 
