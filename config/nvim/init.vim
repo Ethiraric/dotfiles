@@ -187,6 +187,12 @@ augroup END
 
 " Plugin configuration ----------------------------------------------------- {{{
 
+""" Vim-Stay --------------------------------------------------------------- {{{
+
+set viewoptions-=options,curdir
+
+""" }}}
+
 """ FZF -------------------------------------------------------------------- {{{
 
 " Show FZF when pressing ctrl-p
@@ -267,6 +273,15 @@ let g:cpp_class_scope_highlight = 1
 """ }}}
 
 """ coc -------------------------------------------------------------------- {{{
+
+let g:coc_global_extensions = [
+    \ 'coc-snippets',
+    \ 'coc-actions',
+    \ 'coc-python',
+    \ 'coc-prettier',
+    \ 'coc-json',
+    \ 'coc-marketplace',
+\ ]
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

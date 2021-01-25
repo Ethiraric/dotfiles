@@ -1,11 +1,28 @@
 {
-  "languageserver":{
+  "languageserver": {
     "clangd": {
       "command": "clangd",
-      "args":["--background-index", "-clang-tidy", "--completion-style=detailed", "--header-insertion=iwyu"],
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"]
+      "args": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu"
+      ],
+      "filetypes": [
+        "c",
+        "cpp",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
     }
   },
-  "diagnostic.virtualText":true
+  "snippets.ultisnips.enable": true,
+  "diagnostic.virtualText": true
 }
