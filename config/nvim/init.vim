@@ -11,6 +11,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Konfekt/FastFold'
 Plug 'embear/vim-localvimrc'
 Plug 'rhysd/vim-clang-format'
+Plug 'alx741/vim-rustfmt'
 
 " Snippets
 Plug 'SirVer/ultisnips'
