@@ -12,6 +12,7 @@
 exec xrdb ~/.Xresources
 
 set $mod Mod4
+set $term alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -39,7 +40,8 @@ gaps inner 10
 gaps outer -8
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec $term
+bindsym $mod+ShiftReturn exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,6 +173,8 @@ bindsym $mod+semicolon exec "/home/ethiraric/Scripts/i3lock-rand"
 bindsym $mod+apostrophe exec "/home/ethiraric/Scripts/i3lock-select"
 bindsym Control+Mod1+Right workspace next
 bindsym Control+Mod1+Left workspace prev
+bindsym Control+Mod1+l workspace next
+bindsym Control+Mod1+h workspace prev
 bindsym $mod+t exec terminology
 bindsym $mod+Shift+Prior move workspace to output left
 bindsym $mod+Shift+Next move workspace to output right
@@ -356,8 +360,9 @@ mode "sb-dota" {
 }
 
 bindsym $mod+b mode "soundboard"
-bindsym $mod+Shift+b exec "urxvt -e nvim ~/.config/i3/config"
+bindsym $mod+Shift+b exec "$term -e nvim ~/.config/i3/config"
 
 exec --no-startup-id $HOME/.fehbg
 exec xset r rate 200 50
 exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id picom --config ${HOME}/.config/picom/config.ini --experimental-backends -b --no-fading-openclose

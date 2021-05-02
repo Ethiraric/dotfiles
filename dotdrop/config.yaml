@@ -1,0 +1,109 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: ../dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  f_init.vim:
+    src: config/nvim/init.vim
+    dst: ~/.config/nvim/init.vim
+    chmod: '640'
+  f_coc-settings.json:
+    src: config/nvim/coc-settings.json
+    dst: ~/.config/nvim/coc-settings.json
+    chmod: '640'
+  f_cmake.snippets:
+    src: config/nvim/UltiSnips/cmake.snippets
+    dst: ~/.config/nvim/UltiSnips/cmake.snippets
+    chmod: '640'
+  f_cpp.snippets:
+    src: config/nvim/UltiSnips/cpp.snippets
+    dst: ~/.config/nvim/UltiSnips/cpp.snippets
+    chmod: '640'
+  f_c.snippets:
+    src: config/nvim/UltiSnips/c.snippets
+    dst: ~/.config/nvim/UltiSnips/c.snippets
+    chmod: '640'
+  f_java.snippets:
+    src: config/nvim/UltiSnips/java.snippets
+    dst: ~/.config/nvim/UltiSnips/java.snippets
+    chmod: '640'
+  f_make.snippets:
+    src: config/nvim/UltiSnips/make.snippets
+    dst: ~/.config/nvim/UltiSnips/make.snippets
+    chmod: '640'
+  f_plaintex.snippets:
+    src: config/nvim/UltiSnips/plaintex.snippets
+    dst: ~/.config/nvim/UltiSnips/plaintex.snippets
+    chmod: '640'
+  f_tex.snippets:
+    src: config/nvim/UltiSnips/tex.snippets
+    dst: ~/.config/nvim/UltiSnips/tex.snippets
+    chmod: '640'
+  f_text.snippets:
+    src: config/nvim/UltiSnips/text.snippets
+    dst: ~/.config/nvim/UltiSnips/text.snippets
+    chmod: '640'
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+    chmod: '640'
+  f_xdefaults:
+    src: Xdefaults
+    dst: ~/.Xdefaults
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+  f_commands_full.py:
+    src: config/ranger/commands_full.py
+    dst: ~/.config/ranger/commands_full.py
+  f_commands.py:
+    src: config/ranger/commands.py
+    dst: ~/.config/ranger/commands.py
+  f_rc.conf:
+    src: config/ranger/rc.conf
+    dst: ~/.config/ranger/rc.conf
+  f_rifle.conf:
+    src: config/ranger/rifle.conf
+    dst: ~/.config/ranger/rifle.conf
+  f_scope.sh:
+    src: config/ranger/scope.sh
+    dst: ~/.config/ranger/scope.sh
+    chmod: '755'
+  f_config:
+    src: config/i3/config
+    dst: ~/.config/i3/config
+  d_scripts:
+    src: Scripts
+    dst: ~/Scripts
+profiles:
+  Kanto:
+    dotfiles:
+    - f_init.vim
+    - f_coc-settings.json
+    - f_cmake.snippets
+    - f_cpp.snippets
+    - f_c.snippets
+    - f_java.snippets
+    - f_make.snippets
+    - f_plaintex.snippets
+    - f_tex.snippets
+    - f_text.snippets
+    - f_bashrc
+    - f_xdefaults
+    - f_xinitrc
+    - f_xresources
+    - f_commands_full.py
+    - f_commands.py
+    - f_rc.conf
+    - f_rifle.conf
+    - f_scope.sh
+    - f_config
+    - d_scripts
