@@ -23,5 +23,6 @@
       ]
     }
   },
-  "diagnostic.virtualText": true
+  "diagnostic.virtualText": true,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true
 }

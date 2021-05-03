@@ -80,9 +80,162 @@ dotfiles:
   f_config:
     src: config/i3/config
     dst: ~/.config/i3/config
-  d_scripts:
-    src: Scripts
-    dst: ~/Scripts
+  f_camomilla:
+    src: Scripts/camomilla
+    dst: ~/Scripts/camomilla
+    chmod: '755'
+  f_cinclude2dot.pl:
+    src: Scripts/cinclude2dot.pl
+    dst: ~/Scripts/cinclude2dot.pl
+    chmod: '755'
+  f_count:
+    src: Scripts/count
+    dst: ~/Scripts/count
+    chmod: '755'
+  f_gitstat:
+    src: Scripts/gitstat
+    dst: ~/Scripts/gitstat
+    chmod: '755'
+  f_gprof2dot:
+    src: Scripts/gprof2dot
+    dst: ~/Scripts/gprof2dot
+    chmod: '755'
+  f_i3lock-rand:
+    src: Scripts/i3lock-rand
+    dst: ~/Scripts/i3lock-rand
+    chmod: '755'
+  f_i3lock-select:
+    src: Scripts/i3lock-select
+    dst: ~/Scripts/i3lock-select
+    chmod: '755'
+  f_mouli1:
+    src: Scripts/mouli1
+    dst: ~/Scripts/mouli1
+    chmod: '755'
+  f_mouli2:
+    src: Scripts/mouli2
+    dst: ~/Scripts/mouli2
+    chmod: '755'
+  f_mouli3:
+    src: Scripts/mouli3
+    dst: ~/Scripts/mouli3
+    chmod: '755'
+  f_newproj:
+    src: Scripts/newproj
+    dst: ~/Scripts/newproj
+    chmod: '755'
+  f_play:
+    src: Scripts/play
+    dst: ~/Scripts/play
+    chmod: '755'
+  f_scrot_region:
+    src: Scripts/scrot_region
+    dst: ~/Scripts/scrot_region
+    chmod: '755'
+  f_sdmenu_run:
+    src: Scripts/sdmenu_run
+    dst: ~/Scripts/sdmenu_run
+    chmod: '755'
+  f_sleepuntil:
+    src: Scripts/sleepuntil
+    dst: ~/Scripts/sleepuntil
+    chmod: '755'
+  f_sourcetrail:
+    src: Scripts/sourcetrail
+    dst: ~/Scripts/sourcetrail
+    chmod: '755'
+  f_srofi_run:
+    src: Scripts/srofi_run
+    dst: ~/Scripts/srofi_run
+    chmod: '755'
+  f_strlen:
+    src: Scripts/strlen
+    dst: ~/Scripts/strlen
+    chmod: '755'
+  f_tetris:
+    src: Scripts/tetris
+    dst: ~/Scripts/tetris
+    chmod: '755'
+  f_usbreset:
+    src: Scripts/usbreset
+    dst: ~/Scripts/usbreset
+    chmod: '755'
+  f_beep:
+    src: Scripts/beep
+    dst: ~/Scripts/beep
+    chmod: '755'
+  f_aerodynamic.sh:
+    src: Scripts/Musics/aerodynamic.sh
+    dst: ~/Scripts/Musics/aerodynamic.sh
+    chmod: '755'
+  f_brother_jacob.sh:
+    src: Scripts/Musics/brother_jacob.sh
+    dst: ~/Scripts/Musics/brother_jacob.sh
+    chmod: '755'
+  f_come_as_you_are.sh:
+    src: Scripts/Musics/come_as_you_are.sh
+    dst: ~/Scripts/Musics/come_as_you_are.sh
+    chmod: '755'
+  f_crazy_frog.sh:
+    src: Scripts/Musics/crazy_frog.sh
+    dst: ~/Scripts/Musics/crazy_frog.sh
+    chmod: '755'
+  f_ff_victory_theme.sh:
+    src: Scripts/Musics/FF_victory_theme.sh
+    dst: ~/Scripts/Musics/FF_victory_theme.sh
+    chmod: '755'
+  f_ff_victory_theme_short.sh:
+    src: Scripts/Musics/FF_victory_theme_short.sh
+    dst: ~/Scripts/Musics/FF_victory_theme_short.sh
+    chmod: '755'
+  f_happy_birthday.sh:
+    src: Scripts/Musics/happy_birthday.sh
+    dst: ~/Scripts/Musics/happy_birthday.sh
+    chmod: '755'
+  f_imperial_march.sh:
+    src: Scripts/Musics/imperial_march.sh
+    dst: ~/Scripts/Musics/imperial_march.sh
+    chmod: '755'
+  f_merry_christmas.sh:
+    src: Scripts/Musics/merry_christmas.sh
+    dst: ~/Scripts/Musics/merry_christmas.sh
+    chmod: '755'
+  f_mmeloik.sh:
+    src: Scripts/Musics/mmeloik.sh
+    dst: ~/Scripts/Musics/mmeloik.sh
+    chmod: '755'
+  f_tetrisa.sh:
+    src: Scripts/Musics/tetrisA.sh
+    dst: ~/Scripts/Musics/tetrisA.sh
+    chmod: '755'
+  f_create.sh:
+    src: Scripts/Musics/generator/create.sh
+    dst: ~/Scripts/Musics/generator/create.sh
+    chmod: '755'
+  f_main.c:
+    src: Scripts/Musics/generator/main.c
+    dst: ~/Scripts/Musics/generator/main.c
+    chmod: '755'
+  f_main.c.bak:
+    src: Scripts/Musics/generator/main.c.bak
+    dst: ~/Scripts/Musics/generator/main.c.bak
+    chmod: '755'
+  f_main.c.loik:
+    src: Scripts/Musics/generator/main.c.loik
+    dst: ~/Scripts/Musics/generator/main.c.loik
+    chmod: '755'
+  f_mainfort.c:
+    src: Scripts/Musics/generator/mainfort.c
+    dst: ~/Scripts/Musics/generator/mainfort.c
+    chmod: '755'
+  f_mainpirates.c:
+    src: Scripts/Musics/generator/mainpirates.c
+    dst: ~/Scripts/Musics/generator/mainpirates.c
+    chmod: '755'
+  f_output.sh:
+    src: Scripts/Musics/generator/output.sh
+    dst: ~/Scripts/Musics/generator/output.sh
+    chmod: '755'
 profiles:
   Kanto:
     dotfiles:
@@ -106,4 +259,64 @@ profiles:
     - f_rifle.conf
     - f_scope.sh
     - f_config
-    - d_scripts
+  Tswarra:
+    dotfiles:
+    - f_init.vim
+    - f_coc-settings.json
+    - f_cmake.snippets
+    - f_cpp.snippets
+    - f_c.snippets
+    - f_java.snippets
+    - f_make.snippets
+    - f_plaintex.snippets
+    - f_tex.snippets
+    - f_text.snippets
+    - f_bashrc
+    - f_xdefaults
+    - f_xinitrc
+    - f_xresources
+    - f_commands_full.py
+    - f_commands.py
+    - f_rc.conf
+    - f_rifle.conf
+    - f_scope.sh
+    - f_config
+    - f_camomilla
+    - f_cinclude2dot.pl
+    - f_count
+    - f_gitstat
+    - f_gprof2dot
+    - f_i3lock-rand
+    - f_i3lock-select
+    - f_mouli1
+    - f_mouli2
+    - f_mouli3
+    - f_newproj
+    - f_play
+    - f_scrot_region
+    - f_sdmenu_run
+    - f_sleepuntil
+    - f_sourcetrail
+    - f_srofi_run
+    - f_strlen
+    - f_tetris
+    - f_usbreset
+    - f_beep
+    - f_aerodynamic.sh
+    - f_brother_jacob.sh
+    - f_come_as_you_are.sh
+    - f_crazy_frog.sh
+    - f_ff_victory_theme.sh
+    - f_ff_victory_theme_short.sh
+    - f_happy_birthday.sh
+    - f_imperial_march.sh
+    - f_merry_christmas.sh
+    - f_mmeloik.sh
+    - f_tetrisa.sh
+    - f_create.sh
+    - f_main.c
+    - f_main.c.bak
+    - f_main.c.loik
+    - f_mainfort.c
+    - f_mainpirates.c
+    - f_output.sh

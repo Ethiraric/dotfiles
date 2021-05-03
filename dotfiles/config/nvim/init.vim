@@ -34,7 +34,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Valloric/ListToggle'
 Plug 'junegunn/fzf', { 'dir':'~/.fzf','do':'./install --all' }
 Plug 'junegunn/fzf.vim',
-Plug 'rust-lang/rust.vim'
 
 " Cosmetics
 Plug 'vim-airline/vim-airline'
@@ -281,6 +280,7 @@ let g:coc_global_extensions = [
     \ 'coc-python',
     \ 'coc-json',
     \ 'coc-marketplace',
+    \ 'coc-rust-analyzer',
 \ ]
 
 inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : coc#refresh()
@@ -306,11 +306,6 @@ nmap <silent> ,i <Plug>(coc-implementation)
 let g:python3_host_prog = "/usr/bin/python3"
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
-
-" }}}
-
-""" }}}
-let g:rustfmt_autosave = 1
 
 " }}}
 
