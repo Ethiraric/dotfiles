@@ -12,7 +12,7 @@
 exec xrdb ~/.Xresources
 
 set $mod Mod4
-set $term alacritty
+set $terminal alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -40,13 +40,17 @@ gaps inner 10
 gaps outer -8
 
 # start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $terminal
 bindsym $mod+ShiftReturn exec urxvt
+
+# Hawkeye
+# bindsym $mod+Return exec alacritty -e bash -i -c ranger
+# bindsym $mod+Shift+n exec alacritty -e bash -i -c "cd Documents/notes && ranger"
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec "/home/ethiraric/Scripts/srofi_run"
+bindsym $mod+d exec "${HOME}/Scripts/srofi_run"
 
 # change focus
 bindsym $mod+h focus left
@@ -87,7 +91,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -129,26 +133,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym j resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Down resize grow height 1 px or 1 ppt
-        bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
-
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -163,18 +153,8 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym Print exec "scrot"
 bindsym $mod+Shift+s exec "/home/ethiraric/Scripts/scrot_region"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         status_command i3status
-# }
-
 bindsym $mod+semicolon exec "/home/ethiraric/Scripts/i3lock-rand"
 bindsym $mod+apostrophe exec "/home/ethiraric/Scripts/i3lock-select"
-bindsym Control+Mod1+Right workspace next
-bindsym Control+Mod1+Left workspace prev
-bindsym Control+Mod1+l workspace next
-bindsym Control+Mod1+h workspace prev
 bindsym $mod+t exec terminology
 bindsym $mod+Shift+Prior move workspace to output left
 bindsym $mod+Shift+Next move workspace to output right
@@ -360,7 +340,7 @@ mode "sb-dota" {
 }
 
 bindsym $mod+b mode "soundboard"
-bindsym $mod+Shift+b exec "$term -e nvim ~/.config/i3/config"
+bindsym $mod+Shift+b exec "$terminal -e nvim ~/.config/i3/config"
 
 exec --no-startup-id $HOME/.fehbg
 exec xset r rate 200 50

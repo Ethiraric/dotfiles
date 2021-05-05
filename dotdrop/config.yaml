@@ -320,3 +320,60 @@ profiles:
     - f_mainfort.c
     - f_mainpirates.c
     - f_output.sh
+  hawkeye:
+    dotfiles:
+    - f_aerodynamic.sh
+    - f_beep
+    - f_brother_jacob.sh
+    - f_camomilla
+    - f_cinclude2dot.pl
+    - f_cmake.snippets
+    - f_coc-settings.json
+    - f_come_as_you_are.sh
+    - f_commands_full.py
+    - f_commands.py
+    - f_count
+    - f_cpp.snippets
+    - f_crazy_frog.sh
+    - f_create.sh
+    - f_c.snippets
+    - f_ff_victory_theme.sh
+    - f_ff_victory_theme_short.sh
+    - f_gitstat
+    - f_gprof2dot
+    - f_happy_birthday.sh
+    - f_i3lock-rand
+    - f_i3lock-select
+    - f_imperial_march.sh
+    - f_init.vim
+    - f_java.snippets
+    - f_main.c
+    - f_main.c.bak
+    - f_main.c.loik
+    - f_mainfort.c
+    - f_mainpirates.c
+    - f_make.snippets
+    - f_merry_christmas.sh
+    - f_mmeloik.sh
+    - f_mouli1
+    - f_mouli2
+    - f_mouli3
+    - f_newproj
+    - f_output.sh
+    - f_plaintex.snippets
+    - f_play
+    - f_rc.conf
+    - f_rifle.conf
+    - f_scope.sh
+    - f_scrot_region
+    - f_sdmenu_run
+    - f_sleepuntil
+    - f_sourcetrail
+    - f_srofi_run
+    - f_strlen
+    - f_tetris
+    - f_tetrisa.sh
+    - f_tex.snippets
+    - f_text.snippets
+    - f_usbreset
+    - f_xdefaults
