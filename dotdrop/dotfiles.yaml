@@ -1,0 +1,115 @@
+config:
+  backup: false
+  banner: true
+  create: true
+  dotpath: ../dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: true
+dotfiles:
+  f_Xresources:
+    src: Xresources
+    dst: ~/.Xresources
+    chmod: '600'
+  f_config_ranger_scope.sh:
+    src: config/ranger/scope.sh
+    dst: ~/.config/ranger/scope.sh
+    chmod: '700'
+  f_config_ranger_rc.conf:
+    src: config/ranger/rc.conf
+    dst: ~/.config/ranger/rc.conf
+    chmod: '600'
+  f_config_ranger_commands_full.py:
+    src: config/ranger/commands_full.py
+    dst: ~/.config/ranger/commands_full.py
+    chmod: '600'
+  f_config_ranger_commands.py:
+    src: config/ranger/commands.py
+    dst: ~/.config/ranger/commands.py
+    chmod: '600'
+  f_config_ranger_rifle.conf:
+    src: config/ranger/rifle.conf
+    dst: ~/.config/ranger/rifle.conf
+    chmod: '600'
+  f_config_nvim_coc-settings.json:
+    src: config/nvim/coc-settings.json
+    dst: ~/.config/nvim/coc-settings.json
+    chmod: '600'
+  f_config_nvim_init.vim:
+    src: config/nvim/init.vim
+    dst: ~/.config/nvim/init.vim
+    chmod: '600'
+  f_config_nvim_UltiSnips_c.snippets:
+    src: config/nvim/UltiSnips/c.snippets
+    dst: ~/.config/nvim/UltiSnips/c.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_make.snippets:
+    src: config/nvim/UltiSnips/make.snippets
+    dst: ~/.config/nvim/UltiSnips/make.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_text.snippets:
+    src: config/nvim/UltiSnips/text.snippets
+    dst: ~/.config/nvim/UltiSnips/text.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_tex.snippets:
+    src: config/nvim/UltiSnips/tex.snippets
+    dst: ~/.config/nvim/UltiSnips/tex.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_plaintex.snippets:
+    src: config/nvim/UltiSnips/plaintex.snippets
+    dst: ~/.config/nvim/UltiSnips/plaintex.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_cmake.snippets:
+    src: config/nvim/UltiSnips/cmake.snippets
+    dst: ~/.config/nvim/UltiSnips/cmake.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_java.snippets:
+    src: config/nvim/UltiSnips/java.snippets
+    dst: ~/.config/nvim/UltiSnips/java.snippets
+    chmod: '600'
+  f_config_nvim_UltiSnips_cpp.snippets:
+    src: config/nvim/UltiSnips/cpp.snippets
+    dst: ~/.config/nvim/UltiSnips/cpp.snippets
+    chmod: '600'
+  f_config_i3_config:
+    src: config/i3/config
+    dst: ~/.config/i3/config
+    chmod: '600'
+  f_Xdefaults:
+    src: Xdefaults
+    dst: ~/.Xdefaults
+    chmod: '600'
+  f_local_bin_i3lock-select:
+    src:  local/bin/i3lock-select
+    dst:  ~/.local/bin/i3lock-select
+    chmod: '700'
+  f_local_bin_sleepuntil:
+    src:  local/bin/sleepuntil
+    dst:  ~/.local/bin/sleepuntil
+    chmod: '700'
+  f_local_bin_play:
+    src:  local/bin/play
+    dst:  ~/.local/bin/play
+    chmod: '700'
+  f_local_bin_scrot_region:
+    src:  local/bin/scrot_region
+    dst:  ~/.local/bin/scrot_region
+    chmod: '700'
+  f_local_bin_i3lock-rand:
+    src:  local/bin/i3lock-rand
+    dst:  ~/.local/bin/i3lock-rand
+    chmod: '700'
+  f_local_bin_srofi_run:
+    src:  local/bin/srofi_run
+    dst:  ~/.local/bin/srofi_run
+    chmod: '700'
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+    chmod: '600'
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+    chmod: '600'
+profiles:

@@ -1,0 +1,46 @@
+config:
+  backup: false
+  banner: true
+  create: true
+  dotpath: ../dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: true
+dotfiles:
+profiles:
+  tty-only:
+    dotfiles:
+      - f_config_ranger_scope.sh
+      - f_config_ranger_rc.conf
+      - f_config_ranger_commands_full.py
+      - f_config_ranger_commands.py
+      - f_config_ranger_rifle.conf
+      - f_config_nvim_coc-settings.json
+      - f_config_nvim_init.vim
+      - f_config_nvim_UltiSnips_c.snippets
+      - f_config_nvim_UltiSnips_make.snippets
+      - f_config_nvim_UltiSnips_text.snippets
+      - f_config_nvim_UltiSnips_tex.snippets
+      - f_config_nvim_UltiSnips_plaintex.snippets
+      - f_config_nvim_UltiSnips_cmake.snippets
+      - f_config_nvim_UltiSnips_java.snippets
+      - f_config_nvim_UltiSnips_cpp.snippets
+      - f_local_bin_sleepuntil
+      - f_bashrc
+  gui:
+    include:
+      - tty-only
+    dotfiles:
+      - f_Xresources
+      - f_config_i3_config
+      - f_Xdefaults
+      - f_local_bin_i3lock-select
+      - f_local_bin_play
+      - f_local_bin_scrot_region
+      - f_local_bin_i3lock-rand
+      - f_local_bin_srofi_run
+      - f_xinitrc
+  Tswarra:
+    include:
+      - gui
