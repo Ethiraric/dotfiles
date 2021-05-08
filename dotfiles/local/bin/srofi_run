@@ -1,0 +1,1 @@
+PATH=~/Scripts:${PATH} rofi -show run
