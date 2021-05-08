@@ -1,5 +1,11 @@
 #!/bin/bash
 
+## Do not run this script in interactive mode
+# case $- in
+#     *i*) ;;
+#       *) return;;
+# esac
+
 ## Bash options
 # Ignore lines that start with a space and don't store command duplicates.
 HISTCONTROL=ignoreboth
@@ -64,7 +70,7 @@ alias clean='make clean'
 alias fclean='make fclean'
 alias re='clean && make'
 alias valgrindf='valgrind --leak-check=full --show-reachable=yes --track-origins=yes --num-callers=500'
-alias jefaisducacaavecgit='grv' #'gitk --all &'
+alias jefaisducacaavecgit='gitui' #'grv' #'gitk --all &'
 alias cmake='cmake -DCMAKE_C_COMPILER="`which clang`" -DCMAKE_CXX_COMPILER="`which clang++`" -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"'
 
 # Bashrc

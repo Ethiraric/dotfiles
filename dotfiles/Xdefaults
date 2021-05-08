@@ -7,6 +7,8 @@ URxvt*termName:      rxvt-unicode-256color
 URxvt*imLocale:      en_GB.UTF-8
 URxvt*font:          -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
 URxvt*boldFont:      -misc-fixed-bold-r-semicondensed--13-120-75-75-c-60-iso10646-1
+! URxvt*font:     -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1
+! URxvt*boldFont: -misc-fixed-bold-r-semicondensed--13-120-75-75-c-60-iso8859-1
 
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
