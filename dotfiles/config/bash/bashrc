@@ -27,7 +27,7 @@ PROMPT_COMMAND="history -a"
 ## Paths management
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:${PATH}"
 export PATH="${HOME}/.local/bin:${PATH}"
-export PATH="${HOME}/Scripts:${PATH}"
+export PATH="${HOME}/.cargo/bin:${PATH}"
 
 export LD_LIBRARY_PATH="/usr/lib64:/usr/local/lib:${LD_LIBRARY_PATH}"
 
