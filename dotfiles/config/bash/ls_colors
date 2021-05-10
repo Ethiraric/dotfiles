@@ -1,0 +1,102 @@
+# {{@@ header() @@}}
+
+tempfilecolor="33"
+exefilecolor="32;1"
+archivefilecolor="31"
+cfgfilecolor="33;1"
+imgvideofilecolor="35"
+musicfilecolor="36"
+
+cheaderfilecolor="35"
+csourcefilecolor="36"
+texfilecolor="32"
+pyfilecolor="33"
+
+colors=(
+  "no=0;00"
+  "fi=0;00"
+  "di=34;01"
+  "ln=36;01"
+  "or=31;05"
+  "mi=33;05"
+  "pi=35"
+  "so=35"
+  "bd=33"
+  "cd=33"
+  "ex=32;01"
+  "*~=${tempfilecolor}"
+#  "*.a=37;01"
+  "*.avi=${imgvideofilecolor}"
+  "*.bak=${tempfilecolor}"
+  "*.bin=${exefilecolor}"
+  "*.bmp=${imgvideofilecolor}"
+  "*.bz=${archivefilecolor}"
+  "*.bz2=${archivefilecolor}"
+  "*.c=${csourcefilecolor}"
+  "*.cc=${csourcefilecolor}"
+  "*.cfg=${cfgfilecolor}"
+  "*.conf=${cfgfilecolor}"
+  "*.cpp=${csourcefilecolor}"
+  "*.csv=32"
+  "*.dat=0;32"
+  "*.deb=${archivefilecolor}"
+  "*.dll=${exefilecolor}"
+  "*.doc=36;1"
+  "*.docx=36;"
+  "*.exe=${exefilecolor}"
+  "*.gif=${imgvideofilecolor}"
+  "*.gz=${archivefilecolor}"
+  "*.gzip=${archivefilecolor}"
+  "*.h=${cheaderfilecolor}"
+  "*.hh=${cheaderfilecolor}"
+  "*.hpp=${cheaderfilecolor}"
+  "*.iso=${archivefilecolor}"
+  "*.jpeg=${imgvideofilecolor}"
+  "*.jpg=${imgvideofilecolor}"
+  "*.log=37"
+  "*.mp3=${musicfilecolor}"
+  "*.mp4=${imgvideofilecolor}"
+  "*.o=${tempfilecolor}"
+  "*.pdf=33"
+  "*.png=${imgvideofilecolor}"
+  "*.py=${pyfilecolor}"
+  "*.rar=${archivefilecolor}"
+  "*.rpm=${archivefilecolor}"
+  "*.sh=${exefilecolor}"
+  "*.so=${exefilecolor}"
+  "*.tar=${archivefilecolor}"
+  "*.tex=${texfilecolor}"
+  "*.tgz=${archivefilecolor}"
+  "*.tmp=${tempfilecolor}"
+  "*.wav=${musicfilecolor}"
+  "*.xls=1;32"
+  "*.xlsx=1;32"
+  "*.zip=${archivefilecolor}"
+#  "*.c=00;36"
+#  "*.cc=00;36"
+#  "*.cpp=00;36"
+#  "*.cxx=00;36"
+#  "*.h=00;35"
+#  "*.hh=00;35"
+#  "*.hpp=00;35"
+#  "*.hxx=00;35"
+#  "*.cs=00;32"
+#  "*.pdf=00;33"
+#  "*.tex=00;32"
+)
+
+unset tempfilecolor
+unset exefilecolor
+unset archivefilecolor
+unset cfgfilecolor
+unset imgvideofilecolor
+unset musicfilecolor
+
+unset cheaderfilecolor
+unset csourcefilecolor
+unset texfilecolor
+unset pyfilecolor
+
+function join_by { local d=${1-} f=${2-}; if shift 2; then printf %s "$f" "${@/#/$d}"; fi; }
+LS_COLORS=`join_by : ${colors[@]}`
+unset -f join_by

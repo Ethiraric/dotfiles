@@ -28,7 +28,11 @@ profiles:
       - f_config_nvim_UltiSnips_cpp.snippets
       - f_local_bin_sleepuntil
       - f_bashrc
+      - f_config_bash_bashrc
+      - f_config_bash_ls_colors
   gui:
+    variables:
+      is_gui: true
     include:
       - tty-only
     dotfiles:
@@ -42,5 +46,8 @@ profiles:
       - f_local_bin_srofi_run
       - f_xinitrc
   Tswarra:
+    variables:
+      is_homestation: true
+      has_colout: true
     include:
       - gui

@@ -1,0 +1,149 @@
+#!/bin/bash
+
+# {{@@ header() @@}}
+
+## Do not run this script in interactive mode
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+## Bash options
+# Ignore lines that start with a space and don't store command duplicates.
+HISTCONTROL=ignoreboth
+# Number of commands in the history.
+HISTSIZE=500000
+# When using `history`, format to use to display command timestamps.
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+# histappend: Append rather than overwriting the history.
+# checkwinsize: Check window size after each command.
+# cmdhist: Store all lines of multi-line commands in the same hist entry.
+shopt -s histappend checkwinsize cmdhist
+# Run this command before printing the prompt.
+PROMPT_COMMAND="history -a"
+# Prompt style.
+[ ! -n "$RANGER_LEVEL" ] && PS1="(\h \#)" || PS1="(r${RANGER_LEVEL} \h \#)"
+
+## Paths management
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/Scripts:${PATH}"
+
+export LD_LIBRARY_PATH="/usr/lib64:/usr/local/lib:${LD_LIBRARY_PATH}"
+
+{%@@ if has_cuda is defined and has_cuda @@%}
+# CUDA config
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/targets/x86_64-linux/lib/:${LD_LIBRARY_PATH}"
+export C_INCLUDE_PATH="/usr/local/cuda/include:${C_INCLUDE_PATH}"
+export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:/usr/local/cuda-10.1/targets/x86_64-linux/lib/:${LD_LIBRARY_PATH}"
+export C_INCLUDE_PATH="/usr/local/cuda-10.1/include:${C_INCLUDE_PATH}"
+export LD_LIBRARY_PATH="/usr/lib64/:${LD_LIBRARY_PATH}"
+export PATH=/usr/local/cuda/bin/:${PATH}
+{%@@ endif @@%}
+
+## Other bits of configuration for other programs
+export LOCALE="en_GB.utf8"
+export EDITOR='nvim'
+export PAGER='less'
+
+## Aliases
+# ls and friends
+alias ls='clear;lsd --color=auto'
+alias kk='ll'
+alias mm='ll'
+alias k='l'
+alias m='l'
+alias ll='ls -l'
+alias l='ll -h'
+alias la='ls -la'
+alias lr='ll -R'
+alias ..l='..;l'
+alias lcd='cd'
+alias ..='cd ..'
+
+# Binutils
+alias rm='rm -v'
+alias cp='cp -v'
+alias mv='mv -v'
+
+# Development
+alias ne='nvim'
+alias mak='make'
+alias naje='make'
+alias clean='make clean'
+alias fclean='make fclean'
+alias re='clean && make'
+alias valgrindf='valgrind --leak-check=full --show-reachable=yes --track-origins=yes --num-callers=500'
+alias jefaisducacaavecgit='gitui' #'grv' #'gitk --all &'
+alias cmake='cmake -DCMAKE_C_COMPILER="`which clang`" -DCMAKE_CXX_COMPILER="`which clang++`" -DCMAKE_EXPORT_COMPILE_COMMANDS="ON"'
+
+# Bashrc
+alias anew='source ~/.bashrc'
+alias bashrc='ne ~/.bashrc ; anew'
+
+# Misc
+alias cdrecent='cd  "$(\ls -1dt ./*/ | head -n 1)"'
+alias explore='fzf --preview "bat --style=numbers --color=always {}" | head -500'
+alias mysql='mycli'
+# Using ranger as a notes editor
+alias notes="(cd ${HOME}/Documents/notes && ranger)"
+
+{%@@ if is_homestation is defined and is_homestation @@%}
+function ytdl {
+if [ 1 -gt "$#" ]
+then
+  echo "ytdl <link>"
+else
+  youtube-dl -x --audio-format mp3 $@
+fi
+}
+{%@@ endif @@%}
+
+function nbc() {
+{%@@ if has_colout is defined and has_colout @@%}
+  ninja  $@ | colout -t ninja | colout -t g++
+  ret=${PIPESTATUS[0]}
+
+{%@@ if is_homestation is defined and is_homestation @@%}
+  if [ "$ret" -eq 0 ]
+  then
+    play ~/Sounds/Spider_Solitaire_Win.mp3
+  else
+    play ~/Sounds/Spider_Solitaire_Lose.mp3
+  fi
+{%@@ endif @@%}
+
+  return ${ret}
+{%@@ else @@%}
+  ninja $@
+{%@@ endif @@%}
+}
+
+function carre() {
+  echo -e "$@" | sed -e "s/ /  /g" | \
+    sed -e "s/\\([a-z]\\)/:regional_indicator_\\1: /g" | \
+    sed -e "s/0/:zero: /g"  | \
+    sed -e "s/1/:one: /g"   | \
+    sed -e "s/2/:two: /g"   | \
+    sed -e "s/3/:three: /g" | \
+    sed -e "s/4/:four: /g"  | \
+    sed -e "s/5/:five: /g"  | \
+    sed -e "s/6/:six: /g"   | \
+    sed -e "s/7/:seven: /g" | \
+    sed -e "s/8/:eight: /g" | \
+    sed -e "s/9/:nine: /g"
+}
+
+{%@@ if is_gui is defined and is_gui @@%}
+if ! [ -z ${DISPLAY+x} ]; then setxkbmap gb extd; xset r rate 175 50; fi
+{%@@ endif @@%}
+
+{%@@ if profile == "Tswarra" @@%}
+[ -n "${TERMINOLOGY}" ] && pokemon umbreon
+alias kanto='ssh the10thbit.xyz'
+task
+{%@@ elif profile == "Kanto" @@%}
+alias hawkeye='ssh hawkeye'
+{%@@ elif profile == "hawkeye" @@%}
+alias jarvis='ssh jarvis'
+{%@@ endif @@%}

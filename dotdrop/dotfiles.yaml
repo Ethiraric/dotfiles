@@ -8,6 +8,19 @@ config:
   link_on_import: nolink
   longkey: true
 dotfiles:
+  # Bash
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+    chmod: '600'
+  f_config_bash_bashrc:
+    src: config/bash/bashrc
+    dst: ~/.config/bash/bashrc
+    chmod: '600'
+  f_config_bash_ls_colors:
+    src: config/bash/ls_colors
+    dst: ~/.config/bash/ls_colors
+    chmod: '600'
   f_Xresources:
     src: Xresources
     dst: ~/.Xresources
@@ -104,10 +117,6 @@ dotfiles:
     src:  local/bin/srofi_run
     dst:  ~/.local/bin/srofi_run
     chmod: '700'
-  f_bashrc:
-    src: bashrc
-    dst: ~/.bashrc
-    chmod: '600'
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
