@@ -1,2 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
+# {{@@ header() @@}}
+
 (ffplay $@ -nodisp -autoexit > /dev/null 2>&1 < /dev/null &)

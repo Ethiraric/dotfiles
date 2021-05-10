@@ -1,3 +1,5 @@
+# {{@@ header() @@}}
+
 # -*- coding: utf-8 -*-
 # This file is part of ranger, the console file manager.
 # This configuration file is licensed under the same terms as ranger.

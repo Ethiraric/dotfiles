@@ -1,1 +1,5 @@
+#!/bin/sh
+
+# {{@@ header() @@}}
+
 i3lock -te -i `ls /home/ethiraric/Pictures/locks/* | shuf -n 1`

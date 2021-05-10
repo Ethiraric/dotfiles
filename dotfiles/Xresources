@@ -1,3 +1,5 @@
+! {{@@ header() @@}}
+
 ! #include ".Xresources.d/xterm"
 ! #include ".Xresources.d/urxvt-unicode"
 Xft.dpi: 96

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# {{@@ header() @@}}
+
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'
 

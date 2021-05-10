@@ -1,3 +1,5 @@
+# {{@@ header() @@}}
+
 # This is a sample commands.py.  You can add your own commands here.
 #
 # Please refer to commands_full.py for all the default commands and a complete

@@ -1,3 +1,5 @@
+! {{@@ header() @@}}
+
 URxvt*scrollBar:     false
 URxvt.transparent:   true
 URxvt.shading:       30
