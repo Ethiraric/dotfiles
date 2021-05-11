@@ -108,17 +108,17 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 
 # Screenshots
 bindsym Print exec "scrot"
-bindsym $mod+Shift+s exec "/home/ethiraric/Scripts/scrot_region"
+bindsym $mod+Shift+s exec "/home/ethiraric/.local/bin/scrot_region"
 
 # Edit config (b was for soundboard)
 bindsym $mod+Shift+b exec "$terminal -e nvim ~/.config/i3/config"
 
 # Rofi to execute things
-bindsym $mod+d exec "${HOME}/.local/srofi_run"
+bindsym $mod+d exec "${HOME}/.local/bin/srofi_run"
 
 # Locking
-bindsym $mod+semicolon exec "/home/ethiraric/.local/i3lock-rand"
-bindsym $mod+apostrophe exec "/home/ethiraric/.local/i3lock-select"
+bindsym $mod+semicolon exec "/home/ethiraric/.local/bin/i3lock-rand"
+bindsym $mod+apostrophe exec "/home/ethiraric/.local/bin/i3lock-select"
 
 # This probably loads some important settings
 exec xrdb ~/.Xresources
