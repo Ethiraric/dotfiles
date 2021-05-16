@@ -118,7 +118,6 @@ ${1}
 }
 endsnippet
 
-##
 ## Input/Output
 snippet cout "standard print sequence" i
 std::cout << ${1} << '\n';
@@ -149,7 +148,7 @@ static_assert(${1}, "${2}");
 endsnippet
 # static_assert std::is_same
 snippet stas "Static Assert is_same" b
-static_assert(std::is_same<${1}, ${2}>::value, "${3}");
+static_assert(std::is_same_v<${1}, ${2}>, "${3}");
 endsnippet
 
 ## Guard
@@ -172,94 +171,10 @@ for (auto const byte : ${1})
 std::cout << std::endl;
 endsnippet
 
-snippet vdmsgh "VoxDei message header" b
-#ifndef NETWORK_MESSAGES_${1}_HH_
-#define NETWORK_MESSAGES_$1_HH_
-
-#include <Common/Types.hh>
-#include <Network/MessagesGroup.hh>
-#include <Network/Types.hh>
-#include <Network/VDSocket.hpp>
-
-namespace VoxDei
-{
-class Client;
-
-namespace Network
-{
-namespace Messages
-{
-class ${2}
-{
-public:
-  static constexpr auto const OPCODE = Opcode{0x$3};
-  static constexpr auto const GROUPTYPE = GroupType::${4:Guaranteed};
-
-  explicit $2($5) noexcept;
-  $2($2 const& b) = default;
-  $2($2&& b) noexcept = default;
-  ~$2() noexcept = default;
-
-  $2& operator=($2 const& rhs) = default;
-  $2& operator=($2&& rhs) noexcept = default;
-
-  template <typename T>
-  void writeTo(VDStream<T>& sock) const;
-
-  ${6:static MessagesGroupData process(MessagesGroupData group, Client& cl);}
-
-private:
-  ${7}
-};
-
-template <typename T>
-void $2::writeTo(VDStream<T>& sock) const
-{
-  sock.addMessage(GROUPTYPE, OPCODE);
-	${8}
-}${0}
-}
-}
-}
-
-#endif /* !NETWORK_MESSAGES_$1_HH_ */
-endsnippet
-snippet vdmsgc "VoxDei message source" b
-#include <Network/Messages/${1}.hh>
-
-#include <Client.hh>
-#include <Network/Utils.hh>
-#include <Server.hh>
-
-namespace VoxDei
-{
-namespace Network
-{
-namespace Messages
-{
-constexpr Opcode const $1::OPCODE;
-constexpr GroupType const $1::GROUPTYPE;
-
-$1::$1(${2}) noexcept ${3}
-{
-}
-
-MessagesGroupData $1::process(MessagesGroupData group, Client& cl)
-{
-  assert(!group.empty());
-  assert(Opcode{group[0]} == OPCODE);
-
-  if ((unsigned)group.size() < ${4})
-    throw IllformedPacketException("Invalid $1 message");
-	${0}
-  // return group.subspan(5);
-}
-}
-}
-}
-endsnippet
-
 snippet dpar "Default ctor param" i
 ${1}{p$1}
 endsnippet
 
+snippet dparm "Default move ctor param" i
+${1}{std::move(p$1)}
+endsnippet
