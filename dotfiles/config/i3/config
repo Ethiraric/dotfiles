@@ -11,11 +11,13 @@ font pango:monospace 8
 
 # Window settings
 floating_modifier $mod
+{%@@ if is_i3_gaps is defined and is_i3_gaps @@%}
 default_border pixel
 for_window [class="^.*"] border pixel 0
 smart_gaps on
 gaps inner 10
 gaps outer -8
+{%@@ endif @@%}
 
 # start a terminal
 {%@@ if profile == "hawkeye" @@%}

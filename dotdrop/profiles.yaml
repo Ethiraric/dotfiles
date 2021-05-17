@@ -48,6 +48,13 @@ profiles:
   Tswarra:
     variables:
       is_homestation: true
+      is_i3_gaps: true
+      has_colout: true
+    include:
+      - gui
+  hawkeye:
+    variables:
+      is_i3_gaps: false
       has_colout: true
     include:
       - gui
