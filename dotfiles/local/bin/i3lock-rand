@@ -2,4 +2,4 @@
 
 # {{@@ header() @@}}
 
-i3lock -te -i `ls /home/ethiraric/Pictures/locks/* | shuf -n 1`
+i3lock -te -i `ls ${HOME}/Pictures/locks/* | shuf -n 1`
