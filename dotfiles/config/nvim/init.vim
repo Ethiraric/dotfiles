@@ -6,46 +6,7 @@
 filetype plugin indent on
 syntax on
 
-call plug#begin('~/.nvim/plugged')
-
-Plug 'airblade/vim-gitgutter'
-Plug 'tomtom/tcomment_vim'
-Plug 'Konfekt/FastFold'
-Plug 'embear/vim-localvimrc'
-Plug 'rhysd/vim-clang-format'
-Plug 'alx741/vim-rustfmt'
-
-" Snippets
-Plug 'SirVer/ultisnips'
-
-" tpope
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-
-" vim-scripts
-Plug 'vim-scripts/vim-stay'                 " Open a previously closed file where you left it
-
-" Colors
-Plug 'nanotech/jellybeans.vim'
-Plug 'w0ng/vim-hybrid'
-Plug 'luochen1990/rainbow'
-Plug 'octol/vim-cpp-enhanced-highlight'
-
-" Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'Valloric/ListToggle'
-Plug 'junegunn/fzf', { 'dir':'~/.fzf','do':'./install --all' }
-Plug 'junegunn/fzf.vim',
-
-" Cosmetics
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'mhinz/vim-startify'
-
-" }}}
-
-call plug#end()
+luafile $HOME/.config/nvim/lua/config.lua
 
 " Options ------------------------------------------------------------------ {{{
 
