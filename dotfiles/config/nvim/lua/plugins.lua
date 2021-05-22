@@ -35,6 +35,16 @@ return require('packer').startup(function (use)
   use 'junegunn/fzf' -- , { 'dir':'~/.fzf','do':'./install --all' }
   use 'junegunn/fzf.vim'
 
+  use {
+  'nvim-telescope/telescope.nvim',
+    requires = {
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    },
+    config = require('plugin-cfg.telescope')
+  }
+
   -- Cosmetics
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'

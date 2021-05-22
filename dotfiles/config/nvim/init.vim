@@ -29,11 +29,9 @@ set viewoptions-=options,curdir
 
 """ FZF -------------------------------------------------------------------- {{{
 
-" Show FZF when pressing ctrl-p
-noremap <c-p> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore deps -g ""'
 nnoremap / :BLines<CR>
-nnoremap <c-j> :Ag<CR>
+" Much like :Ag, but ignoring the `deps` and `.git` folders
+nnoremap <c-j> :call fzf#vim#grep('ag --ignore deps --ignore .git --color -- "^(?=.)"', 0, fzf#vim#with_preview())<CR>
 nnoremap <c-b> :Buffer<CR>
 
 """ }}}
