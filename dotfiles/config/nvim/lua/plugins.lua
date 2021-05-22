@@ -2,6 +2,7 @@
 
 return require('packer').startup(function (use)
   use 'wbthomason/packer.nvim'
+  use 'kjwon15/vim-transparent'
 
   use 'airblade/vim-gitgutter'
   use 'tomtom/tcomment_vim'

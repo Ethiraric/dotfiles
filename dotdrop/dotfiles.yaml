@@ -53,6 +53,10 @@ dotfiles:
     src: config/nvim/init.vim
     dst: ~/.config/nvim/init.vim
     chmod: '600'
+  f_config_nvim_settings.vim:
+    src: config/nvim/settings.vim
+    dst: ~/.config/nvim/settings.vim
+    chmod: '600'
   f_config_nvim_lua_config.lua:
     src: config/nvim/lua/config.lua
     dst: ~/.config/nvim/lua/config.lua

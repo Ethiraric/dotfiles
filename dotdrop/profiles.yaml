@@ -18,6 +18,7 @@ profiles:
       - f_config_ranger_rifle.conf
       - f_config_nvim_coc-settings.json
       - f_config_nvim_init.vim
+      - f_config_nvim_settings.vim
       - f_config_nvim_lua_config.lua
       - f_config_nvim_lua_plugins.lua
       - f_config_nvim_UltiSnips_c.snippets

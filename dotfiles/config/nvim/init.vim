@@ -1,92 +1,12 @@
 " {{@@ header() @@}}
 
-" nvimrc
-" Plugins ------------------------------------------------------------------ {{{
-
-filetype plugin indent on
-syntax on
-
 luafile $HOME/.config/nvim/lua/config.lua
-
-" Options ------------------------------------------------------------------ {{{
+source $HOME/.config/nvim/settings.vim
 
 """ Basic ------------------------------------------------------------------ {{{
 
 let mapleader = ","
-
-set clipboard=unnamed
-set completeopt-=preview    " Hide scratch buffer on completion
-set cursorline              " Highlight current line
-set foldmethod=syntax
-set notimeout               " No timeout on key codes
-set number
-set relativenumber
-set scrolloff=999           " Keep the cursor centered
-set showbreak=↪             " Show line wrapping character
-set inccommand=split        " Interactive search and replace
-
-" set background=dark
 colorscheme jellybeans
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-" highlight CursorLine ctermbg=none
-
-""" }}}
-
-""" Search ----------------------------------------------------------------- {{{
-
-set backup
-set undofile
-set noswapfile
-
-set undodir=~/.nvim/tmp/undo/
-set backupdir=~/.nvim/tmp/backup/
-set directory=~/.nvim/tmp/swap/
-
-" Create those directories if needed
-
-
-if !isdirectory(expand(&undodir))
-  call mkdir(expand(&undodir), "p")
-endif
-if !isdirectory(expand(&backupdir))
-  call mkdir(expand(&backupdir), "p")
-endif
-if !isdirectory(expand(&directory))
-  call mkdir(expand(&directory), "p")
-endif
-
-""" Search ----------------------------------------------------------------- {{{
-
-set ignorecase
-set smartcase
-
-""" }}}
-
-""" Tabs ------------------------------------------------------------------- {{{
-
-set shiftwidth=2            " Number of spaces for auto-indent
-set smartindent
-set tabstop=2
-set expandtab               " Insert spaces instead of tabs
-
-""" }}}
-
-" }}}
-
-" Functions ---------------------------------------------------------------- {{{
-
-let s:highlight_flag = 0
-
-" Visual search. Stolen from @sjl.
-function! s:VSetSearch()
-  let temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = temp
-endfunction
-
-" }}}
 
 " Mappings ----------------------------------------------------------------- {{{
 
