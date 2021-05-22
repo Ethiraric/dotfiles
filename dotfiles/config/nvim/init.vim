@@ -9,57 +9,9 @@ let mapleader = ","
 colorscheme jellybeans
 
 " Mappings ----------------------------------------------------------------- {{{
-
-" Stop pressing that shift button (qwerty keyboards)
-nnoremap ; :
-vnoremap ; :
-
-" Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-
-" Buffer switching
-nnoremap <leader>n :bnext<CR>
-nnoremap <leader>p :bprevious<CR>
-
-" Remove search highlight with //
-nnoremap <silent> // :nohlsearch<CR>
-
-" Switch to alternate file.
-nnoremap <Leader><Leader> <C-^>
-
-" Splits
-nnoremap <silent> ss :split<CR><C-W>j
-nnoremap <silent> vv :vsplit<CR><C-W>l
-
-" Search
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
-
-" Tabs
-nnoremap T :tabnew<cr>
-nnoremap H :tabprev<cr>
-nnoremap L :tabnext<cr>
-
-" Exit insert mode
-inoremap jk <ESC>
-
-" Folds
-nnoremap <Space> za
-
-" TComment
-map <Leader>c <C-_><C-_>
-
 " Clang-format
 autocmd FileType c,cpp nnoremap <leader>x :ClangFormat<CR>
 autocmd FileType c,cpp ClangFormatAutoEnable
-
-" Misc
-nnoremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<space> :wq<ENTER>
-nnoremap Y ggVG"+y
 
 " Stop randomly `chdir`ing
 set noautochdir
@@ -72,10 +24,8 @@ augroup END
 " Plugin configuration ----------------------------------------------------- {{{
 
 """ Vim-Stay --------------------------------------------------------------- {{{
-
+" When using vim-stay, dont save the cwd and options/mappings to the buffer.
 set viewoptions-=options,curdir
-
-""" }}}
 
 """ FZF -------------------------------------------------------------------- {{{
 
