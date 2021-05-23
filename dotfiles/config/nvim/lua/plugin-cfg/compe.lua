@@ -19,7 +19,7 @@ return function ()
       calc = false,
       nvim_lsp = true,
       nvim_lua = false,
-      -- vsnip = true,
+      ultisnips = true
     },
   }
 
