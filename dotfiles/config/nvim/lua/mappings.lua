@@ -21,7 +21,7 @@ map('n', '<leader>p', ':bprevious<CR>')
 map('n', '//', ':nohlsearch<CR>')
 
 -- Switch to alternate file.
-map('n', '<Leader><Leader>', '<C-^>')
+map('n', '<leader><leader>', '<C-^>')
 
 -- Splits
 map('n', 'ss', ':split<CR><C-W>j')
@@ -45,6 +45,6 @@ map('i', 'jk', '<ESC>')
 map('n', '<Space>', 'za')
 
 -- TComment
-map('', '<Leader>c', '<C-_><C-_>')
+map('n', '<leader>c', ':TComment<CR>')
 
 map('n', '<Up><Up><Down><Down><Left><Right><Left><Right>ba<space>', ':wq<ENTER>')
