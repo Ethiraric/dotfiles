@@ -73,6 +73,26 @@ dotfiles:
     src: config/nvim/lua/utils.lua
     dst: ~/.config/nvim/lua/utils.lua
     chmod: '600'
+  f_config_nvim_lua_lsp_init.lua:
+    src: config/nvim/lua/lsp/init.lua
+    dst: ~/.config/nvim/lua/lsp/init.lua
+    chmod: '600'
+  f_config_nvim_lua_lsp_rust-analyzer.lua:
+    src: config/nvim/lua/lsp/rust-analyzer.lua
+    dst: ~/.config/nvim/lua/lsp/rust-analyzer.lua
+    chmod: '600'
+  f_config_nvim_lua_lsp_sumneko_lua.lua:
+    src: config/nvim/lua/lsp/sumneko_lua.lua
+    dst: ~/.config/nvim/lua/lsp/sumneko_lua.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_compe.lua:
+    src: config/nvim/lua/plugin-cfg/compe.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/compe.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_lsp-trouble.lua:
+    src: config/nvim/lua/plugin-cfg/lsp-trouble.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/lsp-trouble.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_telescope.lua:
     src: config/nvim/lua/plugin-cfg/telescope.lua
     dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua

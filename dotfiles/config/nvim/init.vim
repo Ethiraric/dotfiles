@@ -13,19 +13,14 @@ colorscheme jellybeans
 autocmd FileType c,cpp nnoremap <leader>x :ClangFormat<CR>
 autocmd FileType c,cpp ClangFormatAutoEnable
 
-" Stop randomly `chdir`ing
-set noautochdir
-augroup AutoChdir
-  autocmd!
-augroup END
-
 " }}}
 
 " Plugin configuration ----------------------------------------------------- {{{
 
 """ Vim-Stay --------------------------------------------------------------- {{{
 " When using vim-stay, dont save the cwd and options/mappings to the buffer.
-set viewoptions-=options,curdir
+set viewoptions-=options
+set viewoptions-=curdir
 
 """ FZF -------------------------------------------------------------------- {{{
 
@@ -46,14 +41,6 @@ let g:fastfold_fold_command_suffixes = []
 """ Hybrid ----------------------------------------------------------------- {{{
 
 let g:hybrid_custom_term_colors = 1
-
-""" }}}
-
-
-""" ListToggle ------------------------------------------------------------- {{{
-
-let g:lt_location_list_toggle_map = '<leader>l'
-let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 """ }}}
 
@@ -101,36 +88,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 """ vim-cpp-enhanced-highlight --------------------------------------------- {{{
 
 let g:cpp_class_scope_highlight = 1
-
-""" }}}
-
-""" coc -------------------------------------------------------------------- {{{
-
-let g:coc_global_extensions = [
-    \ 'coc-actions',
-    \ 'coc-python',
-    \ 'coc-json',
-    \ 'coc-marketplace',
-    \ 'coc-rust-analyzer',
-\ ]
-
-inoremap <expr><C-Space> pumvisible() ? "\<C-n>" : coc#refresh()
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-nnoremap <silent> <leader>t :call CocActionAsync('doHover')<CR>
-nnoremap <silent> K :CocAction<CR>
-
-" GoTo code navigation.
-nmap <silent> ,f <Plug>(coc-declaration)
-nmap <silent> ,d <Plug>(coc-definition)
-nmap <silent> ,r <Plug>(coc-references)
-nmap <silent> ,R <Plug>(coc-rename)
-nmap <silent> <expr> ,l bufexists("list:///diagnostics") == 1? ":CocListCancel<CR>" : ":CocList --normal diagnostics<CR>"
-nmap <silent> ,n <Plug>(coc-diagnostic-next)
-nmap <silent> ,p <Plug>(coc-diagnostic-prev)
-
-nmap <silent> ,y <Plug>(coc-type-definition)
-nmap <silent> ,i <Plug>(coc-implementation)
-
 
 """ }}}
 

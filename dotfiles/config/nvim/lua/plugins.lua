@@ -29,8 +29,19 @@ return require('packer').startup(function (use)
   use 'octol/vim-cpp-enhanced-highlight'
 
   -- Completion
-  use { 'neoclide/coc.nvim',
-        branch = 'release' }
+  use {
+    'neovim/nvim-lspconfig',
+    config = require('lsp'),
+    requires = {
+      {
+        'RishabhRD/nvim-lsputils',
+        requires = 'RishabhRD/popfix',
+      },
+    },
+  }
+
+  -- use { 'neoclide/coc.nvim',
+  --       branch = 'release' }
   -- use 'Valloric/ListToggle'
   use 'junegunn/fzf' -- , { 'dir':'~/.fzf','do':'./install --all' }
   use 'junegunn/fzf.vim'
@@ -50,4 +61,16 @@ return require('packer').startup(function (use)
   use 'vim-airline/vim-airline-themes'
   use 'ryanoasis/vim-devicons'
   use 'mhinz/vim-startify'
+
+  -- Highlight similar word
+  use 'RRethy/vim-illuminate'
+  use 'pierreglaser/folding-nvim'
+  use { 'hrsh7th/nvim-compe', config = require('plugin-cfg.compe') }
+  use "ahmedkhalf/lsp-rooter.nvim"
+  -- Lsp Diagnostics window
+  use {
+    'folke/lsp-trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = require('plugin-cfg.lsp-trouble'),
+  }
 end)

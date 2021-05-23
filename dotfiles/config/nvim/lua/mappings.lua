@@ -28,10 +28,10 @@ map('n', 'ss', ':split<CR><C-W>j')
 map('n', 'vv', ':vsplit<CR><C-W>l')
 
 -- Search
-map('n', '/', '/\v')
-map('v', '/', '/\v')
-map('n', '?', '?\v')
-map('v', '?', '?\v')
+map('n', '/', '/\\v')
+map('v', '/', '/\\v')
+map('n', '?', '?\\v')
+map('v', '?', '?\\v')
 
 -- Tabs
 map('n', 'T', ':tabnew<cr>')
