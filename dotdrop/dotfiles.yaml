@@ -97,6 +97,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/telescope.lua
     dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_treesitter.lua:
+    src: config/nvim/lua/plugin-cfg/treesitter.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
+    chmod: '600'
   f_config_nvim_UltiSnips_c.snippets:
     src: config/nvim/UltiSnips/c.snippets
     dst: ~/.config/nvim/UltiSnips/c.snippets

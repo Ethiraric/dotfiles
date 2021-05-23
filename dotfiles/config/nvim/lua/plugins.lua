@@ -64,7 +64,6 @@ return require('packer').startup(function (use)
 
   -- Highlight similar word
   use 'RRethy/vim-illuminate'
-  use 'pierreglaser/folding-nvim'
   use { 'hrsh7th/nvim-compe', config = require('plugin-cfg.compe') }
   use "ahmedkhalf/lsp-rooter.nvim"
   -- Lsp Diagnostics window
@@ -72,5 +71,13 @@ return require('packer').startup(function (use)
     'folke/lsp-trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = require('plugin-cfg.lsp-trouble'),
+  }
+  use {
+    {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = require('plugin-cfg.treesitter'),
+    },
+    'nvim-treesitter/playground'
   }
 end)
