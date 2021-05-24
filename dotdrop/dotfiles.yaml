@@ -89,17 +89,45 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/compe.lua
     dst: ~/.config/nvim/lua/plugin-cfg/compe.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_fzf.lua:
+    src: config/nvim/lua/plugin-cfg/fzf.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/fzf.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_lsp-trouble.lua:
     src: config/nvim/lua/plugin-cfg/lsp-trouble.lua
     dst: ~/.config/nvim/lua/plugin-cfg/lsp-trouble.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_startify.lua:
+    src: config/nvim/lua/plugin-cfg/startify.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/startify.lua
     chmod: '600'
   f_config_nvim_lua_plugin_cfg_telescope.lua:
     src: config/nvim/lua/plugin-cfg/telescope.lua
     dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_tokyonight.lua:
+    src: config/nvim/lua/plugin-cfg/tokyonight.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/tokyonight.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_treesitter.lua:
     src: config/nvim/lua/plugin-cfg/treesitter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_ts-rainbow.lua:
+    src: config/nvim/lua/plugin-cfg/ts-rainbow.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/ts-rainbow.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_ultisnips.lua:
+    src: config/nvim/lua/plugin-cfg/ultisnips.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/ultisnips.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_vim-airline.lua:
+    src: config/nvim/lua/plugin-cfg/vim-airline.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/vim-airline.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_vim-stay.lua:
+    src: config/nvim/lua/plugin-cfg/vim-stay.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/vim-stay.lua
     chmod: '600'
   f_config_nvim_UltiSnips_c.snippets:
     src: config/nvim/UltiSnips/c.snippets

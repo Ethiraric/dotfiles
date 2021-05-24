@@ -1,3 +1,5 @@
+-- {{@@ header() @@}}
+
 return {
   name = 'sumneko_lua',
   settings = {

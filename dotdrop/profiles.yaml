@@ -27,9 +27,16 @@ profiles:
       - f_config_nvim_lua_lsp_rust-analyzer.lua
       - f_config_nvim_lua_lsp_sumneko_lua.lua
       - f_config_nvim_lua_plugin_cfg_compe.lua
+      - f_config_nvim_lua_plugin_cfg_fzf.lua
       - f_config_nvim_lua_plugin_cfg_lsp-trouble.lua
+      - f_config_nvim_lua_plugin_cfg_startify.lua
       - f_config_nvim_lua_plugin_cfg_telescope.lua
+      - f_config_nvim_lua_plugin_cfg_tokyonight.lua
       - f_config_nvim_lua_plugin_cfg_treesitter.lua
+      - f_config_nvim_lua_plugin_cfg_ts-rainbow.lua
+      - f_config_nvim_lua_plugin_cfg_ultisnips.lua
+      - f_config_nvim_lua_plugin_cfg_vim-airline.lua
+      - f_config_nvim_lua_plugin_cfg_vim-stay.lua
       - f_config_nvim_UltiSnips_c.snippets
       - f_config_nvim_UltiSnips_make.snippets
       - f_config_nvim_UltiSnips_text.snippets

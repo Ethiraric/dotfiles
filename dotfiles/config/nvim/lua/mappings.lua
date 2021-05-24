@@ -46,5 +46,6 @@ map('n', '<Space>', 'za')
 
 -- TComment
 map('n', '<leader>c', ':TComment<CR>')
+map('v', '<leader>c', ':TComment<CR>')
 
 map('n', '<Up><Up><Down><Down><Left><Right><Left><Right>ba<space>', ':wq<ENTER>')

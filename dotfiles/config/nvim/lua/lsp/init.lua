@@ -1,3 +1,5 @@
+-- {{@@ header() @@}}
+
 return function ()
   local lsp = require('lspconfig')
 

@@ -1,3 +1,5 @@
+-- {{@@ header() @@}}
+
 return function ()
   require('compe').setup {
     enabled = true,

@@ -1,3 +1,5 @@
+-- {{@@ header() @@}}
+
 local root_pattern = require("utils").root_pattern
 
 return {

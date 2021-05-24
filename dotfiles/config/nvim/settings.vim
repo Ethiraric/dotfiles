@@ -16,8 +16,8 @@ set showbreak=↪             " Show line wrapping character
 set inccommand=split        " Interactive search and replace
 
 " set background=dark
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+" highlight Normal ctermbg=none
+" highlight NonText ctermbg=none
 
 set smartcase               " Use smartcase when searching
 
@@ -25,6 +25,8 @@ set shiftwidth=2            " Number of spaces for auto-indent
 set tabstop=2               " Number of spaces per tab
 set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
+
+colorscheme jellybeans
 
 " Backup, undo and swapfiles
 set backup
