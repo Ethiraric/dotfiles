@@ -20,6 +20,7 @@ profiles:
       - f_config_nvim_init.vim
       - f_config_nvim_settings.vim
       - f_config_nvim_lua_config.lua
+      - f_config_nvim_lua_ethi_luatelescope_extensions_ethi.lua
       - f_config_nvim_lua_mappings.lua
       - f_config_nvim_lua_plugins.lua
       - f_config_nvim_lua_utils.lua

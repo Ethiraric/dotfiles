@@ -129,6 +129,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/vim-stay.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-stay.lua
     chmod: '600'
+  f_config_nvim_lua_ethi_luatelescope_extensions_ethi.lua:
+    src: config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
+    dst: ~/.config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
+    chmod: '600'
   f_config_nvim_UltiSnips_c.snippets:
     src: config/nvim/UltiSnips/c.snippets
     dst: ~/.config/nvim/UltiSnips/c.snippets
