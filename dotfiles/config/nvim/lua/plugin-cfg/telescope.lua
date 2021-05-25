@@ -17,17 +17,17 @@ return function ()
       }
     },
     extensions = {
-      fzf = {
-        override_generic_sorter = false,
-        override_file_sorter = true,
-      },
+      fzf_writer = {
+          minimum_grep_characters = 0,
+          minimum_files_characters = 0,
+          use_highlighter = true,
+      }
     },
   }
 
-  telescope.load_extension('fzf')
+  telescope.load_extension('fzf_writer')
 
-  map('n', '<c-p>', ':Telescope find_files<CR>')
-  -- Commented the folder-wide search, using :Ag from fzf
-  -- map('n', '<c-j>', ':Telescope live_grep<CR>')
-  map('n', '<c-s>', ':Telescope lsp_references<CR>')
+  map('n', '<C-p>', ':lua require(\'telescope\').extensions.fzf_writer.files()<CR>')
+  map('n', '<C-j>', ':lua require(\'telescope\').extensions.fzf_writer.grep()<CR>')
+  map('n', '<C-k>s', ':Telescope lsp_document_symbols<CR>')
 end

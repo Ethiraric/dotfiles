@@ -18,7 +18,7 @@ return function ()
     buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>')
     buf_set_keymap('n', '<leader>yd','<cmd>lua vim.lsp.buf.document_symbol()<CR>')
     buf_set_keymap('n', '<leader>yw','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-    buf_set_keymap('n', '<leader>ys','<cmd>lua vim.lsp.buf.code_action()<CR>')
+    buf_set_keymap('n', '<C-k>k',    '<cmd>lua vim.lsp.buf.code_action()<CR>')
     buf_set_keymap('n', '<leader>L', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
     -- vim.api.nvim_buf_del_keymap(bufnr, 'n', '<leader>l') -- why the fuck not
     buf_set_keymap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<CR>')
