@@ -138,12 +138,23 @@ function carre() {
 if ! [ -z ${DISPLAY+x} ]; then setxkbmap gb extd; xset r rate 175 50; fi
 {%@@ endif @@%}
 
+# SSH aliases
 {%@@ if profile == "Tswarra" @@%}
-[ -n "${TERMINOLOGY}" ] && pokemon umbreon
 alias kanto='ssh the10thbit.xyz'
-task
 {%@@ elif profile == "Kanto" @@%}
 alias hawkeye='ssh hawkeye'
 {%@@ elif profile == "hawkeye" @@%}
 alias jarvis='ssh jarvis'
+{%@@ endif @@%}
+
+# Miscellaneous commands to run
+{%@@ if (is_workstation is defined and is_workstation)  or profile == "Tswarra" @@%}
+task
+{%@@ endif@@%}
+
+{%@@ if profile == "Tswarra" @@%}
+[ -n "${TERMINOLOGY}" ] && pokemon umbreon
+{%@@ elif profile == "hawkeye" @@%}
+eucalyptus bashstart
+trap "eucalyptus bashend" EXIT
 {%@@ endif @@%}
