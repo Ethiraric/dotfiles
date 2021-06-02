@@ -74,6 +74,10 @@ return require('packer').startup(function (use)
 
   ---------- Misc
   use {
+    'norcalli/nvim-colorizer.lua', -- Highlight color patterns like #RRGGBB
+    config = require('plugin-cfg.nvim-colorizer')
+  }
+  use {
     'vim-scripts/vim-stay',        -- Open a previously closed file where you left it
     config = require('plugin-cfg.vim-stay')
   }

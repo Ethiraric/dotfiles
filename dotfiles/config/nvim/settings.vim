@@ -4,6 +4,7 @@ filetype plugin indent on   " https://vi.stackexchange.com/a/10125
 
 syntax enable               " enable syntax highlighting
 
+set termguicolors           " Enable 24-bit colors
 set clipboard=unnamed       " Share system clipboard
 set cursorline              " Highlight current line
 set foldmethod=syntax       " Syntax based folding
