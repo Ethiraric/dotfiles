@@ -12,7 +12,7 @@ return require('telescope').register_extension {
   setup = function(_)
   end,
   exports = {
-    git_commit_diff = function(opts)
+    git_show = function(opts)
       opts = opts or {}
       local results = utils.get_os_command_output({
         'git', 'log', '--pretty=oneline', '--abbrev-commit', '--', '.'
