@@ -26,6 +26,7 @@ set shiftwidth=2            " Number of spaces for auto-indent
 set tabstop=2               " Number of spaces per tab
 set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
+set noautochdir             " STOP. CHANGING. MY. DIRECTORY.
 
 " Backup, undo and swapfiles
 set backup
