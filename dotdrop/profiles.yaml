@@ -69,17 +69,16 @@ profiles:
   Tswarra:
     variables:
       is_homestation: true
-      is_i3_gaps: false
-      has_colout: true
-    include:
-      - tty-only
-  Kanto:
-    variables:
-      is_homestation: true
       is_i3_gaps: true
       has_colout: true
     include:
       - gui
+  Kanto:
+    variables:
+      is_homestation: true
+      has_colout: true
+    include:
+      - tty-only
   hawkeye:
     variables:
       is_i3_gaps: false
