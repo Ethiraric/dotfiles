@@ -37,6 +37,7 @@ profiles:
       - f_config_nvim_lua_plugin_cfg_ts-rainbow.lua
       - f_config_nvim_lua_plugin_cfg_ultisnips.lua
       - f_config_nvim_lua_plugin_cfg_vim-airline.lua
+      - f_config_nvim_lua_plugin_cfg_vim-rooter.lua
       - f_config_nvim_lua_plugin_cfg_vim-stay.lua
       - f_config_nvim_UltiSnips_c.snippets
       - f_config_nvim_UltiSnips_make.snippets

@@ -125,6 +125,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/vim-airline.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-airline.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_vim-rooter.lua:
+    src: config/nvim/lua/plugin-cfg/vim-rooter.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/vim-rooter.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_vim-stay.lua:
     src: config/nvim/lua/plugin-cfg/vim-stay.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-stay.lua
