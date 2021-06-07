@@ -31,7 +31,7 @@ return function ()
   telescope.load_extension('ethi')
 
   map('n', '<C-p>', ':lua require(\'telescope\').extensions.fzf_writer.files()<CR>')
-  map('n', '<C-j>', ':lua require(\'telescope\').extensions.fzf_writer.grep()<CR>')
+  -- map('n', '<C-j>', ':lua require(\'telescope\').extensions.fzf_writer.grep()<CR>')
   map('n', '<C-k>s', ':Telescope lsp_document_symbols<CR>')
   map('n', '<C-g>s', ':lua require(\'telescope\').extensions.ethi.git_show()<CR>')
 end
