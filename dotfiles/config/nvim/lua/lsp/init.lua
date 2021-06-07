@@ -29,6 +29,7 @@ return function ()
     end
 
     require('illuminate').on_attach(client)
+    require('lsp_signature').on_attach()
   end
 
   local servers = {

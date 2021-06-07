@@ -23,10 +23,13 @@ return require('packer').startup(function (use)
   use {
     'neovim/nvim-lspconfig',
     config = require('lsp'),
-    requires = { {
+    requires = {
+      {
         'RishabhRD/nvim-lsputils',
         requires = 'RishabhRD/popfix',
-      }, },
+      },
+      'ray-x/lsp_signature.nvim',
+    },
   }
   -- Completion menu
   use { 'hrsh7th/nvim-compe', config = require('plugin-cfg.compe') }
