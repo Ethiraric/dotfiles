@@ -73,18 +73,20 @@ return require('packer').startup(function (use)
   }
 
   ---------- Misc
+  -- Highlight color patterns like #RRGGBB
   use {
-    'norcalli/nvim-colorizer.lua', -- Highlight color patterns like #RRGGBB
-    config = require('plugin-cfg.nvim-colorizer')
+    'norcalli/nvim-colorizer.lua'
   }
+  require('plugin-cfg.nvim-colorizer')
   use {
     'vim-scripts/vim-stay',        -- Open a previously closed file where you left it
     config = require('plugin-cfg.vim-stay')
   }
   use 'tomtom/tcomment_vim'        -- Commenting and uncommenting bindings
   use "ahmedkhalf/lsp-rooter.nvim" -- `cd` to the LSP root
+  -- Welcome screen
   use {
-    'mhinz/vim-startify',          -- Welcom screen
+    'mhinz/vim-startify',
     config = require('plugin-cfg.startify')
   }
 end)
