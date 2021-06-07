@@ -27,8 +27,6 @@ set tabstop=2               " Number of spaces per tab
 set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
 
-colorscheme jellybeans
-
 " Backup, undo and swapfiles
 set backup
 set undofile

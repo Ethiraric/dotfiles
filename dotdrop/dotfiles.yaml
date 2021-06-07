@@ -109,10 +109,6 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/telescope.lua
     dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_tokyonight.lua:
-    src: config/nvim/lua/plugin-cfg/tokyonight.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/tokyonight.lua
-    chmod: '600'
   f_config_nvim_lua_plugin_cfg_treesitter.lua:
     src: config/nvim/lua/plugin-cfg/treesitter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
