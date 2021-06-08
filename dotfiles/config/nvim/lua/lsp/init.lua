@@ -36,12 +36,8 @@ return function ()
     require('lsp.rust-analyzer'),
     require('lsp.sumneko_lua'),
     { name = 'pyright' },
-    { name = 'hls' },
     { name = 'clangd' },
     { name = 'cmake' },
-    { name = 'hls' },
-    { name = 'vuels' },
-    { name = 'tsserver' },
     { name = 'bashls' },
   }
 
