@@ -51,7 +51,7 @@ return function ()
     "   (Function)",
     "   (Constructor)",
     " ﴲ  (Field)",
-    "[] (Variable)",
+    "   (Variable)",
     "   (Class)",
     " ﰮ  (Interface)",
     "   (Module)",
