@@ -25,7 +25,7 @@ PROMPT_COMMAND="history -a"
 [ ! -n "$RANGER_LEVEL" ] && PS1="(\h \#)" || PS1="(r${RANGER_LEVEL} \h \#)"
 
 ## Paths management
-export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:${PATH}"
+export PATH="${PATH}:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
@@ -38,7 +38,7 @@ export C_INCLUDE_PATH="/usr/local/cuda/include:${C_INCLUDE_PATH}"
 export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:/usr/local/cuda-10.1/targets/x86_64-linux/lib/:${LD_LIBRARY_PATH}"
 export C_INCLUDE_PATH="/usr/local/cuda-10.1/include:${C_INCLUDE_PATH}"
 export LD_LIBRARY_PATH="/usr/lib64/:${LD_LIBRARY_PATH}"
-export PATH=/usr/local/cuda/bin/:${PATH}
+export PATH="/usr/local/cuda/bin/:${PATH}"
 {%@@ endif @@%}
 
 ## Other bits of configuration for other programs
