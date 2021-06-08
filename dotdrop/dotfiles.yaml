@@ -97,6 +97,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/lsp-trouble.lua
     dst: ~/.config/nvim/lua/plugin-cfg/lsp-trouble.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_git-messenger.lua:
+    src: config/nvim/lua/plugin-cfg/git-messenger.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/git-messenger.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_nvim-colorizer.lua:
     src: config/nvim/lua/plugin-cfg/nvim-colorizer.lua
     dst: ~/.config/nvim/lua/plugin-cfg/nvim-colorizer.lua

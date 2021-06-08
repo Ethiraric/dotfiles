@@ -91,6 +91,10 @@ return require('packer').startup(function (use)
     "airblade/vim-rooter",         -- `cd` to an identified root directory
     config = require('plugin-cfg.vim-rooter')
   }
+  use {
+    'rhysd/git-messenger.vim',     -- Insteractive git blame  in a floating window
+    config = require('plugin-cfg.git-messenger')
+  }
   -- Welcome screen
   use {
     'mhinz/vim-startify',
