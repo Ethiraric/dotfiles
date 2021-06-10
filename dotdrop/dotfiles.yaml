@@ -85,6 +85,10 @@ dotfiles:
     src: config/nvim/lua/lsp/sumneko_lua.lua
     dst: ~/.config/nvim/lua/lsp/sumneko_lua.lua
     chmod: '600'
+  f_config_nvim_lua_lsp_texlab.lua:
+    src: config/nvim/lua/lsp/texlab.lua
+    dst: ~/.config/nvim/lua/lsp/texlab.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_compe.lua:
     src: config/nvim/lua/plugin-cfg/compe.lua
     dst: ~/.config/nvim/lua/plugin-cfg/compe.lua
