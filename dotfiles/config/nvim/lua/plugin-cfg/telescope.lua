@@ -16,6 +16,9 @@ return function ()
         '--smart-case'
       }
     },
+    file_ignore_patterns = {
+     'deps/.*'
+    },
     extensions = {
       fzf_writer = {
           minimum_grep_characters = 0,
