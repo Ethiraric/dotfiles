@@ -148,7 +148,7 @@ alias jarvis='ssh jarvis'
 {%@@ endif @@%}
 
 # Miscellaneous commands to run
-{%@@ if (is_workstation is defined and is_workstation)  or profile == "Tswarra" @@%}
+{%@@ if (has_taskwarrior is defined and has_taskwarrior) @@%}
 task
 {%@@ endif@@%}
 

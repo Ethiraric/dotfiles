@@ -70,8 +70,20 @@ profiles:
       - f_xinitrc
   Tswarra:
     variables:
+      # Whether the machine is mine at home.
+      # For the things that are best not found on a workstation.
       is_homestation: true
-      is_i3_gaps: true
+      # Whether the machine is at work.
+      # Kinda exclusive with is_homestation.
+      is_workstation: false
+      # Whether the machine has i3-gaps (does not apply to tty-only
+      # configurations).
+      has_i3_gaps: true
+      # Whether the machine has taskwarrior.
+      # Adds a summary of tasks on bash login.
+      has_taskwarrior: true
+      # Whether the machine has pip's colout package.
+      # Controls compilation outputs.
       has_colout: true
     include:
       - gui
@@ -83,9 +95,14 @@ profiles:
       - tty-only
   hawkeye:
     variables:
-      is_i3_gaps: false
-      has_colout: true
-      is_homestation: false
       is_workstation: true
+      has_colout: true
+      has_taskwarrior: true
+    include:
+      - gui
+  vision:
+    variables:
+      is_workstation: true
+      has_colout: true
     include:
       - gui
