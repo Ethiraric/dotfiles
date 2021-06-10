@@ -181,6 +181,10 @@ dotfiles:
     src: config/i3/config
     dst: ~/.config/i3/config
     chmod: '600'
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+    chmod: '600'
   f_Xdefaults:
     src: Xdefaults
     dst: ~/.Xdefaults

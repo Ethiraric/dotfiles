@@ -1,0 +1,35 @@
+# {{@@ header() @@}}
+
+{%@@ if (git_config_user is defined and git_config_email is defined) @@%}
+[user]
+  email = {{@@ git_config_email @@}}
+  name = {{@@ git_config_user @@}}
+{%@@ endif @@%}
+
+[alias]
+  amen = commit -v --amend
+  c = checkout
+  co = commit -v
+  cp = cherry-pick
+  fe = fetch -p --all
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ls = ls-tree -r --full-tree HEAD
+  pushmr = push -o merge_request.create
+  staged = diff --staged
+  st = status
+
+[core]
+  editor = nvim
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none

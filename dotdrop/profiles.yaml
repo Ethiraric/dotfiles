@@ -11,27 +11,22 @@ dotfiles:
 profiles:
   tty-only:
     dotfiles:
-      - f_config_ranger_scope.sh
-      - f_config_ranger_rc.conf
-      - f_config_ranger_commands_full.py
-      - f_config_ranger_commands.py
-      - f_config_ranger_rifle.conf
+      - f_bashrc
+      - f_config_bash_bashrc
+      - f_config_bash_ls_colors
       - f_config_nvim_coc-settings.json
       - f_config_nvim_init.vim
-      - f_config_nvim_settings.vim
       - f_config_nvim_lua_config.lua
       - f_config_nvim_lua_ethi_luatelescope_extensions_ethi.lua
-      - f_config_nvim_lua_mappings.lua
-      - f_config_nvim_lua_plugins.lua
-      - f_config_nvim_lua_utils.lua
       - f_config_nvim_lua_lsp_init.lua
       - f_config_nvim_lua_lsp_rust-analyzer.lua
       - f_config_nvim_lua_lsp_sumneko_lua.lua
       - f_config_nvim_lua_lsp_texlab.lua
+      - f_config_nvim_lua_mappings.lua
       - f_config_nvim_lua_plugin_cfg_compe.lua
       - f_config_nvim_lua_plugin_cfg_fzf.lua
-      - f_config_nvim_lua_plugin_cfg_lsp-trouble.lua
       - f_config_nvim_lua_plugin_cfg_git-messenger.lua
+      - f_config_nvim_lua_plugin_cfg_lsp-trouble.lua
       - f_config_nvim_lua_plugin_cfg_nvim-colorizer.lua
       - f_config_nvim_lua_plugin_cfg_startify.lua
       - f_config_nvim_lua_plugin_cfg_telescope.lua
@@ -41,18 +36,24 @@ profiles:
       - f_config_nvim_lua_plugin_cfg_vim-airline.lua
       - f_config_nvim_lua_plugin_cfg_vim-rooter.lua
       - f_config_nvim_lua_plugin_cfg_vim-stay.lua
-      - f_config_nvim_UltiSnips_c.snippets
-      - f_config_nvim_UltiSnips_make.snippets
-      - f_config_nvim_UltiSnips_text.snippets
-      - f_config_nvim_UltiSnips_tex.snippets
-      - f_config_nvim_UltiSnips_plaintex.snippets
+      - f_config_nvim_lua_plugins.lua
+      - f_config_nvim_lua_utils.lua
+      - f_config_nvim_settings.vim
       - f_config_nvim_UltiSnips_cmake.snippets
-      - f_config_nvim_UltiSnips_java.snippets
       - f_config_nvim_UltiSnips_cpp.snippets
+      - f_config_nvim_UltiSnips_c.snippets
+      - f_config_nvim_UltiSnips_java.snippets
+      - f_config_nvim_UltiSnips_make.snippets
+      - f_config_nvim_UltiSnips_plaintex.snippets
+      - f_config_nvim_UltiSnips_tex.snippets
+      - f_config_nvim_UltiSnips_text.snippets
+      - f_config_ranger_commands_full.py
+      - f_config_ranger_commands.py
+      - f_config_ranger_rc.conf
+      - f_config_ranger_rifle.conf
+      - f_config_ranger_scope.sh
+      - f_gitconfig
       - f_local_bin_sleepuntil
-      - f_bashrc
-      - f_config_bash_bashrc
-      - f_config_bash_ls_colors
   gui:
     variables:
       is_gui: true
@@ -85,12 +86,18 @@ profiles:
       # Whether the machine has pip's colout package.
       # Controls compilation outputs.
       has_colout: true
+      # The git user name (user.name).
+      git_config_user: Ethiraric
+      # The git email (user.email).
+      git_config_email: ethiraric@gmail.com
     include:
       - gui
   Kanto:
     variables:
       is_homestation: true
       has_colout: true
+      git_config_user: Ethiraric
+      git_config_email: ethiraric@gmail.com
     include:
       - tty-only
   hawkeye:
@@ -98,11 +105,15 @@ profiles:
       is_workstation: true
       has_colout: true
       has_taskwarrior: true
+      git_config_user: Florian Sabourin
+      git_config_email: f.sabourin@alcom-tech.com
     include:
       - gui
   vision:
     variables:
       is_workstation: true
       has_colout: true
+      git_config_user: Florian Sabourin
+      git_config_email: f.sabourin@alcom-tech.com
     include:
       - gui
