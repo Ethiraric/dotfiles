@@ -4,13 +4,12 @@
 
 # Load configuration files
 [ -f ~/.config/bash/bashrc ] && source ~/.config/bash/bashrc
-[ -f ~/.config/bash/ls_colors ] &&  source ~/.config/bash/ls_colors
-
-# Load fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.config/bash/ls_colors ] && source ~/.config/bash/ls_colors
+[ -f ~/.config/bash/monitors.env ] && source ~/.config/bash/monitors.env
 
 # Load other programs' configurations
 [ -f "~/.cargo/env" ] && source "~/.cargo/env"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Load completions
 [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git

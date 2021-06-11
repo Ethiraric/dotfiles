@@ -135,9 +135,9 @@ exec xset r rate 175 50
 
 # Wallpaper
 exec --no-startup-id $HOME/.fehbg
-## Polybar
 {%@@ if profile != "hawkeye" @@%}
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+## Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 {%@@ else @@%}
 bar {
   status_command i3status

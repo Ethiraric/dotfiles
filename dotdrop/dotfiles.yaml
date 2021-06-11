@@ -185,10 +185,86 @@ dotfiles:
     src: config/nvim/UltiSnips/cpp.snippets
     dst: ~/.config/nvim/UltiSnips/cpp.snippets
     chmod: '600'
+
   f_config_i3_config:
     src: config/i3/config
     dst: ~/.config/i3/config
     chmod: '600'
+  f_config_i3_scripts_export_monitor_names_to_file.sh:
+    src: config/i3/scripts/export_monitor_names_to_file.sh
+    dst: ~/.config/i3/scripts/export_monitor_names_to_file.sh
+    chmod: '600'
+
+  # config/polybar
+  f_config_polybar_config.ini:
+    src: config/polybar/config.ini
+    dst: ~/.config/polybar/config.ini
+    chmod: '600'
+  f_config_polybar_bars.ini:
+    src: config/polybar/bars.ini
+    dst: ~/.config/polybar/bars.ini
+    chmod: '600'
+  f_config_polybar_scripts_pulseaudio-control.bash:
+    src: config/polybar/scripts/pulseaudio-control.bash
+    dst: ~/.config/polybar/scripts/pulseaudio-control.bash
+    chmod: '700'
+  f_config_polybar_colors.ini:
+    src: config/polybar/colors.ini
+    dst: ~/.config/polybar/colors.ini
+    chmod: '600'
+  f_config_polybar_modules_memory.ini:
+    src: config/polybar/modules/memory.ini
+    dst: ~/.config/polybar/modules/memory.ini
+    chmod: '600'
+  f_config_polybar_modules_custom_pulseaudio-control.ini:
+    src: config/polybar/modules/custom/pulseaudio-control.ini
+    dst: ~/.config/polybar/modules/custom/pulseaudio-control.ini
+    chmod: '600'
+  f_config_polybar_modules_temperature.ini:
+    src: config/polybar/modules/temperature.ini
+    dst: ~/.config/polybar/modules/temperature.ini
+    chmod: '600'
+  f_config_polybar_modules_pulseaudio.ini:
+    src: config/polybar/modules/pulseaudio.ini
+    dst: ~/.config/polybar/modules/pulseaudio.ini
+    chmod: '600'
+  f_config_polybar_modules_network.ini:
+    src: config/polybar/modules/network.ini
+    dst: ~/.config/polybar/modules/network.ini
+    chmod: '600'
+  f_config_polybar_modules_xkeyboard.ini:
+    src: config/polybar/modules/xkeyboard.ini
+    dst: ~/.config/polybar/modules/xkeyboard.ini
+    chmod: '600'
+  f_config_polybar_modules_cpu.ini:
+    src: config/polybar/modules/cpu.ini
+    dst: ~/.config/polybar/modules/cpu.ini
+    chmod: '600'
+  f_config_polybar_modules_xwindow.ini:
+    src: config/polybar/modules/xwindow.ini
+    dst: ~/.config/polybar/modules/xwindow.ini
+    chmod: '600'
+  f_config_polybar_modules_filesystem.ini:
+    src: config/polybar/modules/filesystem.ini
+    dst: ~/.config/polybar/modules/filesystem.ini
+    chmod: '600'
+  f_config_polybar_modules_battery.ini:
+    src: config/polybar/modules/battery.ini
+    dst: ~/.config/polybar/modules/battery.ini
+    chmod: '600'
+  f_config_polybar_modules_date.ini:
+    src: config/polybar/modules/date.ini
+    dst: ~/.config/polybar/modules/date.ini
+    chmod: '600'
+  f_config_polybar_modules_i3.ini:
+    src: config/polybar/modules/i3.ini
+    dst: ~/.config/polybar/modules/i3.ini
+    chmod: '600'
+  f_config_polybar_launch.sh:
+    src: config/polybar/launch.sh
+    dst: ~/.config/polybar/launch.sh
+    chmod: '700'
+
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
@@ -224,5 +300,9 @@ dotfiles:
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
+    chmod: '600'
+  f_xprofile:
+    src: xprofile
+    dst: ~/.xprofile
     chmod: '600'
 profiles:

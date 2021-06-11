@@ -62,15 +62,34 @@ profiles:
     include:
       - tty-only
     dotfiles:
-      - f_Xresources
       - f_config_i3_config
-      - f_Xdefaults
+      - f_config_i3_scripts_export_monitor_names_to_file.sh
+      - f_config_polybar_config.ini
+      - f_config_polybar_bars.ini
+      - f_config_polybar_scripts_pulseaudio-control.bash
+      - f_config_polybar_colors.ini
+      - f_config_polybar_modules_memory.ini
+      - f_config_polybar_modules_custom_pulseaudio-control.ini
+      - f_config_polybar_modules_temperature.ini
+      - f_config_polybar_modules_pulseaudio.ini
+      - f_config_polybar_modules_network.ini
+      - f_config_polybar_modules_xkeyboard.ini
+      - f_config_polybar_modules_cpu.ini
+      - f_config_polybar_modules_xwindow.ini
+      - f_config_polybar_modules_filesystem.ini
+      - f_config_polybar_modules_battery.ini
+      - f_config_polybar_modules_date.ini
+      - f_config_polybar_modules_i3.ini
+      - f_config_polybar_launch.sh
+      - f_local_bin_i3lock-rand
       - f_local_bin_i3lock-select
       - f_local_bin_play
       - f_local_bin_scrot_region
-      - f_local_bin_i3lock-rand
       - f_local_bin_srofi_run
+      - f_Xdefaults
       - f_xinitrc
+      - f_xprofile
+      - f_Xresources
   Tswarra:
     variables:
       # Whether the machine is mine at home.
@@ -79,6 +98,8 @@ profiles:
       # Whether the machine is at work.
       # Kinda exclusive with is_homestation.
       is_workstation: false
+      # Whether the machine has a battery
+      has_battery: true
       # Whether the machine has i3-gaps (does not apply to tty-only
       # configurations).
       has_i3_gaps: true
@@ -88,6 +109,10 @@ profiles:
       # Whether the machine has pip's colout package.
       # Controls compilation outputs.
       has_colout: true
+      # Name of the wired network interface to display the status of in polybar
+      polybar_wired_network_interface: enp0s31f6
+      # Name of the wireless network interface to display the status of in polybar
+      polybar_wireless_network_interface: wlp4s0
       # The git user name (user.name).
       git_config_user: Ethiraric
       # The git email (user.email).
