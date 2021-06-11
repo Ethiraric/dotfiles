@@ -39,6 +39,8 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+a focus parent
+# Open rofi to show the list of open windows
+bindsym $mod+y exec rofi -show combi
 
 # Window moving
 bindsym $mod+Shift+h move left
@@ -121,6 +123,9 @@ bindsym $mod+d exec "${HOME}/.local/bin/srofi_run"
 # Locking
 bindsym $mod+semicolon exec "${HOME}/.local/bin/i3lock-rand"
 bindsym $mod+apostrophe exec "${HOME}/.local/bin/i3lock-select"
+
+# Misc bindings
+bindsym $mod+Shift+w exec rofi -terminal $terminal -show ssh
 
 # This probably loads some important settings
 exec xrdb ~/.Xresources
