@@ -25,6 +25,14 @@ dotfiles:
     src: Xresources
     dst: ~/.Xresources
     chmod: '600'
+  f_config_gitui_key_config.ron:
+    src: config/gitui/key_config.ron
+    dst: ~/.config/gitui/key_config.ron
+    chmod: '600'
+  f_config_gitui_theme.ron:
+    src: config/gitui/theme.ron
+    dst: ~/.config/gitui/theme.ron
+    chmod: '600'
   f_config_ranger_scope.sh:
     src: config/ranger/scope.sh
     dst: ~/.config/ranger/scope.sh
