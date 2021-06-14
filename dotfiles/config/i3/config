@@ -111,8 +111,8 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 
 # Screenshots
-bindsym Print exec "scrot"
-bindsym $mod+Shift+s exec "${HOME}/.local/bin/scrot_region"
+bindsym Print exec flameshot full -c
+bindsym $mod+Shift+s exec flameshot gui
 
 # Edit config (b was for soundboard)
 bindsym $mod+Shift+b exec "$terminal -e nvim ~/.config/i3/config"
