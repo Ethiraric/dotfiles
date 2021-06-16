@@ -28,7 +28,6 @@ return require('packer').startup(function (use)
         'RishabhRD/nvim-lsputils',
         requires = 'RishabhRD/popfix',
       },
-      'ray-x/lsp_signature.nvim',
     },
   }
   -- Completion menu
