@@ -14,10 +14,10 @@ return function ()
         '--line-number',
         '--column',
         '--smart-case'
-      }
-    },
-    file_ignore_patterns = {
-     'deps/.*'
+      },
+      file_ignore_patterns = {
+       'deps/.*'
+      },
     },
     extensions = {
       fzf_writer = {
