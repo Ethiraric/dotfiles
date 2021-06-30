@@ -62,6 +62,12 @@ return require('packer').startup(function (use)
     },
     'nvim-treesitter/playground'
   }
+  -- Todo
+  use {
+      'folke/todo-comments.nvim',
+      requires = "nvim-lua/plenary.nvim",
+      config = require('plugin-cfg.todo-comments')
+  }
 
   ---------- Git things
   use 'tpope/vim-fugitive' -- Gblame and such

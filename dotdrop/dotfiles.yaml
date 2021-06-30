@@ -125,6 +125,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/telescope.lua
     dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_todo-comments.lua:
+    src: config/nvim/lua/plugin-cfg/todo-comments.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/todo-comments.lua
+    chmod: '600'
   f_config_nvim_lua_plugin_cfg_treesitter.lua:
     src: config/nvim/lua/plugin-cfg/treesitter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
