@@ -135,14 +135,8 @@ exec xset r rate 175 50
 
 # Wallpaper
 exec --no-startup-id $HOME/.fehbg
-{%@@ if profile != "hawkeye" @@%}
 ## Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-{%@@ else @@%}
-bar {
-  status_command i3status
-}
-{%@@ endif @@%}
 # Picom
 exec --no-startup-id picom --config ${HOME}/.config/picom/config.ini --experimental-backends -b --no-fading-openclose
 

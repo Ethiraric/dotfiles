@@ -10,7 +10,9 @@
 # Load other programs' configurations
 [ -f "~/.cargo/env" ] && source "~/.cargo/env"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f  /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 
 # Load completions
 [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 if command -v pandoc 2>&1 > /dev/null ; then eval "$(pandoc --bash-completion)"; fi
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
