@@ -16,4 +16,6 @@ MONITOR=$MAIN_SCREEN polybar main_bot -l info -c ~/.config/polybar/config.ini &
 # MONITOR=$SECONDARY_SCREEN polybar tertiary_top -c ~/.config/polybar/config.ini &
 {%@@ elif profile == "hawkeye" @@%}
 MONITOR=$MAIN_SCREEN polybar main_bot -l info -c ~/.config/polybar/config.ini &
+{%@@ elif profile == "Jotho" @@%}
+MONITOR=$MAIN_SCREEN polybar main_bot -l info -c ~/.config/polybar/config.ini &
 {%@@ endif @@%}

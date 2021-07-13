@@ -128,6 +128,17 @@ profiles:
       git_config_email: ethiraric@gmail.com
     include:
       - tty-only
+  Jotho:
+    variables:
+      is_homestation: true
+      has_colout: true
+      has_i3_gaps: true
+      has_taskwarrior: true
+      polybar_wired_network_interface: enp4s0
+      git_config_user: Ethiraric
+      git_config_email: ethiraric@gmail.com
+    include:
+      - gui
   hawkeye:
     variables:
       is_workstation: true
