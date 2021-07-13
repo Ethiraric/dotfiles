@@ -14,6 +14,7 @@ profiles:
       - f_bashrc
       - f_config_bash_bashrc
       - f_config_bash_ls_colors
+      - f_config_alacritty_alacritty.yml
       - f_config_gitui_key_config.ron
       - f_config_gitui_theme.ron
       - f_config_nvim_coc-settings.json

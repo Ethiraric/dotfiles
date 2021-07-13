@@ -13,6 +13,10 @@ dotfiles:
     src: bashrc
     dst: ~/.bashrc
     chmod: '600'
+  f_config_alacritty_alacritty.yml:
+    src: config/alacritty/alacritty.yml
+    dst: ~/.config/alacritty/alacritty.yml
+    chmod: '600'
   f_config_bash_bashrc:
     src: config/bash/bashrc
     dst: ~/.config/bash/bashrc

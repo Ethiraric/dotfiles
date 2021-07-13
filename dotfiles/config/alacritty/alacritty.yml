@@ -1,0 +1,39 @@
+# {{@@ header() @@}}
+
+font:
+  size: 10
+  normal:
+    family: Fixed
+    style: Medium
+
+colors:
+  primary:
+   background: '#000000'
+  normal:
+   black:   '#000000'
+   red:     '#c11d30'
+   green:   '#aece92'
+   yellow:  '#968a38'
+   blue:    '#438bbb'
+   magenta: '#aa2e81'
+   cyan:    '#7cc0be'
+   white:   '#bebebe'
+  bright:
+   black:   '#666666'
+   red:     '#cf6171'
+   green:   '#c5f779'
+   yellow:  '#fff796'
+   blue:    '#4186be'
+   magenta: '#cf9ebe'
+   cyan:    '#71bebe'
+   white:   '#ffffff'
+
+background_opacity: 0.7
+
+# mouse:
+#   url:
+#     modifiers: Control
+
+key_bindings:
+  - { key: V,              mods: Control|Alt,   mode: ~Vi,        action: Paste            }
+  - { key: C,              mods: Control|Alt,                     action: Copy             }
