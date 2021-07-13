@@ -18,6 +18,7 @@ openssh
 python-pip
 python-pynvim
 ranger
+ripgrep
 rustup
 sudo
 task
