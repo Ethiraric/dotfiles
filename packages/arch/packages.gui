@@ -9,7 +9,10 @@ nvidia
 nvidia-dkms
 picom
 rofi
+vlc
 xorg-fonts-misc
 xorg-server
 xorg-xinit
 xorg-xset
+zathura
+zathura-pdf-mupdf
