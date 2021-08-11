@@ -65,6 +65,7 @@ alias ..='cd ..'
 alias rm='rm -v'
 alias cp='cp -v'
 alias mv='mv -v'
+alias df='duf -hide special'
 
 # Development
 alias ne='nvim'
