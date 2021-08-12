@@ -121,7 +121,7 @@ profiles:
       git_config_email: ethiraric@gmail.com
     include:
       - gui
-  Kanto:
+  kanto:
     variables:
       is_homestation: true
       has_colout: true

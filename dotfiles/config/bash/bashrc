@@ -143,7 +143,7 @@ if ! [ -z ${DISPLAY+x} ]; then setxkbmap gb extd; xset r rate 175 50; fi
 # SSH aliases
 {%@@ if profile == "Tswarra" @@%}
 alias kanto='ssh the10thbit.xyz'
-{%@@ elif profile == "Kanto" @@%}
+{%@@ elif profile == "kanto" @@%}
 alias hawkeye='ssh hawkeye'
 {%@@ elif profile == "hawkeye" @@%}
 alias jarvis='ssh jarvis'
