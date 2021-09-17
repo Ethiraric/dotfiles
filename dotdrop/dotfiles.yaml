@@ -305,6 +305,10 @@ dotfiles:
     src:  local/bin/srofi_run
     dst:  ~/.local/bin/srofi_run
     chmod: '700'
+  f_screenlayout_default.sh:
+    src:  screenlayout/default.sh
+    dst:  ~/.screenlayout/default.sh
+    chmod: '700'
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc

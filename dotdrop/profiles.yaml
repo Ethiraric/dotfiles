@@ -130,6 +130,8 @@ profiles:
     include:
       - tty-only
   Jotho:
+    dotfiles:
+      - f_screenlayout_default.sh
     variables:
       is_homestation: true
       has_colout: true
