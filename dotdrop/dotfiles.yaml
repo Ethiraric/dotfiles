@@ -25,6 +25,10 @@ dotfiles:
     src: config/bash/ls_colors
     dst: ~/.config/bash/ls_colors
     chmod: '600'
+  f_config_dunst_dunstrc:
+    src: config/dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
+    chmod: '600'
   f_Xresources:
     src: Xresources
     dst: ~/.Xresources

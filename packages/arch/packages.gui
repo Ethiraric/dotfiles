@@ -1,10 +1,14 @@
 alacritty
 arandr
+dunst
 feh
 firefox
 flameshot
+gnome-icon-theme
+gnome-icon-theme-extras
 i3-gaps
 i3lock
+libnotify
 nvidia
 nvidia-dkms
 picom

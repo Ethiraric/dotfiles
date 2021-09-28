@@ -64,6 +64,7 @@ profiles:
     include:
       - tty-only
     dotfiles:
+      - f_config_dunst_dunstrc
       - f_config_i3_config
       - f_config_i3_scripts_export_monitor_names_to_file.sh
       - f_config_polybar_config.ini
@@ -151,6 +152,8 @@ profiles:
       polybar_wired_network_interface: enp5s0
       git_config_user: Florian Sabourin
       git_config_email: f.sabourin@alcom-tech.com
+      dunst_monitor: 1
+      dunst_geometry: "300x10-20+40"
     include:
       - gui
   vision:
