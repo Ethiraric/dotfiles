@@ -33,6 +33,7 @@
     // Note: the shift modifier does not work for open_commit_editor
     open_commit_editor: ( code: Char('e'), modifiers: ( bits: 2,),),
     open_help: ( code: F(1), modifiers: ( bits: 0,),),
+    open_options: ( code: F(2), modifiers: ( bits: 0,),),
 
     move_left: ( code: Char('h'), modifiers: ( bits: 0,),),
     move_right: ( code: Char('l'), modifiers: ( bits: 0,),),
@@ -70,6 +71,7 @@
 
     cmd_bar_toggle: ( code: Char('.'), modifiers: ( bits: 0,),),
     log_tag_commit: ( code: Char('t'), modifiers: ( bits: 0,),),
+    log_mark_commit: ( code: Char(' '), modifiers: ( bits: 0,),),
     commit_amend: ( code: Char('a'), modifiers: ( bits: 2,),),
     copy: ( code: Char('y'), modifiers: ( bits: 0,),),
     create_branch: ( code: Char('c'), modifiers: ( bits: 0,),),
@@ -77,11 +79,14 @@
     select_branch: ( code: Char('b'), modifiers: ( bits: 0,),),
     delete_branch: ( code: Char('D'), modifiers: ( bits: 1,),),
     merge_branch: ( code: Char('m'), modifiers: ( bits: 0,),),
+    rebase_branch: ( code: Char('R'), modifiers: ( bits: 1,),),
+    compare_commits: ( code: Char('C'), modifiers: ( bits: 1,),),
     tags: ( code: Char('T'), modifiers: ( bits: 1,),),
     delete_tag: ( code: Char('D'), modifiers: ( bits: 1,),),
     select_tag: ( code: Enter, modifiers: ( bits: 0,),),
     push: ( code: Char('p'), modifiers: ( bits: 0,),),
     open_file_tree: ( code: Char('F'), modifiers: ( bits: 1,),),
+    file_find: ( code: Char('f'), modifiers: ( bits: 0,),),
     force_push: ( code: Char('P'), modifiers: ( bits: 1,),),
     pull: ( code: Char('f'), modifiers: ( bits: 0,),),
     abort_merge: ( code: Char('M'), modifiers: ( bits: 1,),),
