@@ -120,6 +120,10 @@ profiles:
       git_config_user: Ethiraric
       # The git email (user.email).
       git_config_email: ethiraric@gmail.com
+      # The monitor dunst is to use
+      dunst_monitor: 0
+      # Geometry of the notification box
+      dunst_geometry: "300x10-20+40"
     include:
       - gui
   kanto:
@@ -141,6 +145,8 @@ profiles:
       polybar_wired_network_interface: enp4s0
       git_config_user: Ethiraric
       git_config_email: ethiraric@gmail.com
+      dunst_monitor: 1
+      dunst_geometry: "300x10-20+40"
     include:
       - gui
   hawkeye:
