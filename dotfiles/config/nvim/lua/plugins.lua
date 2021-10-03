@@ -33,7 +33,7 @@ return require('packer').startup({
     ---------- LSP
     use {
       'neovim/nvim-lspconfig',
-      config = require('lsp'),
+      config = require('lsp').config,
       requires = {
         {
           'RishabhRD/nvim-lsputils',
