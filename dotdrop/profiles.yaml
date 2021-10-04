@@ -25,11 +25,11 @@ profiles:
       - f_config_nvim_lua_lsp_sumneko_lua.lua
       - f_config_nvim_lua_lsp_texlab.lua
       - f_config_nvim_lua_mappings.lua
-      - f_config_nvim_lua_plugin_cfg_compe.lua
       - f_config_nvim_lua_plugin_cfg_fzf.lua
       - f_config_nvim_lua_plugin_cfg_git-messenger.lua
       - f_config_nvim_lua_plugin_cfg_lsp-trouble.lua
       - f_config_nvim_lua_plugin_cfg_nvim-colorizer.lua
+      - f_config_nvim_lua_plugin_cfg_nvim-cmp.lua
       - f_config_nvim_lua_plugin_cfg_startify.lua
       - f_config_nvim_lua_plugin_cfg_telescope.lua
       - f_config_nvim_lua_plugin_cfg_todo-comments.lua

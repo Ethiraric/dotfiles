@@ -103,10 +103,6 @@ dotfiles:
     src: config/nvim/lua/lsp/texlab.lua
     dst: ~/.config/nvim/lua/lsp/texlab.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_compe.lua:
-    src: config/nvim/lua/plugin-cfg/compe.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/compe.lua
-    chmod: '600'
   f_config_nvim_lua_plugin_cfg_fzf.lua:
     src: config/nvim/lua/plugin-cfg/fzf.lua
     dst: ~/.config/nvim/lua/plugin-cfg/fzf.lua
@@ -122,6 +118,10 @@ dotfiles:
   f_config_nvim_lua_plugin_cfg_nvim-colorizer.lua:
     src: config/nvim/lua/plugin-cfg/nvim-colorizer.lua
     dst: ~/.config/nvim/lua/plugin-cfg/nvim-colorizer.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin_cfg_nvim-cmp.lua:
+    src: config/nvim/lua/plugin-cfg/nvim-cmp.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/nvim-cmp.lua
     chmod: '600'
   f_config_nvim_lua_plugin_cfg_startify.lua:
     src: config/nvim/lua/plugin-cfg/startify.lua
