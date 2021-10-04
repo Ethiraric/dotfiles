@@ -61,6 +61,8 @@ dotfiles:
     src: config/ranger/rifle.conf
     dst: ~/.config/ranger/rifle.conf
     chmod: '600'
+
+  # config/nvim
   f_config_nvim_coc-settings.json:
     src: config/nvim/coc-settings.json
     dst: ~/.config/nvim/coc-settings.json
@@ -145,10 +147,6 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/ts-rainbow.lua
     dst: ~/.config/nvim/lua/plugin-cfg/ts-rainbow.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_ultisnips.lua:
-    src: config/nvim/lua/plugin-cfg/ultisnips.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/ultisnips.lua
-    chmod: '600'
   f_config_nvim_lua_plugin_cfg_vim-airline.lua:
     src: config/nvim/lua/plugin-cfg/vim-airline.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-airline.lua
@@ -161,41 +159,59 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/vim-stay.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-stay.lua
     chmod: '600'
+  f_config_nvim_lua_plugin_cfg_vsnip.lua:
+    src: config/nvim/lua/plugin-cfg/vsnip.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/vsnip.lua
+    chmod: '600'
   f_config_nvim_lua_ethi_luatelescope_extensions_ethi.lua:
     src: config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
     dst: ~/.config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
     chmod: '600'
-  f_config_nvim_UltiSnips_c.snippets:
-    src: config/nvim/UltiSnips/c.snippets
-    dst: ~/.config/nvim/UltiSnips/c.snippets
+
+  # config/nvim/snippets
+  f_config_nvim_snippets_c.json:
+    src: config/nvim/snippets/c.json
+    dst: ~/.config/nvim/snippets/c.json
     chmod: '600'
-  f_config_nvim_UltiSnips_make.snippets:
-    src: config/nvim/UltiSnips/make.snippets
-    dst: ~/.config/nvim/UltiSnips/make.snippets
+  f_config_nvim_snippets_cpp.json:
+    src: config/nvim/snippets/cpp.json
+    dst: ~/.config/nvim/snippets/cpp.json
     chmod: '600'
-  f_config_nvim_UltiSnips_text.snippets:
-    src: config/nvim/UltiSnips/text.snippets
-    dst: ~/.config/nvim/UltiSnips/text.snippets
+  f_config_nvim_snippets_html.json:
+    src: config/nvim/snippets/html.json
+    dst: ~/.config/nvim/snippets/html.json
     chmod: '600'
-  f_config_nvim_UltiSnips_tex.snippets:
-    src: config/nvim/UltiSnips/tex.snippets
-    dst: ~/.config/nvim/UltiSnips/tex.snippets
+  f_config_nvim_snippets_latex.json:
+    src: config/nvim/snippets/latex.json
+    dst: ~/.config/nvim/snippets/latex.json
     chmod: '600'
-  f_config_nvim_UltiSnips_plaintex.snippets:
-    src: config/nvim/UltiSnips/plaintex.snippets
-    dst: ~/.config/nvim/UltiSnips/plaintex.snippets
+  f_config_nvim_snippets_lua.json:
+    src: config/nvim/snippets/lua.json
+    dst: ~/.config/nvim/snippets/lua.json
     chmod: '600'
-  f_config_nvim_UltiSnips_cmake.snippets:
-    src: config/nvim/UltiSnips/cmake.snippets
-    dst: ~/.config/nvim/UltiSnips/cmake.snippets
+  f_config_nvim_snippets_python_base.json:
+    src: config/nvim/snippets/python/base.json
+    dst: ~/.config/nvim/snippets/python/base.json
     chmod: '600'
-  f_config_nvim_UltiSnips_java.snippets:
-    src: config/nvim/UltiSnips/java.snippets
-    dst: ~/.config/nvim/UltiSnips/java.snippets
+  f_config_nvim_snippets_python_comprehension.json:
+    src: config/nvim/snippets/python/comprehension.json
+    dst: ~/.config/nvim/snippets/python/comprehension.json
     chmod: '600'
-  f_config_nvim_UltiSnips_cpp.snippets:
-    src: config/nvim/UltiSnips/cpp.snippets
-    dst: ~/.config/nvim/UltiSnips/cpp.snippets
+  f_config_nvim_snippets_python_debug.json:
+    src: config/nvim/snippets/python/debug.json
+    dst: ~/.config/nvim/snippets/python/debug.json
+    chmod: '600'
+  f_config_nvim_snippets_python_python.json:
+    src: config/nvim/snippets/python/python.json
+    dst: ~/.config/nvim/snippets/python/python.json
+    chmod: '600'
+  f_config_nvim_snippets_python_unittest.json:
+    src: config/nvim/snippets/python/unittest.json
+    dst: ~/.config/nvim/snippets/python/unittest.json
+    chmod: '600'
+  f_config_nvim_snippets_rust.json:
+    src: config/nvim/snippets/rust.json
+    dst: ~/.config/nvim/snippets/rust.json
     chmod: '600'
 
   f_config_i3_config:

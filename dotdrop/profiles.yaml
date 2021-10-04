@@ -12,9 +12,9 @@ profiles:
   tty-only:
     dotfiles:
       - f_bashrc
+      - f_config_alacritty_alacritty.yml
       - f_config_bash_bashrc
       - f_config_bash_ls_colors
-      - f_config_alacritty_alacritty.yml
       - f_config_gitui_key_config.ron
       - f_config_gitui_theme.ron
       - f_config_nvim_coc-settings.json
@@ -36,21 +36,24 @@ profiles:
       - f_config_nvim_lua_plugin_cfg_todo-comments.lua
       - f_config_nvim_lua_plugin_cfg_treesitter.lua
       - f_config_nvim_lua_plugin_cfg_ts-rainbow.lua
-      - f_config_nvim_lua_plugin_cfg_ultisnips.lua
       - f_config_nvim_lua_plugin_cfg_vim-airline.lua
       - f_config_nvim_lua_plugin_cfg_vim-rooter.lua
       - f_config_nvim_lua_plugin_cfg_vim-stay.lua
+      - f_config_nvim_lua_plugin_cfg_vsnip.lua
       - f_config_nvim_lua_plugins.lua
       - f_config_nvim_lua_utils.lua
       - f_config_nvim_settings.vim
-      - f_config_nvim_UltiSnips_cmake.snippets
-      - f_config_nvim_UltiSnips_cpp.snippets
-      - f_config_nvim_UltiSnips_c.snippets
-      - f_config_nvim_UltiSnips_java.snippets
-      - f_config_nvim_UltiSnips_make.snippets
-      - f_config_nvim_UltiSnips_plaintex.snippets
-      - f_config_nvim_UltiSnips_tex.snippets
-      - f_config_nvim_UltiSnips_text.snippets
+      - f_config_nvim_snippets_c.json
+      - f_config_nvim_snippets_cpp.json
+      - f_config_nvim_snippets_html.json
+      - f_config_nvim_snippets_latex.json
+      - f_config_nvim_snippets_lua.json
+      - f_config_nvim_snippets_python_base.json
+      - f_config_nvim_snippets_python_comprehension.json
+      - f_config_nvim_snippets_python_debug.json
+      - f_config_nvim_snippets_python_python.json
+      - f_config_nvim_snippets_python_unittest.json
+      - f_config_nvim_snippets_rust.json
       - f_config_ranger_commands_full.py
       - f_config_ranger_commands.py
       - f_config_ranger_rc.conf

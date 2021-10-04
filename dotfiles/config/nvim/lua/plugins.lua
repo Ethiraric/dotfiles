@@ -50,10 +50,8 @@ return require('packer').startup({
       config = require('plugin-cfg.lsp-trouble'),
     }
     -- Snippets
-    use {
-      'SirVer/ultisnips',
-      config = require('plugin-cfg.ultisnips')
-    }
+    use { 'hrsh7th/vim-vsnip', config = require('plugin-cfg.vsnip') }
+
     -- Folds & highlighting
     use {
       {
