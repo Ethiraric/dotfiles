@@ -63,10 +63,6 @@ dotfiles:
     chmod: '600'
 
   # config/nvim
-  f_config_nvim_coc-settings.json:
-    src: config/nvim/coc-settings.json
-    dst: ~/.config/nvim/coc-settings.json
-    chmod: '600'
   f_config_nvim_init.vim:
     src: config/nvim/init.vim
     dst: ~/.config/nvim/init.vim

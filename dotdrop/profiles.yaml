@@ -17,7 +17,6 @@ profiles:
       - f_config_bash_ls_colors
       - f_config_gitui_key_config.ron
       - f_config_gitui_theme.ron
-      - f_config_nvim_coc-settings.json
       - f_config_nvim_init.vim
       - f_config_nvim_lua_config.lua
       - f_config_nvim_lua_ethi_luatelescope_extensions_ethi.lua
