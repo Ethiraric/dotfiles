@@ -20,9 +20,9 @@ return require('packer').startup({
     use { 'p00f/nvim-ts-rainbow', config = require('plugin-cfg.ts-rainbow') }
     use 'ryanoasis/vim-devicons'
     use {
-      'vim-airline/vim-airline',
-      requires = 'vim-airline/vim-airline-themes',
-      config = require('plugin-cfg.vim-airline')
+      'hoob3rt/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      config = require('plugin-cfg.lualine')
     }
     use 'RRethy/vim-illuminate' -- Highlight occurences of hovered word
     -- Themes
