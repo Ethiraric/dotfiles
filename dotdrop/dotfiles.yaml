@@ -8,15 +8,38 @@ config:
   link_on_import: nolink
   longkey: true
 dotfiles:
-  # Bash
   f_bashrc:
     src: bashrc
     dst: ~/.bashrc
     chmod: '600'
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+    chmod: '600'
+  f_Xdefaults:
+    src: Xdefaults
+    dst: ~/.Xdefaults
+    chmod: '600'
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+    chmod: '600'
+  f_xprofile:
+    src: xprofile
+    dst: ~/.xprofile
+    chmod: '600'
+  f_Xresources:
+    src: Xresources
+    dst: ~/.Xresources
+    chmod: '600'
+
+  # config/alacritty
   f_config_alacritty_alacritty.yml:
     src: config/alacritty/alacritty.yml
     dst: ~/.config/alacritty/alacritty.yml
     chmod: '600'
+
+  # config/bash
   f_config_bash_bashrc:
     src: config/bash/bashrc
     dst: ~/.config/bash/bashrc
@@ -25,14 +48,14 @@ dotfiles:
     src: config/bash/ls_colors
     dst: ~/.config/bash/ls_colors
     chmod: '600'
+
+  # config/dunst
   f_config_dunst_dunstrc:
     src: config/dunst/dunstrc
     dst: ~/.config/dunst/dunstrc
     chmod: '600'
-  f_Xresources:
-    src: Xresources
-    dst: ~/.Xresources
-    chmod: '600'
+
+  # config/gitui
   f_config_gitui_key_config.ron:
     src: config/gitui/key_config.ron
     dst: ~/.config/gitui/key_config.ron
@@ -41,25 +64,19 @@ dotfiles:
     src: config/gitui/theme.ron
     dst: ~/.config/gitui/theme.ron
     chmod: '600'
-  f_config_ranger_scope.sh:
-    src: config/ranger/scope.sh
-    dst: ~/.config/ranger/scope.sh
-    chmod: '700'
-  f_config_ranger_rc.conf:
-    src: config/ranger/rc.conf
-    dst: ~/.config/ranger/rc.conf
+
+  # config/i3
+  f_config_i3_config:
+    src: config/i3/config
+    dst: ~/.config/i3/config
     chmod: '600'
-  f_config_ranger_commands_full.py:
-    src: config/ranger/commands_full.py
-    dst: ~/.config/ranger/commands_full.py
+  f_config_i3_scripts_export_monitor_names_to_file.sh:
+    src: config/i3/scripts/export_monitor_names_to_file.sh
+    dst: ~/.config/i3/scripts/export_monitor_names_to_file.sh
     chmod: '600'
-  f_config_ranger_commands.py:
-    src: config/ranger/commands.py
-    dst: ~/.config/ranger/commands.py
-    chmod: '600'
-  f_config_ranger_rifle.conf:
-    src: config/ranger/rifle.conf
-    dst: ~/.config/ranger/rifle.conf
+  f_config_i3_soundboard:
+    src: config/i3/soundboard
+    dst: ~/.config/i3/soundboard
     chmod: '600'
 
   # config/nvim
@@ -71,6 +88,7 @@ dotfiles:
     src: config/nvim/settings.vim
     dst: ~/.config/nvim/settings.vim
     chmod: '600'
+  # config/nvim/lua
   f_config_nvim_lua_config.lua:
     src: config/nvim/lua/config.lua
     dst: ~/.config/nvim/lua/config.lua
@@ -87,6 +105,12 @@ dotfiles:
     src: config/nvim/lua/utils.lua
     dst: ~/.config/nvim/lua/utils.lua
     chmod: '600'
+  # config/nvim/lua/ethi
+  f_config_nvim_lua_ethi_lua_telescope__extensions_ethi.lua:
+    src: config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
+    dst: ~/.config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
+    chmod: '600'
+  # config/nvim/lua/lsp
   f_config_nvim_lua_lsp_init.lua:
     src: config/nvim/lua/lsp/init.lua
     dst: ~/.config/nvim/lua/lsp/init.lua
@@ -103,67 +127,63 @@ dotfiles:
     src: config/nvim/lua/lsp/texlab.lua
     dst: ~/.config/nvim/lua/lsp/texlab.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_fzf.lua:
+  # config/nvim/lua/plugin-cfg
+  f_config_nvim_lua_plugin-cfg_fzf.lua:
     src: config/nvim/lua/plugin-cfg/fzf.lua
     dst: ~/.config/nvim/lua/plugin-cfg/fzf.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_lsp-trouble.lua:
-    src: config/nvim/lua/plugin-cfg/lsp-trouble.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/lsp-trouble.lua
-    chmod: '600'
-  f_config_nvim_lua_plugin_cfg_lualine.lua:
-    src: config/nvim/lua/plugin-cfg/lualine.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/lualine.lua
-    chmod: '600'
-  f_config_nvim_lua_plugin_cfg_git-messenger.lua:
+  f_config_nvim_lua_plugin-cfg_git-messenger.lua:
     src: config/nvim/lua/plugin-cfg/git-messenger.lua
     dst: ~/.config/nvim/lua/plugin-cfg/git-messenger.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_nvim-colorizer.lua:
-    src: config/nvim/lua/plugin-cfg/nvim-colorizer.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/nvim-colorizer.lua
+  f_config_nvim_lua_plugin-cfg_lsp-trouble.lua:
+    src: config/nvim/lua/plugin-cfg/lsp-trouble.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/lsp-trouble.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_nvim-cmp.lua:
+  f_config_nvim_lua_plugin-cfg_lualine.lua:
+    src: config/nvim/lua/plugin-cfg/lualine.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/lualine.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin-cfg_nvim-cmp.lua:
     src: config/nvim/lua/plugin-cfg/nvim-cmp.lua
     dst: ~/.config/nvim/lua/plugin-cfg/nvim-cmp.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_startify.lua:
+  f_config_nvim_lua_plugin-cfg_nvim-colorizer.lua:
+    src: config/nvim/lua/plugin-cfg/nvim-colorizer.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/nvim-colorizer.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin-cfg_startify.lua:
     src: config/nvim/lua/plugin-cfg/startify.lua
     dst: ~/.config/nvim/lua/plugin-cfg/startify.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_telescope.lua:
+  f_config_nvim_lua_plugin-cfg_telescope.lua:
     src: config/nvim/lua/plugin-cfg/telescope.lua
     dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_todo-comments.lua:
+  f_config_nvim_lua_plugin-cfg_todo-comments.lua:
     src: config/nvim/lua/plugin-cfg/todo-comments.lua
     dst: ~/.config/nvim/lua/plugin-cfg/todo-comments.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_treesitter.lua:
+  f_config_nvim_lua_plugin-cfg_treesitter.lua:
     src: config/nvim/lua/plugin-cfg/treesitter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_ts-rainbow.lua:
+  f_config_nvim_lua_plugin-cfg_ts-rainbow.lua:
     src: config/nvim/lua/plugin-cfg/ts-rainbow.lua
     dst: ~/.config/nvim/lua/plugin-cfg/ts-rainbow.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_vim-rooter.lua:
+  f_config_nvim_lua_plugin-cfg_vim-rooter.lua:
     src: config/nvim/lua/plugin-cfg/vim-rooter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-rooter.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_vim-stay.lua:
+  f_config_nvim_lua_plugin-cfg_vim-stay.lua:
     src: config/nvim/lua/plugin-cfg/vim-stay.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-stay.lua
     chmod: '600'
-  f_config_nvim_lua_plugin_cfg_vsnip.lua:
+  f_config_nvim_lua_plugin-cfg_vsnip.lua:
     src: config/nvim/lua/plugin-cfg/vsnip.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vsnip.lua
     chmod: '600'
-  f_config_nvim_lua_ethi_luatelescope_extensions_ethi.lua:
-    src: config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
-    dst: ~/.config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
-    chmod: '600'
-
   # config/nvim/snippets
   f_config_nvim_snippets_c.json:
     src: config/nvim/snippets/c.json
@@ -210,129 +230,129 @@ dotfiles:
     dst: ~/.config/nvim/snippets/rust.json
     chmod: '600'
 
-  f_config_i3_config:
-    src: config/i3/config
-    dst: ~/.config/i3/config
-    chmod: '600'
-  f_config_i3_scripts_export_monitor_names_to_file.sh:
-    src: config/i3/scripts/export_monitor_names_to_file.sh
-    dst: ~/.config/i3/scripts/export_monitor_names_to_file.sh
-    chmod: '600'
-
   # config/pipewire
   f_config_pipewire_media-session.d_bluez-monitor.conf:
-    src: config/pipewire/media-session.d/bluez-monitor.sh
-    dst: ~/.config/pipewire/media-session.d/bluez-monitor.sh
+    src: config/pipewire/media-session.d/bluez-monitor.conf
+    dst: ~/.config/pipewire/media-session.d/bluez-monitor.conf
     chmod: '600'
 
   # config/polybar
-  f_config_polybar_config.ini:
-    src: config/polybar/config.ini
-    dst: ~/.config/polybar/config.ini
-    chmod: '600'
   f_config_polybar_bars.ini:
     src: config/polybar/bars.ini
     dst: ~/.config/polybar/bars.ini
     chmod: '600'
-  f_config_polybar_scripts_pipewire-control.bash:
-    src: config/polybar/scripts/pipewire-control.bash
-    dst: ~/.config/polybar/scripts/pipewire-control.bash
-    chmod: '700'
   f_config_polybar_colors.ini:
     src: config/polybar/colors.ini
     dst: ~/.config/polybar/colors.ini
     chmod: '600'
-  f_config_polybar_modules_memory.ini:
-    src: config/polybar/modules/memory.ini
-    dst: ~/.config/polybar/modules/memory.ini
-    chmod: '600'
-  f_config_polybar_modules_custom_pipewire-control.ini:
-    src: config/polybar/modules/custom/pipewire-control.ini
-    dst: ~/.config/polybar/modules/custom/pipewire-control.ini
-    chmod: '600'
-  f_config_polybar_modules_temperature.ini:
-    src: config/polybar/modules/temperature.ini
-    dst: ~/.config/polybar/modules/temperature.ini
-    chmod: '600'
-  f_config_polybar_modules_network.ini:
-    src: config/polybar/modules/network.ini
-    dst: ~/.config/polybar/modules/network.ini
-    chmod: '600'
-  f_config_polybar_modules_xkeyboard.ini:
-    src: config/polybar/modules/xkeyboard.ini
-    dst: ~/.config/polybar/modules/xkeyboard.ini
-    chmod: '600'
-  f_config_polybar_modules_cpu.ini:
-    src: config/polybar/modules/cpu.ini
-    dst: ~/.config/polybar/modules/cpu.ini
-    chmod: '600'
-  f_config_polybar_modules_xwindow.ini:
-    src: config/polybar/modules/xwindow.ini
-    dst: ~/.config/polybar/modules/xwindow.ini
-    chmod: '600'
-  f_config_polybar_modules_filesystem.ini:
-    src: config/polybar/modules/filesystem.ini
-    dst: ~/.config/polybar/modules/filesystem.ini
-    chmod: '600'
-  f_config_polybar_modules_battery.ini:
-    src: config/polybar/modules/battery.ini
-    dst: ~/.config/polybar/modules/battery.ini
-    chmod: '600'
-  f_config_polybar_modules_date.ini:
-    src: config/polybar/modules/date.ini
-    dst: ~/.config/polybar/modules/date.ini
-    chmod: '600'
-  f_config_polybar_modules_i3.ini:
-    src: config/polybar/modules/i3.ini
-    dst: ~/.config/polybar/modules/i3.ini
+  f_config_polybar_config.ini:
+    src: config/polybar/config.ini
+    dst: ~/.config/polybar/config.ini
     chmod: '600'
   f_config_polybar_launch.sh:
     src: config/polybar/launch.sh
     dst: ~/.config/polybar/launch.sh
     chmod: '700'
-
-  f_gitconfig:
-    src: gitconfig
-    dst: ~/.gitconfig
+  f_config_polybar_modules_battery.ini:
+    src: config/polybar/modules/battery.ini
+    dst: ~/.config/polybar/modules/battery.ini
     chmod: '600'
-  f_Xdefaults:
-    src: Xdefaults
-    dst: ~/.Xdefaults
+  f_config_polybar_modules_cpu.ini:
+    src: config/polybar/modules/cpu.ini
+    dst: ~/.config/polybar/modules/cpu.ini
     chmod: '600'
-  f_local_bin_i3lock-select:
-    src:  local/bin/i3lock-select
-    dst:  ~/.local/bin/i3lock-select
+  f_config_polybar_modules_custom_pipewire-control.ini:
+    src: config/polybar/modules/custom/pipewire-control.ini
+    dst: ~/.config/polybar/modules/custom/pipewire-control.ini
+    chmod: '600'
+  f_config_polybar_modules_date.ini:
+    src: config/polybar/modules/date.ini
+    dst: ~/.config/polybar/modules/date.ini
+    chmod: '600'
+  f_config_polybar_modules_filesystem.ini:
+    src: config/polybar/modules/filesystem.ini
+    dst: ~/.config/polybar/modules/filesystem.ini
+    chmod: '600'
+  f_config_polybar_modules_i3.ini:
+    src: config/polybar/modules/i3.ini
+    dst: ~/.config/polybar/modules/i3.ini
+    chmod: '600'
+  f_config_polybar_modules_memory.ini:
+    src: config/polybar/modules/memory.ini
+    dst: ~/.config/polybar/modules/memory.ini
+    chmod: '600'
+  f_config_polybar_modules_network.ini:
+    src: config/polybar/modules/network.ini
+    dst: ~/.config/polybar/modules/network.ini
+    chmod: '600'
+  f_config_polybar_modules_temperature.ini:
+    src: config/polybar/modules/temperature.ini
+    dst: ~/.config/polybar/modules/temperature.ini
+    chmod: '600'
+  f_config_polybar_modules_xkeyboard.ini:
+    src: config/polybar/modules/xkeyboard.ini
+    dst: ~/.config/polybar/modules/xkeyboard.ini
+    chmod: '600'
+  f_config_polybar_modules_xwindow.ini:
+    src: config/polybar/modules/xwindow.ini
+    dst: ~/.config/polybar/modules/xwindow.ini
+    chmod: '600'
+  f_config_polybar_scripts_pipewire-control.bash:
+    src: config/polybar/scripts/pipewire-control.bash
+    dst: ~/.config/polybar/scripts/pipewire-control.bash
     chmod: '700'
-  f_local_bin_sleepuntil:
-    src:  local/bin/sleepuntil
-    dst:  ~/.local/bin/sleepuntil
+
+  # config/ranger
+  f_config_ranger_commands_full.py:
+    src: config/ranger/commands_full.py
+    dst: ~/.config/ranger/commands_full.py
+    chmod: '600'
+  f_config_ranger_commands.py:
+    src: config/ranger/commands.py
+    dst: ~/.config/ranger/commands.py
+    chmod: '600'
+  f_config_ranger_rc.conf:
+    src: config/ranger/rc.conf
+    dst: ~/.config/ranger/rc.conf
+    chmod: '600'
+  f_config_ranger_rifle.conf:
+    src: config/ranger/rifle.conf
+    dst: ~/.config/ranger/rifle.conf
+    chmod: '600'
+  f_config_ranger_scope.sh:
+    src: config/ranger/scope.sh
+    dst: ~/.config/ranger/scope.sh
+    chmod: '700'
+
+  # local/bin
+  f_local_bin_i3lock-rand:
+    src: local/bin/i3lock-rand
+    dst: ~/.local/bin/i3lock-rand
+    chmod: '700'
+  f_local_bin_i3lock-select:
+    src: local/bin/i3lock-select
+    dst: ~/.local/bin/i3lock-select
     chmod: '700'
   f_local_bin_play:
-    src:  local/bin/play
-    dst:  ~/.local/bin/play
+    src: local/bin/play
+    dst: ~/.local/bin/play
     chmod: '700'
   f_local_bin_scrot_region:
-    src:  local/bin/scrot_region
-    dst:  ~/.local/bin/scrot_region
+    src: local/bin/scrot_region
+    dst: ~/.local/bin/scrot_region
     chmod: '700'
-  f_local_bin_i3lock-rand:
-    src:  local/bin/i3lock-rand
-    dst:  ~/.local/bin/i3lock-rand
+  f_local_bin_sleepuntil:
+    src: local/bin/sleepuntil
+    dst: ~/.local/bin/sleepuntil
     chmod: '700'
   f_local_bin_srofi_run:
-    src:  local/bin/srofi_run
-    dst:  ~/.local/bin/srofi_run
+    src: local/bin/srofi_run
+    dst: ~/.local/bin/srofi_run
     chmod: '700'
+
+  # screenlayout
   f_screenlayout_default.sh:
-    src:  screenlayout/default.sh
-    dst:  ~/.screenlayout/default.sh
+    src: screenlayout/default.sh
+    dst: ~/.screenlayout/default.sh
     chmod: '700'
-  f_xinitrc:
-    src: xinitrc
-    dst: ~/.xinitrc
-    chmod: '600'
-  f_xprofile:
-    src: xprofile
-    dst: ~/.xprofile
-    chmod: '600'
 profiles:
