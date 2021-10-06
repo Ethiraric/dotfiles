@@ -69,14 +69,14 @@ profiles:
       - f_config_dunst_dunstrc
       - f_config_i3_config
       - f_config_i3_scripts_export_monitor_names_to_file.sh
+      - f_config_polybar_scripts_pipewire-control.bash
       - f_config_polybar_config.ini
       - f_config_polybar_bars.ini
-      - f_config_polybar_scripts_pulseaudio-control.bash
+      - f_config_polybar_scripts_pipewire-control.bash
       - f_config_polybar_colors.ini
       - f_config_polybar_modules_memory.ini
-      - f_config_polybar_modules_custom_pulseaudio-control.ini
+      - f_config_polybar_modules_custom_pipewire-control.ini
       - f_config_polybar_modules_temperature.ini
-      - f_config_polybar_modules_pulseaudio.ini
       - f_config_polybar_modules_network.ini
       - f_config_polybar_modules_xkeyboard.ini
       - f_config_polybar_modules_cpu.ini

@@ -22,6 +22,10 @@ man-pages
 neovim
 ninja
 openssh
+pipewire
+pipewire-alsa
+pipewire-pulse
+playerctl
 python-pip
 python-pynvim
 ranger
