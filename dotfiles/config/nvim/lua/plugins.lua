@@ -92,7 +92,7 @@ return require('packer').startup({
       requires = {
         { 'nvim-lua/popup.nvim' },
         { 'nvim-lua/plenary.nvim' },
-        { 'nvim-telescope/telescope-fzf-writer.nvim' },
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
         { '~/.config/nvim/lua/ethi' },
       },
       config = require('plugin-cfg.telescope')
