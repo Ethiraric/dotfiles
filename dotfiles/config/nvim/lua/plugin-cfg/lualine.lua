@@ -140,7 +140,13 @@ return function ()
   }
 
   ins_left {
-    'filename',
+    function()
+      local path = vim.fn.expand('%')
+      if vim.fn.winwidth(0) <= 84 then
+        path = vim.fn.pathshorten(path)
+      end
+      return path
+    end,
     condition = conditions.buffer_not_empty,
     color = {fg = colors.magenta, gui = 'bold'}
   }
