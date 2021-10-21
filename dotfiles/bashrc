@@ -8,9 +8,10 @@
 [ -f ~/.config/bash/monitors.env ] && source ~/.config/bash/monitors.env
 
 # Load other programs' configurations
-[ -f "~/.cargo/env" ] && source "~/.cargo/env"
+[ -f ~/.cargo/env ] && source ~/.cargo/env
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f  /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Load completions
 [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
