@@ -79,8 +79,7 @@ return function ()
 
   ins_left {
     function() return '▊' end,
-    color = {fg = colors.blue}, -- Sets highlighting of component
-    left_padding = 0 -- We don't need space before this
+    color = {fg = colors.blue} -- Sets highlighting of component
   }
 
   ins_left {
@@ -88,33 +87,33 @@ return function ()
     function()
       -- auto change color according to neovims mode
       local mode_color = {
-        n = colors.red,
-        i = colors.green,
-        v = colors.blue,
+        n      = colors.red,
+        i      = colors.green,
+        v      = colors.blue,
         [''] = colors.blue,
-        V = colors.blue,
-        c = colors.magenta,
-        no = colors.red,
-        s = colors.orange,
-        S = colors.orange,
+        V      = colors.blue,
+        c      = colors.magenta,
+        no     = colors.red,
+        s      = colors.orange,
+        S      = colors.orange,
         [''] = colors.orange,
-        ic = colors.yellow,
-        R = colors.violet,
-        Rv = colors.violet,
-        cv = colors.red,
-        ce = colors.red,
-        r = colors.cyan,
-        rm = colors.cyan,
+        ic     = colors.yellow,
+        R      = colors.violet,
+        Rv     = colors.violet,
+        cv     = colors.red,
+        ce     = colors.red,
+        r      = colors.cyan,
+        rm     = colors.cyan,
         ['r?'] = colors.cyan,
-        ['!'] = colors.red,
-        t = colors.red
+        ['!']  = colors.red,
+        t      = colors.red
       }
       vim.api.nvim_command(
           'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
               colors.bg)
       return ''
     end,
-    color = "LualineMode",
+    color = { fg = "LualineMode"},
     left_padding = 0
   }
 
@@ -136,7 +135,7 @@ return function ()
       if string.len(file) == 0 then return '' end
       return format_file_size(file)
     end,
-    condition = conditions.buffer_not_empty
+    cond = conditions.buffer_not_empty
   }
 
   ins_left {
@@ -147,8 +146,8 @@ return function ()
       end
       return path
     end,
-    condition = conditions.buffer_not_empty,
-    color = {fg = colors.magenta, gui = 'bold'}
+    cond = conditions.buffer_not_empty,
+    color = { fg = colors.magenta, gui = 'bold' }
   }
 
   ins_left {'location'}
@@ -159,9 +158,9 @@ return function ()
     'diagnostics',
     sources = {'nvim_lsp'},
     symbols = {error = ' ', warn = ' ', info = ' '},
-    color_error = colors.red,
-    color_warn = colors.yellow,
-    color_info = colors.cyan
+    color_error = { fg = colors.red },
+    color_warn = { fg = colors.yellow },
+    color_info = { fg = colors.cyan }
   }
 
   -- Insert mid section. You can make any number of sections in neovim :)
@@ -191,7 +190,7 @@ return function ()
   ins_right {
     'o:encoding', -- option component same as &encoding in viml
     upper = true, -- I'm not sure why it's upper case either ;)
-    condition = conditions.hide_in_width,
+    cond = conditions.hide_in_width,
     color = {fg = colors.green, gui = 'bold'}
   }
 
@@ -205,7 +204,7 @@ return function ()
   ins_right {
     'branch',
     icon = '',
-    condition = conditions.check_git_workspace,
+    cond = conditions.check_git_workspace,
     color = {fg = colors.violet, gui = 'bold'}
   }
 
@@ -213,10 +212,10 @@ return function ()
     'diff',
     -- Is it me or the symbol for modified us really weird
     symbols = {added = ' ', modified = '柳 ', removed = ' '},
-    color_added = colors.green,
-    color_modified = colors.orange,
-    color_removed = colors.red,
-    condition = conditions.hide_in_width
+    color_added = { fg = colors.green },
+    color_modified = { fg = colors.orange },
+    color_removed = { fg = colors.red },
+    cond = conditions.hide_in_width
   }
 
   ins_right {
