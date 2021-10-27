@@ -20,7 +20,7 @@ return require('packer').startup({
     use { 'p00f/nvim-ts-rainbow', config = require('plugin-cfg.ts-rainbow') }
     use 'ryanoasis/vim-devicons'
     use {
-      'shadmansaleh/lualine.nvim',
+      'nvim-lualine/lualine.nvim',
       requires = {'kyazdani42/nvim-web-devicons', opt = true},
       config = require('plugin-cfg.lualine')
     }
