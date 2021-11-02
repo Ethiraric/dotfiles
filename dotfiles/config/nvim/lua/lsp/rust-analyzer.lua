@@ -8,6 +8,9 @@ return {
   root_dir = root_pattern("Cargo.toml"),
   settings = {
     ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy"
+      },
       cargo = {
         autoreload = true
       },
