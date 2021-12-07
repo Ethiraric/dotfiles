@@ -22,8 +22,9 @@ return {
         buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>')
         buf_set_keymap('n', '<leader>yd','<cmd>lua vim.lsp.buf.document_symbol()<CR>')
         buf_set_keymap('n', '<leader>yw','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-        buf_set_keymap('n', '<C-k>k',    '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        buf_set_keymap('n', '<leader>L', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+        buf_set_keymap('n', '<C-k>k',    '<cmd>CodeActionMenu<CR>')
+        -- buf_set_keymap('n', '<C-k>k',    '<cmd>lua vim.lsp.buf.code_action()<CR>')
+        buf_set_keymap('n', '<leader>L', '<cmd>lua vim.diagnostic.open_float()<CR>')
         -- vim.api.nvim_buf_del_keymap(bufnr, 'n', '<leader>l') -- why the fuck not
         buf_set_keymap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
@@ -90,14 +91,10 @@ return {
 
     vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 
-    vim.fn.sign_define('LspDiagnosticsSignError',
-      { text = ' ', texthl = 'LspDiagnosticsSignError' })
-    vim.fn.sign_define('LspDiagnosticsSignWarning',
-      { text = ' ', texthl = 'LspDiagnosticsSignWarning' })
-    vim.fn.sign_define('LspDiagnosticsSignInformation',
-      { text = ' ', texthl = 'LspDiagnosticsSignInformation' })
-    vim.fn.sign_define('LspDiagnosticsSignHint',
-      { text = ' ', texthl = 'LspDiagnosticsSignHint' })
+    vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
+    vim.fn.sign_define('DiagnosticSignWarn',  { text = ' ', texthl = 'DiagnosticSignWarn' })
+    vim.fn.sign_define('DiagnosticSignInfo',  { text = ' ', texthl = 'DiagnosticSignInfo' })
+    vim.fn.sign_define('DiagnosticSignHint',  { text = ' ', texthl = 'DiagnosticSignHint' })
 
 
     for _, server in ipairs(servers) do

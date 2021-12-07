@@ -156,7 +156,7 @@ return function ()
 
   ins_left {
     'diagnostics',
-    sources = {'nvim_lsp'},
+    sources = {'nvim_diagnostic'},
     symbols = {error = ' ', warn = ' ', info = ' '},
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },

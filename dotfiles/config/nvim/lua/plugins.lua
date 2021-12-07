@@ -41,6 +41,10 @@ return require('packer').startup({
         },
       },
     }
+    use {
+      'weilbith/nvim-code-action-menu',
+      cmd = 'CodeActionMenu'
+    }
     -- Completion menu
     use {
       'hrsh7th/nvim-cmp',
