@@ -27,8 +27,6 @@ return require('packer').startup({
     use 'RRethy/vim-illuminate' -- Highlight occurences of hovered word
     -- Themes
     use 'folke/tokyonight.nvim'
-    use 'tomasiser/vim-code-dark'
-    use 'nanotech/jellybeans.vim'
 
     ---------- LSP
     use {
