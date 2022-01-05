@@ -152,12 +152,15 @@ if ! [ -z ${DISPLAY+x} ]; then setxkbmap gb extd; xset r rate 175 50; fi
 {%@@ endif @@%}
 
 # SSH aliases
-{%@@ if profile == "Tswarra" @@%}
-alias kanto='ssh the10thbit.xyz'
-{%@@ elif profile == "kanto" @@%}
+{%@@ if profile == "Tswarra" or profile == "Jotho" @@%}
+alias kanto='ssh kanto'
+{%@@ endif @@%}
+{%@@ if profile == "kanto" or profile == "Jotho" or profile == "Tswarra" @@%}
 alias hawkeye='ssh hawkeye'
-{%@@ elif profile == "hawkeye" @@%}
+{%@@ endif @@%}
+{%@@ if profile == "hawkeye" or profile == "kanto" or profile == "Jotho" or profile == "Tswarra" @@%}
 alias jarvis='ssh jarvis'
+alias vision='ssh vision'
 {%@@ endif @@%}
 
 # Conda
