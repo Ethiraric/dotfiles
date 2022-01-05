@@ -136,6 +136,17 @@ function carre() {
     sed -e "s/9/:nine: /g"
 }
 
+{%@@ if profile == "Tswarra" or profile == "Jotho" @@%}
+function orna() {
+if [ 1 -gt "$#" ]
+then
+  echo "orna <searchterm>"
+else
+  firefox "https://orna.guide/search?searchstr=$(echo "$1" | sed -e "s/ /+/")"
+fi
+}
+{%@@ endif @@%}
+
 {%@@ if is_gui is defined and is_gui @@%}
 if ! [ -z ${DISPLAY+x} ]; then setxkbmap gb extd; xset r rate 175 50; fi
 {%@@ endif @@%}
