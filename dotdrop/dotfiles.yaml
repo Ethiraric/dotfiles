@@ -56,9 +56,9 @@ dotfiles:
     chmod: '600'
 
   # config/gitui
-  f_config_gitui_key_config.ron:
-    src: config/gitui/key_config.ron
-    dst: ~/.config/gitui/key_config.ron
+  f_config_gitui_key_bindings.ron:
+    src: config/gitui/key_bindings.ron
+    dst: ~/.config/gitui/key_bindings.ron
     chmod: '600'
   f_config_gitui_theme.ron:
     src: config/gitui/theme.ron
