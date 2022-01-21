@@ -107,6 +107,7 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/polybar/scripts/pipewire-control.bash up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/polybar/scripts/pipewire-control.bash down
 bindsym XF86AudioMute exec --no-startup-id ~/.config/polybar/scripts/pipewire-control.bash togmute
+bindsym XF86Sleep exec --no-startup-id ~/.local/bin/suspend
 
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous

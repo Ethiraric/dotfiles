@@ -359,6 +359,10 @@ dotfiles:
     src: local/bin/srofi_run
     dst: ~/.local/bin/srofi_run
     chmod: '700'
+  f_local_bin_suspend:
+    src: local/bin/suspend
+    dst: ~/.local/bin/suspend
+    chmod: '700'
 
   # screenlayout
   f_screenlayout_default.sh:

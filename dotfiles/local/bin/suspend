@@ -1,0 +1,2 @@
+${HOME}/.local/bin/i3lock-rand &
+systemctl suspend

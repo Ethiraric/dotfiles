@@ -23,6 +23,8 @@ shopt -s histappend checkwinsize cmdhist
 PROMPT_COMMAND="history -a"
 # Prompt style.
 [ ! -n "$RANGER_LEVEL" ] && PS1="(\h \#)" || PS1="(r${RANGER_LEVEL} \h \#)"
+# Disable the `suspend` builtin. This allows us to have a `suspend` command.
+enable -n suspend
 
 ## Paths management
 export PATH="${PATH}:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin"
