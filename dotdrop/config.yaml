@@ -10,5 +10,6 @@ config:
   import_configs:
     - dotfiles.yaml
     - profiles.yaml
+  diff_command: "delta --color-only --paging never {0} {1}"
 dotfiles:
 profiles:
