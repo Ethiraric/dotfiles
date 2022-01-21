@@ -96,7 +96,7 @@ if [ 1 -gt "$#" ]
 then
   echo "ytdl <link>"
 else
-  youtube-dl -x --audio-format mp3 $@
+  yt-dlp -x --audio-format mp3 $@
 fi
 }
 {%@@ endif @@%}

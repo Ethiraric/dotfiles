@@ -324,6 +324,12 @@ dotfiles:
     dst: ~/.config/ranger/scope.sh
     chmod: '700'
 
+  # config/yt-dlp
+  f_config_yt-dlp_config:
+    src: config/yt-dlp/config
+    dst: ~/.config/yt-dlp/config
+    chmod: '600'
+
   # local/bin
   f_local_bin_i3lock-rand:
     src: local/bin/i3lock-rand

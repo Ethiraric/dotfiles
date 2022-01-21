@@ -58,6 +58,7 @@ profiles:
       - f_config_ranger_rc.conf
       - f_config_ranger_rifle.conf
       - f_config_ranger_scope.sh
+      - f_config_yt-dlp_config
       - f_gitconfig
       - f_local_bin_sleepuntil
   gui:
