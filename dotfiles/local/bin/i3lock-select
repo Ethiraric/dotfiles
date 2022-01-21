@@ -5,5 +5,5 @@
 lockname=${HOME}/Pictures/locks/`ls ~/Pictures/locks | xargs -I _ basename _ | rofi -dmenu -format`
 if [ $? -eq 0 ]
 then
-  i3lock -te -i ${lockname}
+  dothelock -te -i ${lockname}
 fi

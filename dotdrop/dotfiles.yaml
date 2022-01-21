@@ -331,6 +331,10 @@ dotfiles:
     chmod: '600'
 
   # local/bin
+  f_local_bin_dothelock:
+    src: local/bin/dothelock
+    dst: ~/.local/bin/dothelock
+    chmod: '700'
   f_local_bin_i3lock-rand:
     src: local/bin/i3lock-rand
     dst: ~/.local/bin/i3lock-rand

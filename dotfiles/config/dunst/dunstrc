@@ -2,14 +2,22 @@
 [global]
     monitor = {{@@ dunst_monitor @@}}
 
-    geometry = "{{@@ dunst_geometry @@}}"
+    origin = top-right
+    width = 300
+    offset = 10x20
+
+    notification_height = 40
+
+    notification_limit = 10
+    indicate_hidden = true
+
     transparency = 15
     separator_height = 7
     padding = 8
     horizontal_padding = 8
     corner_radius = 10
     frame_width = 0
-    alignment = right
+    alignment = left
     vertical_alignment = center
 
     frame_color = "#00000000"
@@ -30,15 +38,14 @@
     show_indicators = yes
     indicate_hidden = yes
 
-    icon_position = left
+    icon_position = right
     min_icon_size = 0
     max_icon_size = 32
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     sticky_history = yes
-    history_length = 20
+    history_length = 200
 
-#   dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
 
     title = Dunst

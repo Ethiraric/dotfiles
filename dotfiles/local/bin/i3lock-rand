@@ -2,4 +2,4 @@
 
 # {{@@ header() @@}}
 
-i3lock -tef -i `ls ${HOME}/Pictures/locks/* | shuf -n 1`
+dothelock -tef -i `ls ${HOME}/Pictures/locks/* | shuf -n 1`
