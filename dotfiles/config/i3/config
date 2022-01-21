@@ -149,6 +149,8 @@ exec_always --no-startup-id ${HOME}/.config/polybar/launch.sh
 exec --no-startup-id picom --config ${HOME}/.config/picom/config.ini --experimental-backends -b --no-fading-openclose
 # Dunst
 exec dunst -config ${HOME}/.config/dunst/dunstrc
+# Set lock command when inactive
+exec --no-startup-id xss-lock --transfer-sleep-lock "${HOME}/.local/bin/i3lock-rand"
 
 {%@@ if is_homestation is defined and is_homestation @@%}
 {%@@ include (_dotdrop_dotpath + '/config/i3/soundboard') @@%}

@@ -18,5 +18,6 @@ xorg-fonts-misc
 xorg-server
 xorg-xinit
 xorg-xset
+xss-lock
 zathura
 zathura-pdf-mupdf

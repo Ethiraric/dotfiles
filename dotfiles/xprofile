@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 # {{@@ header() @@}}
 
+# Turn off system bell
 xset -b
+# Lock the screen after 300 seconds of inactivity
+xset s 300
 xset r rate 150 50
 
 ~/.config/i3/scripts/monitor/export_monitor_names_to_file.sh
