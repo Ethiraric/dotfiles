@@ -56,9 +56,9 @@ return require('packer').startup({
     }
     -- Diagnostics menu
     use {
-      'folke/lsp-trouble.nvim',
+      'folke/trouble.nvim',
       requires = 'kyazdani42/nvim-web-devicons',
-      config = require('plugin-cfg.lsp-trouble'),
+      config = require('plugin-cfg.trouble'),
     }
     -- Snippets
     use { 'hrsh7th/vim-vsnip', config = require('plugin-cfg.vsnip') }

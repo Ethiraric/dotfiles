@@ -27,7 +27,6 @@ profiles:
       - f_config_nvim_lua_mappings.lua
       - f_config_nvim_lua_plugin-cfg_fzf.lua
       - f_config_nvim_lua_plugin-cfg_git-messenger.lua
-      - f_config_nvim_lua_plugin-cfg_lsp-trouble.lua
       - f_config_nvim_lua_plugin-cfg_lualine.lua
       - f_config_nvim_lua_plugin-cfg_nvim-cmp.lua
       - f_config_nvim_lua_plugin-cfg_nvim-colorizer.lua
@@ -35,6 +34,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_telescope.lua
       - f_config_nvim_lua_plugin-cfg_todo-comments.lua
       - f_config_nvim_lua_plugin-cfg_treesitter.lua
+      - f_config_nvim_lua_plugin-cfg_trouble.lua
       - f_config_nvim_lua_plugin-cfg_ts-rainbow.lua
       - f_config_nvim_lua_plugin-cfg_vim-rooter.lua
       - f_config_nvim_lua_plugin-cfg_vim-stay.lua

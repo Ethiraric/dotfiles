@@ -136,10 +136,6 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/git-messenger.lua
     dst: ~/.config/nvim/lua/plugin-cfg/git-messenger.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_lsp-trouble.lua:
-    src: config/nvim/lua/plugin-cfg/lsp-trouble.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/lsp-trouble.lua
-    chmod: '600'
   f_config_nvim_lua_plugin-cfg_lualine.lua:
     src: config/nvim/lua/plugin-cfg/lualine.lua
     dst: ~/.config/nvim/lua/plugin-cfg/lualine.lua
@@ -167,6 +163,10 @@ dotfiles:
   f_config_nvim_lua_plugin-cfg_treesitter.lua:
     src: config/nvim/lua/plugin-cfg/treesitter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
+    chmod: '600'
+  f_config_nvim_lua_plugin-cfg_trouble.lua:
+    src: config/nvim/lua/plugin-cfg/trouble.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/trouble.lua
     chmod: '600'
   f_config_nvim_lua_plugin-cfg_ts-rainbow.lua:
     src: config/nvim/lua/plugin-cfg/ts-rainbow.lua
