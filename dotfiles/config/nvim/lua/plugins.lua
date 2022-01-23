@@ -125,6 +125,11 @@ return require('packer').startup({
       'mhinz/vim-startify',
       config = require('plugin-cfg.startify')
     }
+    -- Highlight trailing whitespace
+    use {
+      'ntpeters/vim-better-whitespace',
+      config = require('plugin-cfg.vim-better-whitespace')
+    }
   end,
   config = {
     display = {

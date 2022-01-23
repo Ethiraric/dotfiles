@@ -36,6 +36,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_treesitter.lua
       - f_config_nvim_lua_plugin-cfg_trouble.lua
       - f_config_nvim_lua_plugin-cfg_ts-rainbow.lua
+      - f_config_nvim_lua_plugin-cfg_vim-better-whitespace.lua
       - f_config_nvim_lua_plugin-cfg_vim-rooter.lua
       - f_config_nvim_lua_plugin-cfg_vim-stay.lua
       - f_config_nvim_lua_plugin-cfg_vsnip.lua
