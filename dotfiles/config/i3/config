@@ -111,7 +111,7 @@ bindsym XF86Sleep exec --no-startup-id ~/.local/bin/suspend
 
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86AudioPause exec--no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 
 # Brightness control
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
@@ -149,6 +149,8 @@ exec_always --no-startup-id ${HOME}/.config/polybar/launch.sh
 exec --no-startup-id picom --config ${HOME}/.config/picom/config.ini --experimental-backends -b --no-fading-openclose
 # Dunst
 exec dunst -config ${HOME}/.config/dunst/dunstrc
+# Gammastep
+exec --no-startup-id gammastep -m randr
 # Set lock command when inactive
 exec --no-startup-id xss-lock --transfer-sleep-lock "${HOME}/.local/bin/i3lock-rand"
 

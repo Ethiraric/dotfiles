@@ -69,6 +69,7 @@ profiles:
       - tty-only
     dotfiles:
       - f_config_dunst_dunstrc
+      - f_config_gammastep_config.ini
       - f_config_i3_config
       - f_config_i3_scripts_export_monitor_names_to_file.sh
       - f_config_polybar_bars.ini

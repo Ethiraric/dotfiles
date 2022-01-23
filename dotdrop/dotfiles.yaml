@@ -55,6 +55,12 @@ dotfiles:
     dst: ~/.config/dunst/dunstrc
     chmod: '600'
 
+  # config/gammastep
+  f_config_gammastep_config.ini:
+    src: config/gammastep/config.ini
+    dst: ~/.config/gammastep/config.ini
+    chmod: '600'
+
   # config/gitui
   f_config_gitui_key_bindings.ron:
     src: config/gitui/key_bindings.ron
