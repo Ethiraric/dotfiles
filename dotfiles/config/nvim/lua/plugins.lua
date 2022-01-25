@@ -130,6 +130,12 @@ return require('packer').startup({
       'ntpeters/vim-better-whitespace',
       config = require('plugin-cfg.vim-better-whitespace')
     }
+    -- In-browser markdown previewer
+    use {
+      'iamcco/markdown-preview.nvim',
+      run = function() vim.fn['mkdp#util#install']() end,
+      ft = {'markdown'}
+    }
   end,
   config = {
     display = {
