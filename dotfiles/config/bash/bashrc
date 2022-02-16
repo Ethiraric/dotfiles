@@ -67,7 +67,8 @@ alias ..='cd ..'
 alias rm='rm -v'
 alias cp='cp -v'
 alias mv='mv -v'
-alias df='duf -hide special'
+alias df='lfs'
+alias duf='duf -hide special'
 alias du='dust -r'
 
 # Development
