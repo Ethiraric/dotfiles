@@ -28,6 +28,7 @@ bindsym $mod+ShiftReturn exec urxvt
 bindsym $mod+t exec terminology
 {%@@ endif @@%}
 bindsym $mod+Shift+n exec alacritty -e bash -i -c "cd Documents/notes && ranger"
+bindsym $mod+Shift+p exec alacritty -e bash -i -c ipython
 
 # Kill focused window
 bindsym $mod+Shift+q kill
