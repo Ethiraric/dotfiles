@@ -27,6 +27,10 @@ return require('packer').startup({
     use 'RRethy/vim-illuminate' -- Highlight occurences of hovered word
     -- Themes
     use 'folke/tokyonight.nvim'
+    --{%@@ if profile == "Jotho" @@%}
+    -- Mindustry asm
+    use 'purofle/vim-mindustry-logic'
+    -- {%@@ endif @@%}
 
     ---------- LSP
     use {
