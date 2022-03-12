@@ -47,6 +47,11 @@ return require('packer').startup({
       'weilbith/nvim-code-action-menu',
       cmd = 'CodeActionMenu'
     }
+    use {
+      'j-hui/fidget.nvim', -- Display progress of LSP
+      config = require('plugin-cfg.fidget')
+    }
+
     -- Completion menu
     use {
       'hrsh7th/nvim-cmp',
