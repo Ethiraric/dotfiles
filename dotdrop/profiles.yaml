@@ -12,7 +12,6 @@ profiles:
   tty-only:
     dotfiles:
       - f_bashrc
-      - f_config_alacritty_alacritty.yml
       - f_config_bash_bashrc
       - f_config_bash_ls_colors
       - f_config_gitui_key_bindings.ron
@@ -68,6 +67,7 @@ profiles:
     include:
       - tty-only
     dotfiles:
+      - f_config_alacritty_alacritty.yml
       - f_config_dunst_dunstrc
       - f_config_gammastep_config.ini
       - f_config_i3_config
