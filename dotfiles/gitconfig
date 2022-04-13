@@ -18,6 +18,9 @@
   staged = diff --staged
   st = status
 
+[push]
+  default = current
+
 [core]
   editor = nvim
   pager = delta
