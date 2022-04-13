@@ -3,6 +3,7 @@ base
 base-devel
 bat
 bc
+bottom
 clang
 dust
 efibootmgr
