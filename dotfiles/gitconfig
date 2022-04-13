@@ -18,6 +18,9 @@
   staged = diff --staged
   st = status
 
+[init]
+  defaultBranch = master
+
 [push]
   default = current
 
