@@ -1,5 +1,6 @@
 return function ()
   local cmp = require('cmp')
+  local types = require('cmp.types')
 
   cmp.setup {
     snippet = {
@@ -14,6 +15,8 @@ return function ()
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<Tab>'] = cmp.mapping.select_next_item(),
       ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = types.cmp.SelectBehavior.Insert }), { 'i', 'c' }),
+      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = types.cmp.SelectBehavior.Insert }), { 'i', 'c' }),
     },
 
     sources = {
