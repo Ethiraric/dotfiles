@@ -71,6 +71,7 @@ alias df='lfs'
 alias duf='duf -hide special'
 alias du='dust -r'
 alias htop='btm'
+alias ping='gping'
 
 # Development
 alias ne='nvim'
