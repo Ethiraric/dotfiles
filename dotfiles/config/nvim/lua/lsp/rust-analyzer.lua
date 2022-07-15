@@ -11,6 +11,9 @@ return {
       checkOnSave = {
         command = "clippy"
       },
+      assist = {
+        importPrefix = "crate"
+      },
       cargo = {
         autoreload = true
       },
