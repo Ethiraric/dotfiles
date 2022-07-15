@@ -9,4 +9,5 @@ return function ()
   }
 
   map('n', '<leader>l', ':TroubleToggle<CR>')
+  map('n', '<leader>L', ':TroubleToggle workspace_diagnostics<CR>')
 end
