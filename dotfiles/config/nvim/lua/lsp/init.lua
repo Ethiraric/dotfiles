@@ -39,6 +39,7 @@ return {
     end
 
     local servers = {
+      require('lsp.html'),
       require('lsp.rust-analyzer'),
       require('lsp.sumneko_lua'),
       require('lsp.texlab'),

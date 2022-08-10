@@ -117,6 +117,10 @@ dotfiles:
     dst: ~/.config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
     chmod: '600'
   # config/nvim/lua/lsp
+  f_config_nvim_lua_lsp_html.lua:
+    src: config/nvim/lua/lsp/html.lua
+    dst: ~/.config/nvim/lua/lsp/html.lua
+    chmod: '600'
   f_config_nvim_lua_lsp_init.lua:
     src: config/nvim/lua/lsp/init.lua
     dst: ~/.config/nvim/lua/lsp/init.lua

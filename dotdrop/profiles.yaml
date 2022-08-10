@@ -19,6 +19,7 @@ profiles:
       - f_config_nvim_init.vim
       - f_config_nvim_lua_config.lua
       - f_config_nvim_lua_ethi_lua_telescope__extensions_ethi.lua
+      - f_config_nvim_lua_lsp_html.lua
       - f_config_nvim_lua_lsp_init.lua
       - f_config_nvim_lua_lsp_rust-analyzer.lua
       - f_config_nvim_lua_lsp_sumneko_lua.lua
