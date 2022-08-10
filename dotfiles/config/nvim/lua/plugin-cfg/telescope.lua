@@ -1,6 +1,6 @@
 -- {{@@ header() @@}}
 
-return function ()
+return function()
   local map = require("utils").map
   local telescope = require('telescope')
 
@@ -16,7 +16,7 @@ return function ()
         '--smart-case'
       },
       file_ignore_patterns = {
-       'deps/.*'
+        'deps/.*'
       },
     },
     extensions = {
