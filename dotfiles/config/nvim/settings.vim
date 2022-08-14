@@ -27,6 +27,7 @@ set tabstop=2               " Number of spaces per tab
 set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
 set noautochdir             " STOP. CHANGING. MY. DIRECTORY.
+set laststatus=3            " One wide status bar instead of one per window.
 
 " Backup, undo and swapfiles
 set backup
