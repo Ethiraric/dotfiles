@@ -145,6 +145,11 @@ return require('packer').startup({
       run = function() vim.fn['mkdp#util#install']() end,
       ft = {'markdown'}
     }
+    -- Zen mode
+    use {
+      'Pocco81/true-zen.nvim',
+      config = require('plugin-cfg.true-zen')
+    }
   end,
   config = {
     display = {

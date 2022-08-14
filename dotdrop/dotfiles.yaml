@@ -182,6 +182,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/trouble.lua
     dst: ~/.config/nvim/lua/plugin-cfg/trouble.lua
     chmod: '600'
+  f_config_nvim_lua_plugin-cfg_true-zen.lua:
+    src: config/nvim/lua/plugin-cfg/true-zen.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/true-zen.lua
+    chmod: '600'
   f_config_nvim_lua_plugin-cfg_vim-better-whitespace.lua:
     src: config/nvim/lua/plugin-cfg/vim-better-whitespace.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-better-whitespace.lua
