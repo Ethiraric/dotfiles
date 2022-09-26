@@ -35,6 +35,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_startify.lua
       - f_config_nvim_lua_plugin-cfg_telescope.lua
       - f_config_nvim_lua_plugin-cfg_todo-comments.lua
+      - f_config_nvim_lua_plugin-cfg_tokyonight.lua
       - f_config_nvim_lua_plugin-cfg_treesitter.lua
       - f_config_nvim_lua_plugin-cfg_trouble.lua
       - f_config_nvim_lua_plugin-cfg_true-zen.lua

@@ -29,7 +29,10 @@ return require('packer').startup({
     }
     use 'RRethy/vim-illuminate' -- Highlight occurences of hovered word
     -- Themes
-    use 'folke/tokyonight.nvim'
+    use {
+      'folke/tokyonight.nvim',
+      config = require('plugin-cfg.tokyonight')
+    }
     --{%@@ if profile == "Jotho" @@%}
     -- Mindustry asm
     use 'purofle/vim-mindustry-logic'

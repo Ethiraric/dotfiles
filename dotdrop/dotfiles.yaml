@@ -178,6 +178,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/todo-comments.lua
     dst: ~/.config/nvim/lua/plugin-cfg/todo-comments.lua
     chmod: '600'
+  f_config_nvim_lua_plugin-cfg_tokyonight.lua:
+    src: config/nvim/lua/plugin-cfg/tokyonight.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/tokyonight.lua
+    chmod: '600'
   f_config_nvim_lua_plugin-cfg_treesitter.lua:
     src: config/nvim/lua/plugin-cfg/treesitter.lua
     dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
