@@ -31,6 +31,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_lualine.lua
       - f_config_nvim_lua_plugin-cfg_nvim-cmp.lua
       - f_config_nvim_lua_plugin-cfg_nvim-colorizer.lua
+      - f_config_nvim_lua_plugin-cfg_nvim-transparent.lua
       - f_config_nvim_lua_plugin-cfg_startify.lua
       - f_config_nvim_lua_plugin-cfg_telescope.lua
       - f_config_nvim_lua_plugin-cfg_todo-comments.lua

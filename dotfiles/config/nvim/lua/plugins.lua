@@ -16,7 +16,10 @@ return require('packer').startup({
     use 'wbthomason/packer.nvim'
 
     ----------  Cosmetics
-    use 'kjwon15/vim-transparent'
+    use {
+      'xiyaowong/nvim-transparent',
+      config = require('plugin-cfg.nvim-transparent')
+    }
     use { 'p00f/nvim-ts-rainbow', config = require('plugin-cfg.ts-rainbow') }
     use 'ryanoasis/vim-devicons'
     use {

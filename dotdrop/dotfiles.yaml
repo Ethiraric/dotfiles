@@ -162,6 +162,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/nvim-colorizer.lua
     dst: ~/.config/nvim/lua/plugin-cfg/nvim-colorizer.lua
     chmod: '600'
+  f_config_nvim_lua_plugin-cfg_nvim-transparent.lua:
+    src: config/nvim/lua/plugin-cfg/nvim-transparent.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/nvim-transparent.lua
+    chmod: '600'
   f_config_nvim_lua_plugin-cfg_startify.lua:
     src: config/nvim/lua/plugin-cfg/startify.lua
     dst: ~/.config/nvim/lua/plugin-cfg/startify.lua
