@@ -87,6 +87,11 @@ return require('packer').startup({
       },
       'nvim-treesitter/playground'
     }
+    use {
+      'kevinhwang91/nvim-ufo',
+      requires = { 'kevinhwang91/promise-async' },
+      config = require('plugin-cfg.nvim-ufo')
+    }
     -- Todo
     use {
         'folke/todo-comments.nvim',
