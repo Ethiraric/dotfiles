@@ -6,12 +6,12 @@ local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', '--depth', '1', install_path})
+  fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', '--depth', '1', install_path })
   execute 'packadd packer.nvim'
 end
 
 return require('packer').startup({
-  function (use)
+  function(use)
     ----------  Package manager
     use 'wbthomason/packer.nvim'
 
@@ -24,7 +24,7 @@ return require('packer').startup({
     use 'ryanoasis/vim-devicons'
     use {
       'nvim-lualine/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
       config = require('plugin-cfg.lualine')
     }
     use 'RRethy/vim-illuminate' -- Highlight occurences of hovered word
@@ -94,9 +94,9 @@ return require('packer').startup({
     }
     -- Todo
     use {
-        'folke/todo-comments.nvim',
-        requires = "nvim-lua/plenary.nvim",
-        config = require('plugin-cfg.todo-comments')
+      'folke/todo-comments.nvim',
+      requires = "nvim-lua/plenary.nvim",
+      config = require('plugin-cfg.todo-comments')
     }
 
     ---------- Git things
@@ -110,7 +110,7 @@ return require('packer').startup({
       config = require('plugin-cfg.fzf')
     }
     use {
-    'nvim-telescope/telescope.nvim',
+      'nvim-telescope/telescope.nvim',
       requires = {
         { 'nvim-lua/popup.nvim' },
         { 'nvim-lua/plenary.nvim' },
@@ -127,17 +127,17 @@ return require('packer').startup({
       config = require('plugin-cfg.nvim-colorizer')
     }
     use {
-      'vim-scripts/vim-stay',        -- Open a previously closed file where you left it
+      'vim-scripts/vim-stay', -- Open a previously closed file where you left it
       config = require('plugin-cfg.vim-stay')
     }
-    use 'tomtom/tcomment_vim'        -- Commenting and uncommenting bindings
+    use 'tomtom/tcomment_vim' -- Commenting and uncommenting bindings
     use "ahmedkhalf/lsp-rooter.nvim" -- `cd` to the LSP root
     use {
-      "airblade/vim-rooter",         -- `cd` to an identified root directory
+      "airblade/vim-rooter", -- `cd` to an identified root directory
       config = require('plugin-cfg.vim-rooter')
     }
     use {
-      'rhysd/git-messenger.vim',     -- Insteractive git blame  in a floating window
+      'rhysd/git-messenger.vim', -- Insteractive git blame  in a floating window
       config = require('plugin-cfg.git-messenger')
     }
     -- Welcome screen
@@ -154,7 +154,7 @@ return require('packer').startup({
     use {
       'iamcco/markdown-preview.nvim',
       run = function() vim.fn['mkdp#util#install']() end,
-      ft = {'markdown'}
+      ft = { 'markdown' }
     }
     -- Zen mode
     use {
@@ -164,7 +164,7 @@ return require('packer').startup({
   end,
   config = {
     display = {
-        open_fn = require('packer.util').float,
+      open_fn = require('packer.util').float,
     }
   }
 })
