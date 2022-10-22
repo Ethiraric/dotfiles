@@ -9,7 +9,7 @@ return {
     local utils = require('utils')
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     local make_on_attach = function(ls_on_attach)
       return function(client, bufnr)
@@ -28,10 +28,14 @@ return {
         -- vim.api.nvim_buf_del_keymap(bufnr, 'n', '<leader>l') -- why the fuck not
         buf_set_keymap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
-        if client.resolved_capabilities.document_formatting then
-          buf_set_keymap('n', '<leader>F',         '<cmd>lua vim.lsp.buf.formatting()<CR>')
+        if client.server_capabilities.documentFormattingProvider then
+          buf_set_keymap('n', '<leader>F', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
           buf_set_keymap('n', '<leader><leader>F', '<cmd>lua require(\'lsp\').toggle_format_on_save()<CR>')
           require('lsp').set_format_on_save(true)
+        end
+
+        if client.server_capabilities.documentRangeFormattingProvider then
+          buf_set_keymap('v', '<leader>F', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
         end
 
         require('illuminate').on_attach(client)
@@ -112,7 +116,7 @@ return {
     format_on_save = enabled
     local command = ''
 
-    if enabled then command = 'autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()\n' end
+    if enabled then command = 'autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })\n' end
     vim.cmd([[
     augroup FormatOnSave
     autocmd!
