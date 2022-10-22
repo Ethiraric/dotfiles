@@ -3,7 +3,7 @@
 local format_on_save = true
 
 return {
-  config = function ()
+  config = function()
     local lsp = require('lspconfig')
 
     local utils = require('utils')
@@ -14,15 +14,16 @@ return {
     local make_on_attach = function(ls_on_attach)
       return function(client, bufnr)
         local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
+
         buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.declaration()<CR>')
         buf_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-        buf_set_keymap('n', 'K',         '<cmd>lua vim.lsp.buf.hover()<CR>')
-        buf_set_keymap('n', '<leader>ys','<cmd>lua vim.lsp.buf.signature_help()<CR>')
+        buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+        buf_set_keymap('n', '<leader>ys', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
         buf_set_keymap('n', '<leader>t', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
         buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>')
-        buf_set_keymap('n', '<leader>yd','<cmd>lua vim.lsp.buf.document_symbol()<CR>')
-        buf_set_keymap('n', '<leader>yw','<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-        buf_set_keymap('n', '<C-k>k',    '<cmd>CodeActionMenu<CR>')
+        buf_set_keymap('n', '<leader>yd', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+        buf_set_keymap('n', '<leader>yw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
+        buf_set_keymap('n', '<C-k>k', '<cmd>CodeActionMenu<CR>')
         -- buf_set_keymap('n', '<C-k>k',    '<cmd>lua vim.lsp.buf.code_action()<CR>')
         -- buf_set_keymap('n', '<leader>L', '<cmd>lua vim.diagnostic.open_float()<CR>')
         -- vim.api.nvim_buf_del_keymap(bufnr, 'n', '<leader>l') -- why the fuck not
@@ -86,20 +87,20 @@ return {
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        update_in_insert = false,
-        virtual_text = {
-          prefix = ' '
-        },
-      }
+      underline = true,
+      update_in_insert = false,
+      virtual_text = {
+        prefix = ' '
+      },
+    }
     )
 
-    vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
+    vim.lsp.handlers['textDocument/codeAction'] = require 'lsputil.codeAction'.code_action_handler
 
     vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
-    vim.fn.sign_define('DiagnosticSignWarn',  { text = ' ', texthl = 'DiagnosticSignWarn' })
-    vim.fn.sign_define('DiagnosticSignInfo',  { text = ' ', texthl = 'DiagnosticSignInfo' })
-    vim.fn.sign_define('DiagnosticSignHint',  { text = ' ', texthl = 'DiagnosticSignHint' })
+    vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
+    vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
+    vim.fn.sign_define('DiagnosticSignHint', { text = ' ', texthl = 'DiagnosticSignHint' })
 
 
     for _, server in ipairs(servers) do
@@ -112,7 +113,7 @@ return {
     end
   end,
 
-  set_format_on_save = function (enabled)
+  set_format_on_save = function(enabled)
     format_on_save = enabled
     local command = ''
 
@@ -121,11 +122,11 @@ return {
     augroup FormatOnSave
     autocmd!
     ]]
-    .. command .. 'augroup END'
+      .. command .. 'augroup END'
     )
   end,
 
-  toggle_format_on_save = function ()
+  toggle_format_on_save = function()
     require('lsp').set_format_on_save(not format_on_save)
   end
 }
