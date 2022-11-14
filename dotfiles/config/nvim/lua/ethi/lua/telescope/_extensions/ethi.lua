@@ -23,10 +23,10 @@ return require('telescope').register_extension {
           results = results,
           entry_maker = opts.entry_maker or make_entry.gen_from_git_commits(opts),
         },
-        previewer = previewers.git_commit_diff.new(opts),
+        previewer = previewers.git_commit_diff_to_parent.new(opts),
         sorter = conf.file_sorter(opts),
         attach_mappings = function()
-          actions.select_default:replace(function (prompt_bufnr)
+          actions.select_default:replace(function(prompt_bufnr)
             local commit_uid = action_state.get_selected_entry().value
             actions.close(prompt_bufnr)
             local diff = utils.get_os_command_output({
