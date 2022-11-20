@@ -147,7 +147,7 @@ exec --no-startup-id ${HOME}/.fehbg
 # Polybar
 exec_always --no-startup-id ${HOME}/.config/polybar/launch.sh
 # Picom
-exec --no-startup-id picom --config ${HOME}/.config/picom/config.ini --experimental-backends -b --no-fading-openclose
+exec --no-startup-id picom --config ${HOME}/.config/picom/config.ini -b --no-fading-openclose
 # Dunst
 exec dunst -config ${HOME}/.config/dunst/dunstrc
 # Gammastep
