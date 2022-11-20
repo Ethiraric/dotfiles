@@ -67,6 +67,7 @@ mode "sb-sfx" {
   bindsym Shift+w exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_wheeeee.mp3"
   bindsym Shift+y exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_ohoui.mp3"
   bindsym Shift+z exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_zelda_cook_sound.mp3"
+  bindsym Ctrl+n exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_niconiconii.mp3"
   bindsym t exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_totally-spies.mp3"
   bindsym w exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_woody-woodpecker.mp3"
   bindsym y exec "${HOME}/.local/bin/play ${HOME}/Sounds/sfx_yahaha.mp3"
