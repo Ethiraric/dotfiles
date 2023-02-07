@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# {{@@ header() @@}}
+
+layoutpath=${HOME}/.screenlayout/`ls ~/.screenlayout/ | xargs -I _ basename _ | rofi -dmenu`
+if [ $? -eq 0 ]
+then
+  bash $layoutpath
+fi

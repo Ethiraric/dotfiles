@@ -127,6 +127,7 @@ bindsym $mod+semicolon exec "${HOME}/.local/bin/i3lock-rand"
 bindsym $mod+apostrophe exec "${HOME}/.local/bin/i3lock-select"
 
 # Misc bindings
+bindsym $mod+Ctrl+s exec "${HOME}/.local/bin/screenlayout"
 bindsym $mod+Shift+w exec rofi -terminal $terminal -show ssh
 bindsym $mod+space exec dunstctl close-all
 
