@@ -24,7 +24,7 @@ return require('packer').startup({
     use 'ryanoasis/vim-devicons'
     use {
       'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      requires = 'nvim-tree/nvim-web-devicons',
       config = require('plugin-cfg.lualine')
     }
     use 'RRethy/vim-illuminate' -- Highlight occurences of hovered word
@@ -72,7 +72,7 @@ return require('packer').startup({
     -- Diagnostics menu
     use {
       'folke/trouble.nvim',
-      requires = 'kyazdani42/nvim-web-devicons',
+      requires = 'nvim-tree/nvim-web-devicons',
       config = require('plugin-cfg.trouble'),
     }
     -- Snippets
