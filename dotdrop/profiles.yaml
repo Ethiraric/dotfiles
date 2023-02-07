@@ -103,6 +103,7 @@ profiles:
       - f_local_bin_scrot_region
       - f_local_bin_srofi_run
       - f_local_bin_suspend
+      - f_local_bin_wallpaper
       - f_Xdefaults
       - f_xinitrc
       - f_xprofile

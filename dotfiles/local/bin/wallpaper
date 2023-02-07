@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# {{@@ header() @@}}
+
+wpname=`ls ${HOME}/Pictures/wallpapers | xargs -I _ basename _ | rofi -dmenu`
+ret=$?
+wppath="${HOME}/Pictures/wallpapers/${wpname}"
+if [ "$ret" -eq 0 ] && ! [ -z "${wppath}" ] && [ -f "$wppath" ]
+then
+  feh --no-fehbg --bg-fill $wppath
+fi

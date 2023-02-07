@@ -401,6 +401,10 @@ dotfiles:
     src: local/bin/suspend
     dst: ~/.local/bin/suspend
     chmod: '700'
+  f_local_bin_wallpaper:
+    src: local/bin/wallpaper
+    dst: ~/.local/bin/wallpaper
+    chmod: '700'
 
   # screenlayout
   f_screenlayout_default.sh:
