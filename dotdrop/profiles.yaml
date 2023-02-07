@@ -113,7 +113,7 @@ profiles:
       is_homestation: true
       # Whether the machine is at work.
       # Kinda exclusive with is_homestation.
-      is_workstation: false
+      is_workstation: true
       # Whether the machine has a battery
       has_battery: true
       # Whether the machine has i3-gaps (does not apply to tty-only
