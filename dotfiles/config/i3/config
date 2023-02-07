@@ -19,15 +19,9 @@ gaps outer -8
 {%@@ endif @@%}
 
 # start a terminal
-{%@@ if profile == "hawkeye" @@%}
-bindsym $mod+Return exec $terminal -e bash -i -c ranger
-bindsym $mod+ShiftReturn exec $terminal
-bindsym $mod+Shift+n exec alacritty -e bash -i -c "cd Documents/notes/src && ranger"
-{%@@ else @@%}
 bindsym $mod+Return exec $terminal
 bindsym $mod+ShiftReturn exec urxvt
 bindsym $mod+t exec terminology
-{%@@ endif @@%}
 bindsym $mod+Shift+p exec alacritty -e bash -i -c ipython
 
 # Kill focused window

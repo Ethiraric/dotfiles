@@ -162,24 +162,3 @@ profiles:
       dunst_geometry: "300x10-20+40"
     include:
       - gui
-  hawkeye:
-    variables:
-      is_workstation: true
-      has_colout: true
-      has_i3_gaps: true
-      has_taskwarrior: true
-      polybar_wired_network_interface: enp5s0
-      git_config_user: Florian Sabourin
-      git_config_email: f.sabourin@alcom-tech.com
-      dunst_monitor: 1
-      dunst_geometry: "300x10-20+40"
-    include:
-      - gui
-  vision:
-    variables:
-      is_workstation: true
-      has_colout: true
-      git_config_user: Florian Sabourin
-      git_config_email: f.sabourin@alcom-tech.com
-    include:
-      - gui
