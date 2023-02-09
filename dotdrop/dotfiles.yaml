@@ -358,6 +358,12 @@ dotfiles:
     dst: ~/.config/ranger/scope.sh
     chmod: '700'
 
+  # config/rofi
+  f_config_rofi_config.rasi:
+    src: config/rofi/config.rasi
+    dst: ~/.config/rofi/config.rasi
+    chmod: '600'
+
   # config/yt-dlp
   f_config_yt-dlp_config:
     src: config/yt-dlp/config
@@ -405,6 +411,24 @@ dotfiles:
     src: local/bin/wallpaper
     dst: ~/.local/bin/wallpaper
     chmod: '700'
+
+  # local/share/rofi/themes
+  f_local_share_rofi_themes_catppuccin-frappe.rasi:
+    src: local/share/rofi/themes/catppuccin-frappe.rasi
+    dst: ~/.local/share/rofi/themes/catppuccin-frappe.rasi
+    chmod: '600'
+  f_local_share_rofi_themes_catppuccin-latte.rasi:
+    src: local/share/rofi/themes/catppuccin-latte.rasi
+    dst: ~/.local/share/rofi/themes/catppuccin-latte.rasi
+    chmod: '600'
+  f_local_share_rofi_themes_catppuccin-macchiato.rasi:
+    src: local/share/rofi/themes/catppuccin-macchiato.rasi
+    dst: ~/.local/share/rofi/themes/catppuccin-macchiato.rasi
+    chmod: '600'
+  f_local_share_rofi_themes_catppuccin-mocha.rasi:
+    src: local/share/rofi/themes/catppuccin-mocha.rasi
+    dst: ~/.local/share/rofi/themes/catppuccin-mocha.rasi
+    chmod: '600'
 
   # screenlayout
   f_screenlayout_default.sh:

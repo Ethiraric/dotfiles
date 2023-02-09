@@ -95,6 +95,7 @@ profiles:
       - f_config_polybar_modules_xwindow.ini
       - f_config_polybar_scripts_pipewire-control.bash
       - f_config_polybar_scripts_pipewire-control.bash
+      - f_config_rofi_config.rasi
       - f_local_bin_dothelock
       - f_local_bin_i3lock-rand
       - f_local_bin_i3lock-select
@@ -104,6 +105,10 @@ profiles:
       - f_local_bin_srofi_run
       - f_local_bin_suspend
       - f_local_bin_wallpaper
+      - f_local_share_rofi_themes_catppuccin-frappe.rasi
+      - f_local_share_rofi_themes_catppuccin-latte.rasi
+      - f_local_share_rofi_themes_catppuccin-macchiato.rasi
+      - f_local_share_rofi_themes_catppuccin-mocha.rasi
       - f_Xdefaults
       - f_xinitrc
       - f_xprofile
