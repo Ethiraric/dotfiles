@@ -399,6 +399,10 @@ dotfiles:
     src: local/bin/sleepuntil
     dst: ~/.local/bin/sleepuntil
     chmod: '700'
+  f_local_bin_spotify-tui-scratchpad:
+    src: local/bin/spotify-tui-scratchpad
+    dst: ~/.local/bin/spotify-tui-scratchpad
+    chmod: '700'
   f_local_bin_srofi_run:
     src: local/bin/srofi_run
     dst: ~/.local/bin/srofi_run

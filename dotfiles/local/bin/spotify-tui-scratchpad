@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# {{@@ header() @@}}
+
+# There will alway be 1 line in `ps` that matches, that of `ag spotifyd`.
+# We are looking for a second one, that of `spotifyd`.
+# If `$spotifyd_running` contains 1, that means that `spotifyd` isn't started.
+spotifyd_running=`ps auxh | ag spotifyd | wc -l`
+
+if [[ $spotifyd_running == 1 ]]
+then
+  spotifyd || (i3-nagbar -t warning -m "Failed to start spotifyd" && exit 1)
+fi
+
+spotify_tui_running=`ps auxh | ag "alacritty -t Alacritty: spotify-tui -e spt" | wc -l`
+
+if [[ $spotify_tui_running == 1 ]]
+then
+  i3-msg 'exec alacritty -t "Alacritty: spotify-tui" -e spt'
+  sleep 0.2
+  i3-msg '[title="^Alacritty: spotify-tui"] move scratchpad'
+fi
+
+i3-msg '[title="^Alacritty: spotify-tui"] scratchpad show'
