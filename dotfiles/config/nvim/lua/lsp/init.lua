@@ -45,8 +45,8 @@ return {
 
     local servers = {
       require('lsp.html'),
+      require('lsp.lua_ls'),
       require('lsp.rust-analyzer'),
-      require('lsp.sumneko_lua'),
       require('lsp.texlab'),
       { name = 'pyright' },
       { name = 'clangd' },

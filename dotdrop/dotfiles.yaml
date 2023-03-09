@@ -125,13 +125,13 @@ dotfiles:
     src: config/nvim/lua/lsp/init.lua
     dst: ~/.config/nvim/lua/lsp/init.lua
     chmod: '600'
+  f_config_nvim_lua_lsp_lua_ls.lua:
+    src: config/nvim/lua/lsp/lua_ls.lua
+    dst: ~/.config/nvim/lua/lsp/lua_ls.lua
+    chmod: '600'
   f_config_nvim_lua_lsp_rust-analyzer.lua:
     src: config/nvim/lua/lsp/rust-analyzer.lua
     dst: ~/.config/nvim/lua/lsp/rust-analyzer.lua
-    chmod: '600'
-  f_config_nvim_lua_lsp_sumneko_lua.lua:
-    src: config/nvim/lua/lsp/sumneko_lua.lua
-    dst: ~/.config/nvim/lua/lsp/sumneko_lua.lua
     chmod: '600'
   f_config_nvim_lua_lsp_texlab.lua:
     src: config/nvim/lua/lsp/texlab.lua

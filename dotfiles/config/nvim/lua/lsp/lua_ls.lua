@@ -1,7 +1,7 @@
 -- {{@@ header() @@}}
 
 return {
-  name = 'sumneko_lua',
+  name = 'lua_ls',
   settings = {
     Lua = {
       runtime = {
