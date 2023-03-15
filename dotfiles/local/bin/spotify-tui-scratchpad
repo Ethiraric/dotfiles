@@ -2,6 +2,13 @@
 
 # {{@@ header() @@}}
 
+if [[ $1 == "reset" ]]
+then
+  pkill -x -9 spotifyd
+  pkill -x -9 spt
+  sleep 0.2
+fi
+
 # There will alway be 1 line in `ps` that matches, that of `ag spotifyd`.
 # We are looking for a second one, that of `spotifyd`.
 # If `$spotifyd_running` contains 1, that means that `spotifyd` isn't started.
