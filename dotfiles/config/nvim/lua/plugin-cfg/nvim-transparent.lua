@@ -2,7 +2,6 @@
 
 return function()
   require("transparent").setup({
-    enable = true,
     extra_groups = {
       -- example of akinsho/nvim-bufferline.lua
       -- "BufferLineTabClose",
@@ -16,6 +15,6 @@ return function()
       'TelescopePreviewNormal',
       'TelescopeResultsNormal',
     },
-    exclude = {},
+    exclude_groups = {},
   })
 end

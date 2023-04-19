@@ -18,7 +18,8 @@ return require('packer').startup({
     ----------  Cosmetics
     use {
       'xiyaowong/nvim-transparent',
-      config = require('plugin-cfg.nvim-transparent')
+      config = require('plugin-cfg.nvim-transparent'),
+      run = ':TransparentEnable'
     }
     use { 'p00f/nvim-ts-rainbow', config = require('plugin-cfg.ts-rainbow') }
     use 'ryanoasis/vim-devicons'
