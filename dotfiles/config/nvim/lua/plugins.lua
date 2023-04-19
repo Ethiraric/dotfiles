@@ -131,10 +131,10 @@ return require('packer').startup({
       'vim-scripts/vim-stay', -- Open a previously closed file where you left it
       config = require('plugin-cfg.vim-stay')
     }
-    use 'tomtom/tcomment_vim' -- Commenting and uncommenting bindings
+    use 'tomtom/tcomment_vim'        -- Commenting and uncommenting bindings
     use "ahmedkhalf/lsp-rooter.nvim" -- `cd` to the LSP root
     use {
-      "airblade/vim-rooter", -- `cd` to an identified root directory
+      "airblade/vim-rooter",         -- `cd` to an identified root directory
       config = require('plugin-cfg.vim-rooter')
     }
     use {
