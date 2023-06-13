@@ -9,7 +9,8 @@ return {
   settings = {
     ["rust-analyzer"] = {
       checkOnSave = {
-        command = "clippy"
+        command = "clippy",
+        extraArgs = { "--", "-Wclippy::pedantic", "-Aclippy::redundant_else" }
       },
       assist = {
         importPrefix = "crate"
