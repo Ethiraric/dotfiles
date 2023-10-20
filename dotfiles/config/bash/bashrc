@@ -47,6 +47,7 @@ export PATH="/usr/local/cuda/bin/:${PATH}"
 export LOCALE="en_GB.utf8"
 export EDITOR='nvim'
 export PAGER='less'
+export FX_THEME=8
 
 ## Aliases
 # ls and friends

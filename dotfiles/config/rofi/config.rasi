@@ -2,7 +2,7 @@
 
 configuration{
     font: "mafont";
-    modi: "run,drun,window";
+    modi: "run,drun,window,ssh";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "alacritty";
