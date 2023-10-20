@@ -21,7 +21,7 @@ return require('packer').startup({
       config = require('plugin-cfg.nvim-transparent'),
       run = ':TransparentEnable'
     }
-    use { 'p00f/nvim-ts-rainbow', config = require('plugin-cfg.ts-rainbow') }
+    use { 'hiphish/rainbow-delimiters.nvim', config = require('plugin-cfg.rainbow-delimiters') }
     use 'ryanoasis/vim-devicons'
     use {
       'nvim-lualine/lualine.nvim',

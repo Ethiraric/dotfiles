@@ -33,6 +33,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_nvim-colorizer.lua
       - f_config_nvim_lua_plugin-cfg_nvim-transparent.lua
       - f_config_nvim_lua_plugin-cfg_nvim-ufo.lua
+      - f_config_nvim_lua_plugin-cfg_rainbow-delimiters.lua
       - f_config_nvim_lua_plugin-cfg_startify.lua
       - f_config_nvim_lua_plugin-cfg_telescope.lua
       - f_config_nvim_lua_plugin-cfg_todo-comments.lua
@@ -40,7 +41,6 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_treesitter.lua
       - f_config_nvim_lua_plugin-cfg_trouble.lua
       - f_config_nvim_lua_plugin-cfg_true-zen.lua
-      - f_config_nvim_lua_plugin-cfg_ts-rainbow.lua
       - f_config_nvim_lua_plugin-cfg_vim-better-whitespace.lua
       - f_config_nvim_lua_plugin-cfg_vim-rooter.lua
       - f_config_nvim_lua_plugin-cfg_vim-stay.lua

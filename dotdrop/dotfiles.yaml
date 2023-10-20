@@ -170,6 +170,10 @@ dotfiles:
     src: config/nvim/lua/plugin-cfg/nvim-ufo.lua
     dst: ~/.config/nvim/lua/plugin-cfg/nvim-ufo.lua
     chmod: '600'
+  f_config_nvim_lua_plugin-cfg_rainbow-delimiters.lua:
+    src: config/nvim/lua/plugin-cfg/rainbow-delimiters.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/rainbow-delimiters.lua
+    chmod: '600'
   f_config_nvim_lua_plugin-cfg_startify.lua:
     src: config/nvim/lua/plugin-cfg/startify.lua
     dst: ~/.config/nvim/lua/plugin-cfg/startify.lua
@@ -201,10 +205,6 @@ dotfiles:
   f_config_nvim_lua_plugin-cfg_vim-better-whitespace.lua:
     src: config/nvim/lua/plugin-cfg/vim-better-whitespace.lua
     dst: ~/.config/nvim/lua/plugin-cfg/vim-better-whitespace.lua
-    chmod: '600'
-  f_config_nvim_lua_plugin-cfg_ts-rainbow.lua:
-    src: config/nvim/lua/plugin-cfg/ts-rainbow.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/ts-rainbow.lua
     chmod: '600'
   f_config_nvim_lua_plugin-cfg_vim-rooter.lua:
     src: config/nvim/lua/plugin-cfg/vim-rooter.lua
