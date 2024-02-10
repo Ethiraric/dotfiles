@@ -1,8 +1,6 @@
 -- {{@@ header() @@}}
 
-return function ()
-  -- When using vim-stay, dont save the cwd and options/mappings to the
-  -- buffer.
-  vim.cmd('set viewoptions-=options')
-  vim.cmd('set viewoptions-=curdir')
+return function()
+  -- When using vim-stay, save only cursor position.
+  vim.cmd('set viewoptions=cursor')
 end

@@ -87,12 +87,12 @@ return {
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = true,
-      update_in_insert = false,
-      virtual_text = {
-        prefix = ' '
-      },
-    }
+        underline = true,
+        update_in_insert = false,
+        virtual_text = {
+          prefix = ' '
+        },
+      }
     )
 
     vim.lsp.handlers['textDocument/codeAction'] = require 'lsputil.codeAction'.code_action_handler
@@ -104,12 +104,9 @@ return {
 
 
     for _, server in ipairs(servers) do
-      lsp[server.name].setup {
-        on_attach = make_on_attach(server.on_attach),
-        cmd = server.cmd,
-        settings = server.settings,
-        capabilities = capabilities
-      }
+      server.on_attach = make_on_attach(server.on_attach)
+      server.capabilities = capabilities
+      lsp[server.name].setup(server)
     end
   end,
 
@@ -117,7 +114,7 @@ return {
     format_on_save = enabled
     local command = ''
 
-    if enabled then command = 'autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })\n' end
+    if enabled then command = 'autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })\n' end
     vim.cmd([[
     augroup FormatOnSave
     autocmd!
