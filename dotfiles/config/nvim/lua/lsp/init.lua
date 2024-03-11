@@ -1,6 +1,6 @@
 -- {{@@ header() @@}}
 
-local format_on_save = true
+local format_on_save_enabled = true
 
 return {
   config = function()
@@ -109,9 +109,8 @@ return {
       lsp[server.name].setup(server)
     end
   end,
-
   set_format_on_save = function(enabled)
-    format_on_save = enabled
+    format_on_save_enabled = enabled
     local command = ''
 
     if enabled then command = 'autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })\n' end
@@ -122,7 +121,6 @@ return {
       .. command .. 'augroup END'
     )
   end,
-
   toggle_format_on_save = function()
     require('lsp').set_format_on_save(not format_on_save)
   end
