@@ -6,6 +6,10 @@
   name = {{@@ git_config_user @@}}
 {%@@ endif @@%}
 
+[core]
+  editor = nvim
+  pager = delta
+
 [alias]
   amen = commit -v --amend
   c = checkout
@@ -24,9 +28,13 @@
 [push]
   default = current
 
-[core]
-  editor = nvim
-  pager = delta
+[rerere]
+  enabled = true
+  autoUpdate = true
+
+[branch]
+	sort = -commiterdate
+
 
 [interactive]
   diffFilter = delta --color-only
@@ -39,3 +47,7 @@
   commit-decoration-style = bold yellow box ul
   file-style = bold yellow ul
   file-decoration-style = none
+
+# [includeIf "gitdir:~/projects/oss"]
+#     path = ~/.gitconfig-oss
+# https://git-scm.com/docs/git-config
