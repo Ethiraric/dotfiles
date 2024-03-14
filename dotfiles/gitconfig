@@ -33,7 +33,7 @@
   autoUpdate = true
 
 [branch]
-	sort = -commiterdate
+	sort = -committerdate
 
 
 [interactive]
