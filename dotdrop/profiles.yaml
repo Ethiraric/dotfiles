@@ -25,6 +25,7 @@ profiles:
       - f_config_nvim_lua_lsp_rust-analyzer.lua
       - f_config_nvim_lua_lsp_texlab.lua
       - f_config_nvim_lua_mappings.lua
+      - f_config_nvim_lua_plugin-cfg_actions-preview.lua
       - f_config_nvim_lua_plugin-cfg_fidget.lua
       - f_config_nvim_lua_plugin-cfg_fzf.lua
       - f_config_nvim_lua_plugin-cfg_git-messenger.lua

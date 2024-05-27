@@ -23,7 +23,7 @@ return {
         buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>')
         buf_set_keymap('n', '<leader>yd', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
         buf_set_keymap('n', '<leader>yw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
-        buf_set_keymap('n', '<C-k>k', '<cmd>CodeActionMenu<CR>')
+        buf_set_keymap('n', '<C-k>k', '<cmd>lua require("actions-preview").code_actions()<CR>')
         -- buf_set_keymap('n', '<C-k>k',    '<cmd>lua vim.lsp.buf.code_action()<CR>')
         -- buf_set_keymap('n', '<leader>L', '<cmd>lua vim.diagnostic.open_float()<CR>')
         -- vim.api.nvim_buf_del_keymap(bufnr, 'n', '<leader>l') -- why the fuck not

@@ -51,8 +51,8 @@ return require('packer').startup({
       },
     }
     use {
-      'weilbith/nvim-code-action-menu',
-      cmd = 'CodeActionMenu'
+      'aznhe21/actions-preview.nvim',
+      config = require('plugin-cfg.actions-preview'),
     }
     use {
       'j-hui/fidget.nvim', -- Display progress of LSP

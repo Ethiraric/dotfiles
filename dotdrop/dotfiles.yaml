@@ -138,6 +138,10 @@ dotfiles:
     dst: ~/.config/nvim/lua/lsp/texlab.lua
     chmod: '600'
   # config/nvim/lua/plugin-cfg
+  f_config_nvim_lua_plugin-cfg_actions-preview.lua:
+    src: config/nvim/lua/plugin-cfg/actions-preview.lua
+    dst: ~/.config/nvim/lua/plugin-cfg/actions-preview.lua
+    chmod: '600'
   f_config_nvim_lua_plugin-cfg_fidget.lua:
     src: config/nvim/lua/plugin-cfg/fidget.lua
     dst: ~/.config/nvim/lua/plugin-cfg/fidget.lua
