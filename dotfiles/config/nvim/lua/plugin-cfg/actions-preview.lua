@@ -1,6 +1,7 @@
 return function()
   require("actions-preview").setup {
     telescope = {
+      initial_mode = "normal",
       layout_strategy = "vertical",
       layout_config = {
         width = 0.8,
