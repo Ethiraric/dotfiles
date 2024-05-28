@@ -51,3 +51,6 @@
 # [includeIf "gitdir:~/projects/oss"]
 #     path = ~/.gitconfig-oss
 # https://git-scm.com/docs/git-config
+
+[advice]
+  detachedHead = false
