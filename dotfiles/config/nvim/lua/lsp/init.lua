@@ -122,6 +122,6 @@ return {
     )
   end,
   toggle_format_on_save = function()
-    require('lsp').set_format_on_save(not format_on_save)
+    require('lsp').set_format_on_save(not format_on_save_enabled)
   end
 }
