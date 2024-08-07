@@ -387,6 +387,10 @@ dotfiles:
     src: local/bin/i3lock-select
     dst: ~/.local/bin/i3lock-select
     chmod: '700'
+  f_local_bin_mtp_mount:
+    src: local/bin/mtp_mount
+    dst: ~/.local/bin/mtp_mount
+    chmod: '700'
   f_local_bin_play:
     src: local/bin/play
     dst: ~/.local/bin/play

@@ -1,0 +1,6 @@
+mountpoint=`gio mount -li | grep activation_root | cut -d'=' -f2 | rofi -dmenu -format`
+
+if [ $? -eq 0 ]
+then
+  gio mount $mountpoint
+fi
