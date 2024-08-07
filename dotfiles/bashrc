@@ -18,3 +18,4 @@
 [ -f /usr/share/bash-completion/completions/diesel ] && source /usr/share/bash-completion/completions/diesel
 if command -v pandoc 2>&1 > /dev/null ; then eval "$(pandoc --bash-completion)"; fi
 [ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+if command -v just 2>&1 > /dev/null ; then eval "$(just --completions bash)"; fi
