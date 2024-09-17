@@ -134,6 +134,7 @@ bindsym $mod+p exec "${HOME}/.local/bin/screenlayout"
 bindsym $mod+Shift+w exec rofi -terminal $terminal -show ssh
 bindsym $mod+space exec dunstctl close-all
 bindsym $mod+m exec "${HOME}/.local/bin/mtp_mount"
+bindsym $mod+Shift+space floating toggle
 
 # This probably loads some important settings
 exec xrdb ~/.Xresources

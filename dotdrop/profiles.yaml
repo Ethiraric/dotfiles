@@ -35,7 +35,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_nvim-transparent.lua
       - f_config_nvim_lua_plugin-cfg_nvim-ufo.lua
       - f_config_nvim_lua_plugin-cfg_rainbow-delimiters.lua
-      - f_config_nvim_lua_plugin-cfg_startify.lua
+      - f_config_nvim_lua_plugin-cfg_startup.lua
       - f_config_nvim_lua_plugin-cfg_telescope.lua
       - f_config_nvim_lua_plugin-cfg_todo-comments.lua
       - f_config_nvim_lua_plugin-cfg_tokyonight.lua
@@ -48,6 +48,7 @@ profiles:
       - f_config_nvim_lua_plugin-cfg_vsnip.lua
       - f_config_nvim_lua_plugins.lua
       - f_config_nvim_lua_utils.lua
+      - f_config_nvim_lua_startup_themes_umbreon.lua
       - f_config_nvim_settings.vim
       - f_config_nvim_snippets_c.json
       - f_config_nvim_snippets_cpp.json

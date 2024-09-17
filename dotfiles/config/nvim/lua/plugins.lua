@@ -143,8 +143,8 @@ return require('packer').startup({
     }
     -- Welcome screen
     use {
-      'mhinz/vim-startify',
-      config = require('plugin-cfg.startify')
+      'max397574/startup.nvim',
+      config = require('plugin-cfg.startup')
     }
     -- Highlight trailing whitespace
     use {
