@@ -373,6 +373,28 @@ dotfiles:
     dst: ~/.config/rofi/config.rasi
     chmod: '600'
 
+  # config/yazi
+  f_config_yazi_init.lua:
+    src: config/yazi/init.lua
+    dst: ~/.config/yazi/init.lua
+    chmod: '600'
+  f_config_yazi_keymap.toml:
+    src: config/yazi/keymap.toml
+    dst: ~/.config/yazi/keymap.toml
+    chmod: '600'
+  f_config_yazi_package.toml:
+    src: config/yazi/package.toml
+    dst: ~/.config/yazi/package.toml
+    chmod: '600'
+  f_config_yazi_plugins_smart-enter.yazi_init.lua:
+    src: config/yazi/plugins/smart-enter.yazi/init.lua
+    dst: ~/.config/yazi/plugins/smart-enter.yazi/init.lua
+    chmod: '600'
+  f_config_yazi_yazi.toml:
+    src: config/yazi/yazi.toml
+    dst: ~/.config/yazi/yazi.toml
+    chmod: '600'
+
   # config/yt-dlp
   f_config_yt-dlp_config:
     src: config/yt-dlp/config

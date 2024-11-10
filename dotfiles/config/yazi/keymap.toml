@@ -1,0 +1,8 @@
+# {{@@ header() @@}}
+
+[manager]
+prepend_keymap = [
+  { on = "l",         run = "plugin --sync smart-enter",          desc = "Open selected files" },
+  { on = "d",         run = "noop",                               desc = "Remove trash default shortcut" },
+  { on = ["d", "D"],  run = "remove --permanently",               desc = "Delete files" },
+]

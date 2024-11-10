@@ -1,0 +1,9 @@
+# {{@@ header() @@}}
+
+[manager]
+linemode = "size"
+scrolloff = 255
+mouse_events = []
+
+[preview]
+tab_size = 4
