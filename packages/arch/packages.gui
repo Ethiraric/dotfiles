@@ -10,10 +10,9 @@ gnome-icon-theme-extras
 i3-gaps
 i3lock
 libnotify
-nvidia
-nvidia-dkms
 picom
 rofi
+ttf-cascadia-code-nerd
 vlc
 xorg-fonts-misc
 xorg-server

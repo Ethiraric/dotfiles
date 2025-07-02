@@ -178,3 +178,14 @@ profiles:
       dunst_geometry: "300x10-20+40"
     include:
       - gui
+  protea:
+    variables:
+      is_workstation: true
+      has_colout: false
+      has_i3_gaps: true
+      has_taskwarrior: true
+      polybar_wireless_network_interface: wlan0
+      dunst_monitor: 0
+      dunst_geometry: "300x10-20+40"
+    include:
+      - gui
