@@ -34,9 +34,9 @@ dotfiles:
     chmod: '600'
 
   # config/alacritty
-  f_config_alacritty_alacritty.yml:
-    src: config/alacritty/alacritty.yml
-    dst: ~/.config/alacritty/alacritty.yml
+  f_config_alacritty_alacritty.toml:
+    src: config/alacritty/alacritty.toml
+    dst: ~/.config/alacritty/alacritty.toml
     chmod: '600'
 
   # config/bash

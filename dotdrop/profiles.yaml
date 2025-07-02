@@ -80,7 +80,7 @@ profiles:
     include:
       - tty-only
     dotfiles:
-      - f_config_alacritty_alacritty.yml
+      - f_config_alacritty_alacritty.toml
       - f_config_dunst_dunstrc
       - f_config_gammastep_config.ini
       - f_config_i3_config

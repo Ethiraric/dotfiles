@@ -1,0 +1,45 @@
+# {{@@ header() @@}}
+
+[colors.bright]
+black = "#666666"
+blue = "#4186be"
+cyan = "#71bebe"
+green = "#c5f779"
+magenta = "#cf9ebe"
+red = "#cf6171"
+white = "#ffffff"
+yellow = "#fff796"
+
+[colors.normal]
+black = "#000000"
+blue = "#438bbb"
+cyan = "#7cc0be"
+green = "#aece92"
+magenta = "#aa2e81"
+red = "#c11d30"
+white = "#bebebe"
+yellow = "#968a38"
+
+[colors.primary]
+background = "#000000"
+
+[font]
+size = 10
+
+[font.normal]
+family = "Fixed"
+style = "SemiCondensed"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mode = "~Vi"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Alt"
+
+[window]
+opacity = 0.9
