@@ -4,8 +4,6 @@ local format_on_save_enabled = true
 
 return {
   config = function()
-    local lsp = require('lspconfig')
-
     local utils = require('utils')
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -13,6 +11,10 @@ return {
 
     local make_on_attach = function(ls_on_attach)
       return function(client, bufnr)
+        if ls_on_attach ~= nil then
+          ls_on_attach(client, bufnr)
+        end
+
         local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
 
         buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.declaration()<CR>')
@@ -24,9 +26,6 @@ return {
         buf_set_keymap('n', '<leader>yd', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
         buf_set_keymap('n', '<leader>yw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
         buf_set_keymap('n', '<C-k>k', '<cmd>lua require("actions-preview").code_actions()<CR>')
-        -- buf_set_keymap('n', '<C-k>k',    '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        -- buf_set_keymap('n', '<leader>L', '<cmd>lua vim.diagnostic.open_float()<CR>')
-        -- vim.api.nvim_buf_del_keymap(bufnr, 'n', '<leader>l') -- why the fuck not
         buf_set_keymap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
         if client.server_capabilities.documentFormattingProvider then
@@ -43,16 +42,17 @@ return {
       end
     end
 
-    local servers = {
-      require('lsp.html'),
-      require('lsp.lua_ls'),
+    local lsp_servers = {
+      -- require('lsp.html'),
+      -- require('lsp.lua_ls'),
       require('lsp.rust-analyzer'),
-      require('lsp.texlab'),
-      { name = 'pyright' },
-      { name = 'clangd' },
-      { name = 'cmake' },
-      { name = 'bashls' },
-      { name = 'hls' },
+      -- require('lsp.texlab'),
+      -- { name = 'pyright' },
+      -- { name = 'clangd' },
+      -- { name = 'cmake' },
+      -- { name = 'bashls' },
+      -- { name = 'hls' },
+      -- { name = 'marksman' },
     }
 
     vim.lsp.protocol.CompletionItemKind = {
@@ -103,10 +103,12 @@ return {
     vim.fn.sign_define('DiagnosticSignHint', { text = ' ', texthl = 'DiagnosticSignHint' })
 
 
-    for _, server in ipairs(servers) do
-      server.on_attach = make_on_attach(server.on_attach)
-      server.capabilities = capabilities
-      lsp[server.name].setup(server)
+    -- Using `ipairs` is idiomatic, even if we don't use the index.
+    for _, config in ipairs(lsp_servers) do
+      config.on_attach = make_on_attach(config.on_attach)
+      config.capabilities = capabilities
+      vim.lsp.config(config.name, config)
+      vim.lsp.enable(config.name)
     end
   end,
   set_format_on_save = function(enabled)

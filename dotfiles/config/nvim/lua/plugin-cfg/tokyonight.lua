@@ -5,7 +5,7 @@ return function()
     style = "night",
     transparent = true,
     styles = {
-      comment = {
+      comments = {
         italic = false,
       },
       keywords = {
@@ -13,4 +13,5 @@ return function()
       },
     }
   })
+  vim.cmd("colorscheme tokyonight-night")
 end
