@@ -18,11 +18,14 @@ gaps inner 10
 gaps outer -8
 {%@@ endif @@%}
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec $terminal
-bindsym $mod+ShiftReturn exec urxvt
+# Start one with resizeable font
 bindsym $mod+t exec terminology
+# Start a python interpreter
 bindsym $mod+Shift+p exec alacritty -e bash -i -c ipython
+# Start a bash in the directory specified by the clipboard
+bindsym $mod+ShiftReturn exec $terminal -e bash -i -c 'bash --init-file <(echo ". ~/.bashrc 2>&1 > /dev/null && cd `xclip -o -sel clipboard` && pwd") -i'
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -111,8 +114,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 
 # Brightness control
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 10-%"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
 
 # Screenshots
 bindsym Print exec flameshot full -c

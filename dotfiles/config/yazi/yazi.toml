@@ -1,6 +1,6 @@
 # {{@@ header() @@}}
 
-[manager]
+[mgr]
 linemode = "size"
 scrolloff = 255
 mouse_events = []

@@ -47,7 +47,7 @@ export PATH="/usr/local/cuda/bin/:${PATH}"
 export LOCALE="en_GB.utf8"
 export EDITOR='nvim'
 export PAGER='less'
-export FX_THEME=8
+export FX_THEME=6
 
 ## Aliases
 # ls and friends
@@ -93,6 +93,7 @@ alias bashrc='ne ~/.bashrc ; anew'
 alias cdrecent='cd  "$(\ls -1dt ./*/ | head -n 1)"'
 alias explore='fzf --preview "bat --style=numbers --color=always {}" | head -500'
 alias mysql='mycli'
+alias jj='just -g'
 # Using ranger as a notes editor
 alias notes="(cd ${HOME}/Documents/notes && ranger)"
 
