@@ -4,8 +4,8 @@
 -- Author: shadmansaleh
 -- Credit: glepnir
 
-return function ()
-  local lualine = require 'lualine'
+function set_config()
+  local lualine = require('lualine')
 
   -- Color table for highlights
   local colors = {
@@ -227,3 +227,9 @@ return function ()
   -- Now don't forget to initialize lualine
   lualine.setup(config)
 end
+
+return {{
+  'nvim-lualine/lualine.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = set_config
+}}

@@ -90,40 +90,33 @@ dotfiles:
     src: config/nvim/init.vim
     dst: ~/.config/nvim/init.vim
     chmod: '600'
-  f_config_nvim_settings.vim:
-    src: config/nvim/settings.vim
-    dst: ~/.config/nvim/settings.vim
+  f_config_nvim_lua_config_autocmds.lua:
+    src: config/nvim/lua/config/autocmds.lua
+    dst: ~/.config/nvim/lua/config/autocmds.lua
     chmod: '600'
-  # config/nvim/lua
+  f_config_nvim_lua_config_keymaps.lua:
+    src: config/nvim/lua/config/keymaps.lua
+    dst: ~/.config/nvim/lua/config/keymaps.lua
+    chmod: '600'
+  f_config_nvim_lua_config_lazy.lua:
+    src: config/nvim/lua/config/lazy.lua
+    dst: ~/.config/nvim/lua/config/lazy.lua
+    chmod: '600'
   f_config_nvim_lua_config.lua:
     src: config/nvim/lua/config.lua
     dst: ~/.config/nvim/lua/config.lua
     chmod: '600'
-  f_config_nvim_lua_mappings.lua:
-    src: config/nvim/lua/mappings.lua
-    dst: ~/.config/nvim/lua/mappings.lua
+  f_config_nvim_lua_config_options.lua:
+    src: config/nvim/lua/config/options.lua
+    dst: ~/.config/nvim/lua/config/options.lua
     chmod: '600'
-  f_config_nvim_lua_plugins.lua:
-    src: config/nvim/lua/plugins.lua
-    dst: ~/.config/nvim/lua/plugins.lua
-    chmod: '600'
-  f_config_nvim_lua_utils.lua:
-    src: config/nvim/lua/utils.lua
-    dst: ~/.config/nvim/lua/utils.lua
-    chmod: '600'
-  # config/nvim/lua/ethi
   f_config_nvim_lua_ethi_lua_telescope__extensions_ethi.lua:
     src: config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
     dst: ~/.config/nvim/lua/ethi/lua/telescope/_extensions/ethi.lua
     chmod: '600'
-  # config/nvim/lua/lsp
   f_config_nvim_lua_lsp_html.lua:
     src: config/nvim/lua/lsp/html.lua
     dst: ~/.config/nvim/lua/lsp/html.lua
-    chmod: '600'
-  f_config_nvim_lua_lsp_init.lua:
-    src: config/nvim/lua/lsp/init.lua
-    dst: ~/.config/nvim/lua/lsp/init.lua
     chmod: '600'
   f_config_nvim_lua_lsp_lua_ls.lua:
     src: config/nvim/lua/lsp/lua_ls.lua
@@ -137,97 +130,146 @@ dotfiles:
     src: config/nvim/lua/lsp/texlab.lua
     dst: ~/.config/nvim/lua/lsp/texlab.lua
     chmod: '600'
-  # config/nvim/lua/plugin-cfg
-  f_config_nvim_lua_plugin-cfg_actions-preview.lua:
-    src: config/nvim/lua/plugin-cfg/actions-preview.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/actions-preview.lua
+  f_config_nvim_lua_mappings.lua:
+    src: config/nvim/lua/mappings.lua
+    dst: ~/.config/nvim/lua/mappings.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_fidget.lua:
-    src: config/nvim/lua/plugin-cfg/fidget.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/fidget.lua
+  f_config_nvim_lua_plugins_actions-preview.lua:
+    src: config/nvim/lua/plugins/actions-preview.lua
+    dst: ~/.config/nvim/lua/plugins/actions-preview.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_fzf.lua:
-    src: config/nvim/lua/plugin-cfg/fzf.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/fzf.lua
+  f_config_nvim_lua_plugins_fidget.lua:
+    src: config/nvim/lua/plugins/fidget.lua
+    dst: ~/.config/nvim/lua/plugins/fidget.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_git-messenger.lua:
-    src: config/nvim/lua/plugin-cfg/git-messenger.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/git-messenger.lua
+  f_config_nvim_lua_plugins_fzf.lua:
+    src: config/nvim/lua/plugins/fzf.lua
+    dst: ~/.config/nvim/lua/plugins/fzf.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_lualine.lua:
-    src: config/nvim/lua/plugin-cfg/lualine.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/lualine.lua
+  f_config_nvim_lua_plugins_git-messenger.lua:
+    src: config/nvim/lua/plugins/git-messenger.lua
+    dst: ~/.config/nvim/lua/plugins/git-messenger.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_nvim-cmp.lua:
-    src: config/nvim/lua/plugin-cfg/nvim-cmp.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/nvim-cmp.lua
+  f_config_nvim_lua_plugins_lsp.lua:
+    src: config/nvim/lua/plugins/lsp.lua
+    dst: ~/.config/nvim/lua/plugins/lsp.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_nvim-colorizer.lua:
-    src: config/nvim/lua/plugin-cfg/nvim-colorizer.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/nvim-colorizer.lua
+  f_config_nvim_lua_plugins_lualine.lua:
+    src: config/nvim/lua/plugins/lualine.lua
+    dst: ~/.config/nvim/lua/plugins/lualine.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_nvim-transparent.lua:
-    src: config/nvim/lua/plugin-cfg/nvim-transparent.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/nvim-transparent.lua
+  f_config_nvim_lua_plugins_markdown-preview.lua:
+    src: config/nvim/lua/plugins/markdown-preview.lua
+    dst: ~/.config/nvim/lua/plugins/markdown-preview.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_nvim-ufo.lua:
-    src: config/nvim/lua/plugin-cfg/nvim-ufo.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/nvim-ufo.lua
+  f_config_nvim_lua_plugins_noice.lua:
+    src: config/nvim/lua/plugins/noice.lua
+    dst: ~/.config/nvim/lua/plugins/noice.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_rainbow-delimiters.lua:
-    src: config/nvim/lua/plugin-cfg/rainbow-delimiters.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/rainbow-delimiters.lua
+  f_config_nvim_lua_plugins_nvim-cmp.lua:
+    src: config/nvim/lua/plugins/nvim-cmp.lua
+    dst: ~/.config/nvim/lua/plugins/nvim-cmp.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_startup.lua:
-    src: config/nvim/lua/plugin-cfg/startup.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/startup.lua
+  f_config_nvim_lua_plugins_nvim-colorizer.lua:
+    src: config/nvim/lua/plugins/nvim-colorizer.lua
+    dst: ~/.config/nvim/lua/plugins/nvim-colorizer.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_telescope.lua:
-    src: config/nvim/lua/plugin-cfg/telescope.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/telescope.lua
+  f_config_nvim_lua_plugins_nvim-transparent.lua:
+    src: config/nvim/lua/plugins/nvim-transparent.lua
+    dst: ~/.config/nvim/lua/plugins/nvim-transparent.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_todo-comments.lua:
-    src: config/nvim/lua/plugin-cfg/todo-comments.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/todo-comments.lua
+  f_config_nvim_lua_plugins_nvim-ufo.lua:
+    src: config/nvim/lua/plugins/nvim-ufo.lua
+    dst: ~/.config/nvim/lua/plugins/nvim-ufo.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_tokyonight.lua:
-    src: config/nvim/lua/plugin-cfg/tokyonight.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/tokyonight.lua
+  f_config_nvim_lua_plugins_project.lua:
+    src: config/nvim/lua/plugins/project.lua
+    dst: ~/.config/nvim/lua/plugins/project.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_treesitter.lua:
-    src: config/nvim/lua/plugin-cfg/treesitter.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/treesitter.lua
+  f_config_nvim_lua_plugins_rainbow-delimiters.lua:
+    src: config/nvim/lua/plugins/rainbow-delimiters.lua
+    dst: ~/.config/nvim/lua/plugins/rainbow-delimiters.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_trouble.lua:
-    src: config/nvim/lua/plugin-cfg/trouble.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/trouble.lua
+  f_config_nvim_lua_plugins_snacks.lua:
+    src: config/nvim/lua/plugins/snacks.lua
+    dst: ~/.config/nvim/lua/plugins/snacks.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_true-zen.lua:
-    src: config/nvim/lua/plugin-cfg/true-zen.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/true-zen.lua
+  f_config_nvim_lua_plugins_startup.lua:
+    src: config/nvim/lua/plugins/startup.lua
+    dst: ~/.config/nvim/lua/plugins/startup.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_vim-better-whitespace.lua:
-    src: config/nvim/lua/plugin-cfg/vim-better-whitespace.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/vim-better-whitespace.lua
+  f_config_nvim_lua_plugins_tcomment.lua:
+    src: config/nvim/lua/plugins/tcomment.lua
+    dst: ~/.config/nvim/lua/plugins/tcomment.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_vim-rooter.lua:
-    src: config/nvim/lua/plugin-cfg/vim-rooter.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/vim-rooter.lua
+  f_config_nvim_lua_plugins_telescope.lua:
+    src: config/nvim/lua/plugins/telescope.lua
+    dst: ~/.config/nvim/lua/plugins/telescope.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_vim-stay.lua:
-    src: config/nvim/lua/plugin-cfg/vim-stay.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/vim-stay.lua
+  f_config_nvim_lua_plugins_todo-comments.lua:
+    src: config/nvim/lua/plugins/todo-comments.lua
+    dst: ~/.config/nvim/lua/plugins/todo-comments.lua
     chmod: '600'
-  f_config_nvim_lua_plugin-cfg_vsnip.lua:
-    src: config/nvim/lua/plugin-cfg/vsnip.lua
-    dst: ~/.config/nvim/lua/plugin-cfg/vsnip.lua
+  f_config_nvim_lua_plugins_tokyonight.lua:
+    src: config/nvim/lua/plugins/tokyonight.lua
+    dst: ~/.config/nvim/lua/plugins/tokyonight.lua
     chmod: '600'
-  # config/nvim/lua/startup/themes
+  f_config_nvim_lua_plugins_treesitter.lua:
+    src: config/nvim/lua/plugins/treesitter.lua
+    dst: ~/.config/nvim/lua/plugins/treesitter.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_trouble.lua:
+    src: config/nvim/lua/plugins/trouble.lua
+    dst: ~/.config/nvim/lua/plugins/trouble.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_true-zen.lua:
+    src: config/nvim/lua/plugins/true-zen.lua
+    dst: ~/.config/nvim/lua/plugins/true-zen.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-better-whitespace.lua:
+    src: config/nvim/lua/plugins/vim-better-whitespace.lua
+    dst: ~/.config/nvim/lua/plugins/vim-better-whitespace.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-fugitive.lua:
+    src: config/nvim/lua/plugins/vim-fugitive.lua
+    dst: ~/.config/nvim/lua/plugins/vim-fugitive.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-gitgutter.lua:
+    src: config/nvim/lua/plugins/vim-gitgutter.lua
+    dst: ~/.config/nvim/lua/plugins/vim-gitgutter.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-illuminate.lua:
+    src: config/nvim/lua/plugins/vim-illuminate.lua
+    dst: ~/.config/nvim/lua/plugins/vim-illuminate.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-mindustry-logic.lua:
+    src: config/nvim/lua/plugins/vim-mindustry-logic.lua
+    dst: ~/.config/nvim/lua/plugins/vim-mindustry-logic.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-rooter.lua:
+    src: config/nvim/lua/plugins/vim-rooter.lua
+    dst: ~/.config/nvim/lua/plugins/vim-rooter.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vim-stay.lua:
+    src: config/nvim/lua/plugins/vim-stay.lua
+    dst: ~/.config/nvim/lua/plugins/vim-stay.lua
+    chmod: '600'
+  f_config_nvim_lua_plugins_vsnip.lua:
+    src: config/nvim/lua/plugins/vsnip.lua
+    dst: ~/.config/nvim/lua/plugins/vsnip.lua
+    chmod: '600'
   f_config_nvim_lua_startup_themes_umbreon.lua:
     src: config/nvim/lua/startup/themes/umbreon.lua
     dst: ~/.config/nvim/lua/startup/themes/umbreon.lua
     chmod: '600'
-  # config/nvim/snippets
+  f_config_nvim_lua_utils.lua:
+    src: config/nvim/lua/utils.lua
+    dst: ~/.config/nvim/lua/utils.lua
+    chmod: '600'
+  f_config_nvim_settings.vim:
+    src: config/nvim/settings.vim
+    dst: ~/.config/nvim/settings.vim
+    chmod: '600'
   f_config_nvim_snippets_c.json:
     src: config/nvim/snippets/c.json
     dst: ~/.config/nvim/snippets/c.json

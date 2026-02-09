@@ -1,166 +1,73 @@
 -- {{@@ header() @@}}
 
--- https://github.com/neovim/nvim-lspconfig/blob/56a9268de428acee307f67fc11c08b575e96004c/lua/nvim_lsp/util.lua
-
-local validate = vim.validate
-local uv = vim.loop
-
-local default_options = {
+--- Default options that are applied to every key mapping. These can be
+--- overridden in the mapping functions below if necessary.
+local default_map_opts = {
   noremap = true,
   silent = true
 }
 
-local M = {}
+--- @alias Mode 'n' | 'i' | 'v' | 'x' | 's' | 'o' | 'c' | 't'
+--- @alias Modes Mode | Mode[]
 
-function M.map(mode, keys, action, opts)
-  local options = default_options
-  if opts then options = vim.tbl_extend('force', options, opts) end
-
-  vim.api.nvim_set_keymap(mode, keys, action, options)
-end
-
-function M.buf_map(buffer, mode, keys, action, opts)
-    local options = default_options
-    if opts then options = vim.tbl_extend('force', options, opts) end
-
-    vim.api.nvim_buf_set_keymap(buffer, mode, keys, action, options)
-end
-
-M.path = (function()
-  local function exists(filename)
-    local stat = uv.fs_stat(filename)
-    return stat and stat.type or false
-  end
-
-  local function is_dir(filename)
-    return exists(filename) == 'directory'
-  end
-
-  local function is_file(filename)
-    return exists(filename) == 'file'
-  end
-
-  local is_windows = uv.os_uname().version:match("Windows")
-  local path_sep = is_windows and "\\" or "/"
-
-  local is_fs_root
-  if is_windows then
-    is_fs_root = function(path)
-      return path:match("^%a:$")
-    end
-  else
-    is_fs_root = function(path)
-      return path == "/"
-    end
-  end
-
-  local function is_absolute(filename)
-    if is_windows then
-      return filename:match("^%a:") or filename:match("^\\\\")
-    else
-      return filename:match("^/")
-    end
-  end
-
-  local dirname
-  do
-    local strip_dir_pat = path_sep.."([^"..path_sep.."]+)$"
-    local strip_sep_pat = path_sep.."$"
-    dirname = function(path)
-      if not path then return end
-      local result = path:gsub(strip_sep_pat, ""):gsub(strip_dir_pat, "")
-      if #result == 0 then
-        return "/"
-      end
-      return result
-    end
-  end
-
-  local function path_join(...)
-    local result =
-      table.concat(
-        vim.tbl_flatten {...}, path_sep):gsub(path_sep.."+", path_sep)
-    return result
-  end
-
-  -- Traverse the path calling cb along the way.
-  local function traverse_parents(path, cb)
-    path = uv.fs_realpath(path)
-    local dir = path
-    -- Just in case our algo is buggy, don't infinite loop.
-    for _ = 1, 100 do
-      dir = dirname(dir)
-      if not dir then return end
-      -- If we can't ascend further, then stop looking.
-      if cb(dir, path) then
-        return dir, path
-      end
-      if is_fs_root(dir) then
-        break
-      end
-    end
-  end
-
-  -- Iterate the path until we find the rootdir.
-  local function iterate_parents(path)
-    path = uv.fs_realpath(path)
-    local function it(s, v)
-      if not v then return end
-      if is_fs_root(v) then return end
-      return dirname(v), path
-    end
-    return it, path, path
-  end
-
-  local function is_descendant(root, path)
-    if (not path) then
-      return false;
-    end
-
-    local function cb(dir, _)
-      return dir == root;
-    end
-
-    local dir, _ = traverse_parents(path, cb);
-
-    return dir == root;
-  end
-
-  return {
-    is_dir = is_dir;
-    is_file = is_file;
-    is_absolute = is_absolute;
-    exists = exists;
-    sep = path_sep;
-    dirname = dirname;
-    join = path_join;
-    traverse_parents = traverse_parents;
-    iterate_parents = iterate_parents;
-    is_descendant = is_descendant;
-  }
-end)()
-
-function M.search_ancestors(startpath, func)
-  validate { func = {func, 'f'} }
-  if func(startpath) then return startpath end
-  for path in M.path.iterate_parents(startpath) do
-    if func(path) then return path end
+--- Create a function which adds mappings with the given default options.
+---
+--- @param opts? vim.api.keyset.keymap Default options the returned mapping
+---   function will set for bindings. This has more precedence than the global
+---   default options, but less than the options set as parameter of the
+---   returned function.
+--- @return fun(mode:Mode, key_seq:string, action:function|string, opts?: vim.api.keyset.keymap)
+local function make_keymap_setter(opts)
+  return function(mode, key_seq, action, o)
+    local options = vim.tbl_extend("force", default_map_opts, opts or {}, o or {})
+    vim.keymap.set(mode, key_seq, action, options)
   end
 end
 
-function M.root_pattern(...)
-  local patterns = vim.tbl_flatten {...}
-  local function matcher(path)
-    for _, pattern in ipairs(patterns) do
-      if M.path.exists(M.path.join(path, pattern)) then
-        return path
-      end
-    end
-  end
-  return function(startpath)
-    return M.search_ancestors(startpath, matcher)
-  end
+--- Create the given key mapping. This wrapper around |vim.keymap.set|
+--- automatically adds the `noremap` and `silent` options. Extra options can be
+--- specified in `opts`. Values in `opts` take precedence over defaults.
+---
+--- @param mode Mode The mode in which to create the mapping.
+--- @param key_seq string The key-sequence to map.
+--- @param action string The action to take when the mapping is invoked.
+--- @param opts? vim.api.keyset.keymap Options of the mapping.
+local function map(mode, key_seq, action, opts)
+  make_keymap_setter()(mode, key_seq, action, opts)
 end
 
-return M
+--- Create the given key mapping for the given buffer only. This wrapper around
+--- |vim.keymap.set| automatically adds the `noremap` and `silent` options.
+--- Extra options can be specified in `opts`. Values in `opts` take precedence
+--- over defaults.
+---
+--- @param buffer integer The buffer ID for which to create the mapping. `0`
+---   means the current buffer.
+--- @param mode Mode The mode in which to create the mapping.
+--- @param key_seq string The key-sequence to map.
+--- @param action function|string The action to execute when the mapping is
+---   invoked.
+--- @param opts? vim.api.keyset.keymap Options of the mapping.
+local function buf_map(buffer, mode, key_seq, action, opts)
+  make_keymap_setter({ buffer = buffer })(mode, key_seq, action, opts)
+end
 
+--- Create a function which adds mappings to a buffer with the given default
+--- options.
+---
+--- @param opts? vim.api.keyset.keymap Default options the returned mapping
+---   function will set for bindings. This has more precedence than the global
+---   default options, but less than the options set as parameter of the
+---   returned function.
+--- @return fun(mode:Mode, key_seq:string, action:function|string, opts?: vim.api.keyset.keymap)
+local function make_buf_keymap_setter(buffer, opts)
+  local fn_options = vim.tbl_extend("force", { buffer = buffer }, opts or {})
+  return make_keymap_setter(fn_options)
+end
+
+return {
+  map = map,
+  buf_map = buf_map,
+  make_keymap_setter = make_keymap_setter,
+  make_buf_keymap_setter = make_buf_keymap_setter
+}

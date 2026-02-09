@@ -17,38 +17,49 @@ profiles:
       - f_config_gitui_key_bindings.ron
       - f_config_gitui_theme.ron
       - f_config_nvim_init.vim
+      - f_config_nvim_lua_config_autocmds.lua
+      - f_config_nvim_lua_config_keymaps.lua
+      - f_config_nvim_lua_config_lazy.lua
       - f_config_nvim_lua_config.lua
+      - f_config_nvim_lua_config_options.lua
       - f_config_nvim_lua_ethi_lua_telescope__extensions_ethi.lua
       - f_config_nvim_lua_lsp_html.lua
-      - f_config_nvim_lua_lsp_init.lua
       - f_config_nvim_lua_lsp_lua_ls.lua
       - f_config_nvim_lua_lsp_rust-analyzer.lua
       - f_config_nvim_lua_lsp_texlab.lua
       - f_config_nvim_lua_mappings.lua
-      - f_config_nvim_lua_plugin-cfg_actions-preview.lua
-      - f_config_nvim_lua_plugin-cfg_fidget.lua
-      - f_config_nvim_lua_plugin-cfg_fzf.lua
-      - f_config_nvim_lua_plugin-cfg_git-messenger.lua
-      - f_config_nvim_lua_plugin-cfg_lualine.lua
-      - f_config_nvim_lua_plugin-cfg_nvim-cmp.lua
-      - f_config_nvim_lua_plugin-cfg_nvim-colorizer.lua
-      - f_config_nvim_lua_plugin-cfg_nvim-transparent.lua
-      - f_config_nvim_lua_plugin-cfg_nvim-ufo.lua
-      - f_config_nvim_lua_plugin-cfg_rainbow-delimiters.lua
-      - f_config_nvim_lua_plugin-cfg_startup.lua
-      - f_config_nvim_lua_plugin-cfg_telescope.lua
-      - f_config_nvim_lua_plugin-cfg_todo-comments.lua
-      - f_config_nvim_lua_plugin-cfg_tokyonight.lua
-      - f_config_nvim_lua_plugin-cfg_treesitter.lua
-      - f_config_nvim_lua_plugin-cfg_trouble.lua
-      - f_config_nvim_lua_plugin-cfg_true-zen.lua
-      - f_config_nvim_lua_plugin-cfg_vim-better-whitespace.lua
-      - f_config_nvim_lua_plugin-cfg_vim-rooter.lua
-      - f_config_nvim_lua_plugin-cfg_vim-stay.lua
-      - f_config_nvim_lua_plugin-cfg_vsnip.lua
-      - f_config_nvim_lua_plugins.lua
-      - f_config_nvim_lua_utils.lua
+      - f_config_nvim_lua_plugins_actions-preview.lua
+      - f_config_nvim_lua_plugins_fidget.lua
+      - f_config_nvim_lua_plugins_fzf.lua
+      - f_config_nvim_lua_plugins_git-messenger.lua
+      - f_config_nvim_lua_plugins_lsp.lua
+      - f_config_nvim_lua_plugins_lualine.lua
+      - f_config_nvim_lua_plugins_markdown-preview.lua
+      - f_config_nvim_lua_plugins_noice.lua
+      - f_config_nvim_lua_plugins_nvim-cmp.lua
+      - f_config_nvim_lua_plugins_nvim-colorizer.lua
+      - f_config_nvim_lua_plugins_nvim-transparent.lua
+      - f_config_nvim_lua_plugins_nvim-ufo.lua
+      - f_config_nvim_lua_plugins_project.lua
+      - f_config_nvim_lua_plugins_rainbow-delimiters.lua
+      - f_config_nvim_lua_plugins_snacks.lua
+      - f_config_nvim_lua_plugins_startup.lua
+      - f_config_nvim_lua_plugins_tcomment.lua
+      - f_config_nvim_lua_plugins_telescope.lua
+      - f_config_nvim_lua_plugins_todo-comments.lua
+      - f_config_nvim_lua_plugins_tokyonight.lua
+      - f_config_nvim_lua_plugins_treesitter.lua
+      - f_config_nvim_lua_plugins_trouble.lua
+      - f_config_nvim_lua_plugins_true-zen.lua
+      - f_config_nvim_lua_plugins_vim-better-whitespace.lua
+      - f_config_nvim_lua_plugins_vim-fugitive.lua
+      - f_config_nvim_lua_plugins_vim-gitgutter.lua
+      - f_config_nvim_lua_plugins_vim-illuminate.lua
+      - f_config_nvim_lua_plugins_vim-rooter.lua
+      - f_config_nvim_lua_plugins_vim-stay.lua
+      - f_config_nvim_lua_plugins_vsnip.lua
       - f_config_nvim_lua_startup_themes_umbreon.lua
+      - f_config_nvim_lua_utils.lua
       - f_config_nvim_settings.vim
       - f_config_nvim_snippets_c.json
       - f_config_nvim_snippets_cpp.json
@@ -166,6 +177,7 @@ profiles:
   Jotho:
     dotfiles:
       - f_screenlayout_default.sh
+      - f_config_nvim_lua_plugins_vim-mindustry-logic.lua
     variables:
       is_homestation: true
       has_colout: true

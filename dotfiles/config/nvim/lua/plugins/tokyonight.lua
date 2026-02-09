@@ -1,7 +1,10 @@
 -- {{@@ header() @@}}
 
-return function()
-  require("tokyonight").setup({
+return { {
+  'folke/tokyonight.nvim',
+  lazy = false,
+  priority = 1000,
+  opts = {
     style = "night",
     transparent = true,
     styles = {
@@ -12,6 +15,5 @@ return function()
         italic = false,
       },
     }
-  })
-  vim.cmd("colorscheme tokyonight-night")
-end
+  },
+} }

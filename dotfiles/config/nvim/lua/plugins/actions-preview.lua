@@ -1,5 +1,8 @@
-return function()
-  require("actions-preview").setup {
+-- {{@@ header() @@}}
+
+return {{
+  "aznhe21/actions-preview.nvim",
+  opts = {
     telescope = {
       initial_mode = "normal",
       layout_strategy = "vertical",
@@ -9,7 +12,7 @@ return function()
         preview_height = function(_, _, max_lines)
           return max_lines - 15
         end,
-      },
-    },
+      }
+    }
   }
-end
+}}

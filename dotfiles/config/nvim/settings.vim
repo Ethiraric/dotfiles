@@ -15,6 +15,7 @@ set relativenumber          " Print offset from highlighted line
 set scrolloff=999           " Keep the cursor centered
 set showbreak=↪             " Show line wrapping character
 set inccommand=split        " Interactive search and replace
+set shortmess+=c            " Suppress completion matches showing as popup
 
 " set background=dark
 " highlight Normal ctermbg=none
@@ -38,6 +39,7 @@ set undodir=~/.nvim/tmp/undo/
 set backupdir=~/.nvim/tmp/backup/
 set directory=~/.nvim/tmp/swap/
 
+
 " Create those directories if needed
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
@@ -48,3 +50,6 @@ endif
 if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
 endif
+
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
