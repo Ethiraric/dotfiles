@@ -159,8 +159,17 @@ local function config()
       ls.from_my_config()
     end
     vim.lsp.config(ls.name, ls)
+    -- Bake in lspconfig's shipped defaults (cmd, root_markers, ...) while it is
+    -- still on 'rtp'; reading `vim.lsp.config[name]` resolves but does not cache.
+    vim.lsp.config(ls.name, vim.lsp.config[ls.name])
     vim.lsp.enable(ls.name)
   end
+
+  -- Allowlist: the configs above are now resolved and cached, so drop
+  -- nvim-lspconfig from 'runtimepath'. Its ~350 other `lsp/*.lua` configs become
+  -- undiscoverable, and commands like `:LspStart` can no longer enable servers we
+  -- never asked for (e.g. gitlab_duo, which attaches to rust buffers).
+  vim.opt.runtimepath:remove(vim.fn.fnamemodify(vim.api.nvim_get_runtime_file("lsp/gopls.lua", false)[1], ":h:h"))
 end
 
 return {

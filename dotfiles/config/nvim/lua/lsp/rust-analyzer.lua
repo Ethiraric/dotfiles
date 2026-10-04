@@ -1,94 +1,105 @@
 -- {{@@ header() @@}}
 
-local root_pattern = require("lspconfig.util").root_pattern
+local root_pattern = require('lspconfig.util').root_pattern
 
 function create_cargo_feature_commands()
   vim.api.nvim_create_user_command(
-    'FtSet',
+    'Ft',
     function(opts)
-      local rustAnalyzerSettings = vim.lsp.get_clients({ name = "rust_analyzer" })[1].config.settings
-      if rustAnalyzerSettings ~= nil then
-        rustAnalyzerSettings["rust-analyzer"].cargo.features = opts.fargs
-        vim.lsp.enable('rust_analyzer', false)
-        vim.lsp.config('rust_analyzer', { settings = rustAnalyzerSettings })
-        vim.lsp.enable('rust_analyzer')
+      print('=== Ft '..table.concat(opts.fargs, " ").." ===")
+      local rustAnalyzerSettings = vim.lsp.get_clients({ name = 'rust_analyzer' })[1].config.settings
+      if rustAnalyzerSettings == nil then
+        print('Ft: No configuration for `rust_analyzer`. Is the LSP running?')
+        return
       end
-    end,
-    { desc = 'Set rust-analyzer features to the provided list', nargs = '*' }
-  )
-  vim.api.nvim_create_user_command(
-    'FtSetAll',
-    function(opts)
-      local rustAnalyzerSettings = vim.lsp.get_clients({ name = "rust_analyzer" })[1].config.settings
-      if rustAnalyzerSettings ~= nil then
-        rustAnalyzerSettings["rust-analyzer"].cargo.features = "all"
-        vim.lsp.enable('rust_analyzer', false)
-        vim.lsp.config('rust_analyzer', { settings = rustAnalyzerSettings })
-        vim.lsp.enable('rust_analyzer')
-      end
-    end,
-    { desc = 'Set all rust-analyzer features', nargs = 0 }
-  )
-  vim.api.nvim_create_user_command(
-    'FtToggleAll',
-    function(opts)
-      local rustAnalyzerSettings = vim.lsp.get_clients({ name = "rust_analyzer" })[1].config.settings
-      if rustAnalyzerSettings ~= nil then
-        if rustAnalyzerSettings["rust-analyzer"].cargo.features ~= nil then
-          rustAnalyzerSettings["rust-analyzer"].cargo.features = nil
+      local default_features = not rustAnalyzerSettings['rust-analyzer'].cargo.noDefaultFeatures
+      local features = rustAnalyzerSettings['rust-analyzer'].cargo.features
+      local args = opts.fargs
+      if type(args) ~= 'table' or #args == 0 then
+        print('Ft <list|set|default>')
+        return
+      elseif args[1] == 'list' or args[1] == 'l' then
+        if default_features then
+          print('Default features enabled')
         else
-          rustAnalyzerSettings["rust-analyzer"].cargo.features = "all"
+          print('Default features disabled')
         end
-        vim.lsp.enable('rust_analyzer', false)
-        vim.lsp.config('rust_analyzer', { settings = rustAnalyzerSettings })
-        vim.lsp.enable('rust_analyzer')
+        if features == nil then
+          print('No additional features')
+        elseif features == 'all' then
+          print('All features enabled')
+        elseif type(features) == 'table' then
+          print('Additional features: ['..table.concat(rustAnalyzerSettings['rust-analyzer'].cargo.features, ', ')..']')
+        else
+          print('Additional features: '..type(features)..': "'..tostring(features)..'"')
+        end
+        return
+      elseif args[1] == 'set' then
+        table.remove(args, 1)
+        features = args
+        print('Setting features to '..table.concat(features,', '))
+      elseif args[1] == 'default' or args[1] == 'd' then
+        if args[2] == 'toggle' then
+          default_features = not default_features
+        elseif args[2] == 'on' or args[2] == 'true' then
+          default_features = true
+        elseif args[2] == 'off' or args[2] == 'false' then
+          default_features = false
+        else
+          print('Ft default <toggle|on|off|true|false>')
+          return
+        end
+        if default_features then
+          print('Enabling default features')
+        else
+          print('Disabling default features')
+        end
+      else
+        print('Ft '..args[1]..': Unknown command')
+        return
       end
+      rustAnalyzerSettings['rust-analyzer'].cargo.noDefaultFeatures = not default_features
+      rustAnalyzerSettings['rust-analyzer'].cargo.features = features
+      vim.lsp.enable('rust_analyzer', false)
+      vim.lsp.config('rust_analyzer', { settings = rustAnalyzerSettings })
+      vim.lsp.enable('rust_analyzer')
     end,
-    { desc = 'Set all rust-analyzer features', nargs = 0 }
-  )
-  vim.api.nvim_create_user_command(
-    'FtList',
-    function(opts)
-      local rustAnalyzerSettings = vim.lsp.get_clients({ name = "rust_analyzer" })[1].config.settings
-      if rustAnalyzerSettings == 'all' then
-        print("all features enabled")
-      elseif rustAnalyzerSettings ~= nil then
-        print('['..table.concat(rustAnalyzerSettings["rust-analyzer"].cargo.features, ', ')..']')
-      end
-    end,
-    { desc = "List rust-analyzer active features.", nargs = 0 }
+    { desc = 'Manipulate cargo features', nargs = '*' }
   )
 end
 
 return {
   name = 'rust_analyzer',
   cmd = { '/usr/lib/rustup/bin/rust-analyzer' },
-  filetypes = { "rust" },
+  filetypes = { 'rust' },
   {%@@ if profile != "protea" @@%}
-  root_dir = root_pattern("Cargo.toml"),
+  root_dir = root_pattern('Cargo.toml'),
   {%@@ endif @@%}
   settings = {
-    ["rust-analyzer"] = {
+    ['rust-analyzer'] = {
       diagnostics = {
+        disabled = {
+          'inactive-code'
+        },
         styleLints = {
           enable = true,
         }
       },
       check = {
-        command = "clippy",
+        command = 'clippy',
         {%@@ if profile != "protea" @@%}
-        extraArgs = { "--", "-Wclippy::pedantic", "-Aclippy::redundant_else" },
+        extraArgs = { '--', '-Wclippy::pedantic', '-Aclippy::redundant_else' },
         {%@@ else @@%}
-        extraArgs = { "--", "-Wclippy::pedantic", "-Aclippy::redundant_else", "-Aclippy::too_many_lines" },
+        extraArgs = { '--', '-Wclippy::pedantic', '-Aclippy::redundant_else', '-Aclippy::too_many_lines' },
         workspace = false,
         {%@@ endif @@%}
       },
       checkOnSave = true,
       rustc = {
-        source = "discover"
+        source = 'discover'
       },
       assist = {
-        importPrefix = "crate"
+        importPrefix = 'crate'
       },
       cargo = {
         autoreload = true
