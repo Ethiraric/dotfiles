@@ -315,12 +315,6 @@ dotfiles:
     dst: ~/.config/nvim/snippets/rust.json
     chmod: '600'
 
-  # config/pipewire
-  f_config_pipewire_media-session.d_bluez-monitor.conf:
-    src: config/pipewire/media-session.d/bluez-monitor.conf
-    dst: ~/.config/pipewire/media-session.d/bluez-monitor.conf
-    chmod: '600'
-
   # config/polybar
   f_config_polybar_bars.ini:
     src: config/polybar/bars.ini

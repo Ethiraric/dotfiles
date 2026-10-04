@@ -112,7 +112,6 @@ profiles:
       - f_config_polybar_modules_xkeyboard.ini
       - f_config_polybar_modules_xwindow.ini
       - f_config_polybar_scripts_pipewire-control.bash
-      - f_config_polybar_scripts_pipewire-control.bash
       - f_config_rofi_config.rasi
       - f_local_bin_dothelock
       - f_local_bin_i3lock-rand
@@ -196,8 +195,11 @@ profiles:
       has_colout: true
       has_i3_gaps: true
       has_taskwarrior: true
-      polybar_wireless_network_interface: wlan0
       dunst_monitor: 1
       dunst_geometry: "300x10-20+40"
+      polybar_wireless_network_interface: wlan0
+      polybar_battery: BAT1
+      polybar_adapter: ACAD
+      has_battery: true
     include:
       - gui

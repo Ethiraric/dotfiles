@@ -18,6 +18,4 @@ MONITOR=$MAIN_SCREEN polybar main_bot -l info -c ~/.config/polybar/config.ini &
 MONITOR=DP-0 polybar main_bot -l info -c ~/.config/polybar/config.ini &
 {%@@ elif profile == "protea" @@%}
 MONITOR=eDP-1 polybar main_bot -l info -c ~/.config/polybar/config.ini &
-{%@@ else @@%}
-polybar main_bot -l info -c ~/.config/polybar/config.ini &
 {%@@ endif @@%}

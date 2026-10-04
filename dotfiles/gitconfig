@@ -27,6 +27,7 @@
 
 [push]
   default = current
+	autoSetupRemote = false
 
 [rerere]
   enabled = true
@@ -54,3 +55,7 @@
 
 [advice]
   detachedHead = false
+	mergeConflict = false
+	skippedCherryPicks = false
+[rebase]
+	autosquash = true

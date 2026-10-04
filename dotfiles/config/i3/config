@@ -22,8 +22,13 @@ gaps outer -8
 bindsym $mod+Return exec $terminal
 # Start one with resizeable font
 bindsym $mod+t exec terminology
+{%@@ if profile == "protea" @@%}
+bindsym $mod+Shift+p exec /home/ethiraric/.local/bin/rofi_scripts/open_pr
+bindsym $mod+Shift+o exec /home/ethiraric/.local/bin/rofi_scripts/oom
+{%@@ else @@%}
 # Start a python interpreter
 bindsym $mod+Shift+p exec alacritty -e bash -i -c ipython
+{%@@ endif @@%}
 # Start a bash in the directory specified by the clipboard
 bindsym $mod+ShiftReturn exec $terminal -e bash -i -c 'bash --init-file <(echo ". ~/.bashrc 2>&1 > /dev/null && cd `xclip -o -sel clipboard` && pwd") -i'
 
@@ -132,6 +137,9 @@ bindsym $mod+semicolon exec "${HOME}/.local/bin/i3lock-rand"
 bindsym $mod+apostrophe exec "${HOME}/.local/bin/i3lock-select"
 
 # Misc bindings
+{%@@ if profile == "protea" @@%}
+bindsym $mod+Shift+n exec $terminal -e bash -c "${HOME}/.local/bin/notes"
+{%@@ endif @@%}
 bindsym $mod+Ctrl+w exec "${HOME}/.local/bin/wallpaper"
 bindsym $mod+p exec "${HOME}/.local/bin/screenlayout"
 bindsym $mod+Shift+w exec rofi -terminal $terminal -show ssh

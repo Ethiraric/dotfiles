@@ -6,6 +6,6 @@ prepend_keymap = [
   { on = "d",         run = "noop",                               desc = "Remove trash default shortcut" },
   { on = ["d", "D"],  run = "remove --permanently",               desc = "Delete files" },
   { on = "<S-s>",     run = "shell --block bash",                 desc = "Start an interactive shell (bash) in that directory" },
-  { on = "e",         run = "shell --block nvim -- "$@"",         desc = "Open selected files with neovim" },
+  { on = "e",         run = "shell --block nvim -- \"$@\"",       desc = "Open selected files with neovim" },
   { on = "<S-e>",     run = "shell --block nvim",                 desc = "Run neovim in that directory" },
 ]
